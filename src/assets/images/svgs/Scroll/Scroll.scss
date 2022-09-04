@@ -1,0 +1,67 @@
+svg {
+  overflow: visible;
+}
+.btn--scroll {
+  cursor: pointer;
+  opacity: 0.7;
+  svg {
+    transform: scale(0.8);
+  }
+}
+
+a:active svg path {
+  animation-play-state: paused;
+}
+@keyframes circleBounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  70% {
+    transform: translateY(-8px);
+  }
+  90% {
+    transform: translateY(13px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes arrowBounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  70% {
+    transform: translateY(-4px);
+  }
+  90% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+.circle {
+  position: relative;
+  animation-name: circleBounce;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+}
+
+.down {
+  animation-name: arrowBounce;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-delay: 200ms;
+}
+.up {
+  animation-name: arrowBounce;
+  animation-duration: 4s;
+  animation-iteration-count: infinite;
+  animation-delay: 50ms;
+}

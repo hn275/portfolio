@@ -1,0 +1,50 @@
+header {
+  z-index: -1;
+  position: relative;
+  .banner {
+    h1 {
+      display: inline-block;
+    }
+  }
+  .btn--header-resume {
+    font-size: 1.4em;
+    margin-top: 0.7em;
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.4em;
+    gap: 1em;
+    padding-bottom: 3em;
+    .svg--static-header {
+      margin: 0 2em;
+    }
+    .banner {
+      text-align: center;
+    }
+  }
+}
+
+@media only screen and (min-width: 821px) {
+  header {
+    display: grid;
+    grid-template-columns: 55% 1fr;
+    grid-gap: 2em;
+    align-items: center;
+
+    .svg--static-header {
+      width: 80%;
+      justify-self: end;
+    }
+
+    .banner {
+      justify-self: start;
+      font-size: 1.5em;
+    }
+  }
+}

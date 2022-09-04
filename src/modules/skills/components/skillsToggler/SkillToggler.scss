@@ -1,0 +1,11 @@
+.skill--toggler {
+  .current-skill {
+    span {
+      cursor: pointer;
+      opacity: 0.5;
+    }
+    .skill--active {
+      opacity: 1 !important;
+    }
+  }
+}
