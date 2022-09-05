@@ -1,16 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BtnMain, BtnSecondary } from 'modules/common/components/buttons';
 import { ReactComponent as StaticAssets } from 'assets/images/static_assets.svg';
 import { useRedirect } from 'hooks';
 import './Home.scss';
 
-export const Home = () => {
-  // redirect for portfolio
+interface HomeProps {
+  setHasNav: React.Dispatch<React.SetStateAction<boolean>>;
+}
+export const Home: React.FC<HomeProps> = ({ setHasNav }) => {
   const navigate = useRedirect();
   const handlePortfolioClick = (event: React.MouseEvent) => {
     event.preventDefault();
     navigate('/portfolio');
   };
+
+  useEffect(() => {
+    setHasNav(() => false);
+    return () => setHasNav(() => true);
+  });
 
   return (
     <header className='container--layout'>

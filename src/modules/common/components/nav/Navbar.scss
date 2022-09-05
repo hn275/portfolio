@@ -1,5 +1,9 @@
 @use 'globals/styles';
 
+#no-nav {
+  display: none;
+}
+
 .nav--main-wrapper {
   width: 100%;
   position: sticky;

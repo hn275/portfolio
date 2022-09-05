@@ -6,7 +6,10 @@ import { NavLink } from 'react-router-dom';
 import { useRedirect } from 'hooks';
 import './Navbar.scss';
 
-export const Navbar = () => {
+interface NavbarProps {
+  hasNav: boolean;
+}
+export const Navbar: React.FC<NavbarProps> = ({ hasNav }) => {
   // mobile screen slide in menu toggle
   const menuRef = useRef<HTMLDivElement | null>(null);
   const handleMenuOpen = () => {
@@ -26,7 +29,10 @@ export const Navbar = () => {
 
   // TSX
   return (
-    <div className='nav--main-wrapper'>
+    <div
+      className='nav--main-wrapper'
+      id={hasNav ? '' : 'no-nav'}
+    >
       <nav className='nav--main'>
         <div
           className='nav--logo'
