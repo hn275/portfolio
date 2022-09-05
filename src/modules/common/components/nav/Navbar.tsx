@@ -1,8 +1,9 @@
 import React, { useRef } from 'react';
-import { ResumeButton } from 'modules/common/components/resumeButton';
+import { BtnMain } from 'modules/common/components/buttons';
 import { ReactComponent as Logo } from 'assets/images/Logo.svg';
 import { Hamburger } from 'assets/images/svgs/Hamburger/Hamburger';
-import { NavLink, useNavigate } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+import { useRedirect } from 'hooks';
 import './Navbar.scss';
 
 export const Navbar = () => {
@@ -17,10 +18,10 @@ export const Navbar = () => {
   };
 
   // Navigate back home
-  const navigate = useNavigate();
+  const redirect = useRedirect();
   const handleHomeClick = (event: React.MouseEvent) => {
     event.preventDefault();
-    navigate('/home', { replace: true });
+    redirect('/home');
   };
 
   // TSX
@@ -46,10 +47,10 @@ export const Navbar = () => {
           </div>
           <ul>
             <li>
-              <NavLink to='skills'>Skills</NavLink>
+              <NavLink to='portfolio'>Portfolio</NavLink>
             </li>
             <li>
-              <NavLink to='portfolio'>Portfolio</NavLink>
+              <NavLink to='skills'>Skills</NavLink>
             </li>
             <li>
               <NavLink to='about'>About</NavLink>
@@ -62,7 +63,7 @@ export const Navbar = () => {
 
         <div className='nav--util flex-row'>
           <div className='nav--resume-btn'>
-            <ResumeButton />
+            <BtnMain>Resume</BtnMain>
           </div>
 
           <div

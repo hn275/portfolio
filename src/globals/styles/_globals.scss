@@ -52,3 +52,31 @@ a {
   display: flex;
   align-items: center;
 }
+
+// for button
+$padding: 0.4em 1em;
+$borderRadius: 1.2em;
+// for button ends
+.btn--main {
+  background-color: colors.$accent-main;
+  color: colors.$bg-main;
+  padding: $padding;
+  border-radius: $borderRadius;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  transition: box-shadow 250ms ease;
+  &:hover {
+    box-shadow: 0px 0px 1em colors.$accent-main;
+  }
+}
+.btn--secondary {
+  background-color: colors.$bg-main;
+  padding: $padding;
+  border-radius: $borderRadius;
+  border: 1px solid colors.$accent-main;
+  color: colors.$accent-main;
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: 1em;
+}

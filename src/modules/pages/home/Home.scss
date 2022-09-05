@@ -1,14 +1,28 @@
+@use 'globals/styles';
+
+body {
+  overflow: hidden;
+}
 header {
-  z-index: -1;
-  position: relative;
+  background-color: styles.$bg-main;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
   .banner {
     h1 {
       display: inline-block;
     }
   }
-  .btn--header-resume {
-    font-size: 1.4em;
+  .btn--header {
+    font-size: 1.1em;
     margin-top: 0.7em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 }
 

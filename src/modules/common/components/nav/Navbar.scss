@@ -2,7 +2,7 @@
 
 .nav--main-wrapper {
   width: 100%;
-  position: fixed;
+  position: sticky;
   top: 0;
   background-color: styles.$bg-nav;
 }
@@ -13,19 +13,14 @@ nav.nav--main {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* isolation: isolate; */
   padding: 1em;
-  z-index: 999;
 }
 .nav--logo {
+  cursor: pointer;
   width: 5em;
   svg {
     width: 100%;
   }
-}
-
-.nav--util {
-  gap: 1em;
 }
 
 .nav--hamburger {
@@ -49,11 +44,17 @@ nav.nav--main {
       a.active {
         color: styles.$accent-main;
       }
+      a:hover {
+        color: styles.$fg-main;
+      }
     }
   }
 }
 
 @media only screen and (max-width: 669px) {
+  .nav--util {
+    gap: 1em;
+  }
   .nav--hamburger {
     display: block;
   }
@@ -99,7 +100,7 @@ nav.nav--main {
 
 @media only screen and (min-width: 670px) {
   .nav--main {
-    gap: 5em;
+    gap: 4em;
     .nav--links {
       flex-grow: 1;
       ul {
