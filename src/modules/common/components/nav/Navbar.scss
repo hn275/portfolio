@@ -68,6 +68,7 @@ nav.nav--main {
     right: 0;
     width: 40vw;
     height: 100vh;
+    overflow-y: hidden;
     background-color: hsla(227deg, 100%, 4%, 70%);
     backdrop-filter: blur(7px);
     transform: translateX(100%);
@@ -99,6 +100,9 @@ nav.nav--main {
         }
       }
     }
+  }
+  .nav--links-close-menu {
+    transform: translateY(0.5em);
   }
 }
 

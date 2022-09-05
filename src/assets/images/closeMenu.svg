@@ -1,0 +1,11 @@
+<svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="closeMenu" clip-path="url(#clip0_44_2)">
+<path id="Vector 1" d="M2 2L19 19" stroke="#61DAFB" stroke-width="3" stroke-linecap="round"/>
+<path id="Vector 2" d="M19 2L2 19" stroke="#61DAFB" stroke-width="3" stroke-linecap="round"/>
+</g>
+<defs>
+<clipPath id="clip0_44_2">
+<rect width="21" height="21" fill="white"/>
+</clipPath>
+</defs>
+</svg>

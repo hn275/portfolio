@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { BtnMain } from 'modules/common/components/buttons';
 import { ReactComponent as Logo } from 'assets/images/Logo.svg';
 import { Hamburger } from 'assets/images/svgs/Hamburger/Hamburger';
+import { ReactComponent as CloseMenu } from 'assets/images/closeMenu.svg';
 import { NavLink } from 'react-router-dom';
 import { useRedirect } from 'hooks';
 import './Navbar.scss';
@@ -49,7 +50,7 @@ export const Navbar: React.FC<NavbarProps> = ({ hasNav }) => {
             onClick={handleMenuClose}
             className='nav--links-close-menu'
           >
-            close menu
+            <CloseMenu />
           </div>
           <ul>
             <li onClick={handleMenuClose}>
