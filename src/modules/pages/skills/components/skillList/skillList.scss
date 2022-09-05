@@ -1,0 +1,39 @@
+.skills--hard-skills {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1em;
+}
+
+// transition
+.hard-skills-transition-enter {
+  opacity: 0;
+}
+.hard-skills-transition-enter-active {
+  opacity: 1;
+  transition: all 250ms;
+}
+.hard-skills-transition-exit {
+  opacity: 1;
+}
+.hard-skills-transition-exit-active {
+  opacity: 0;
+  transition: all 250ms linear;
+}
+
+.soft-skills-transition-enter {
+  opacity: 0;
+  transform: translate(-2px, -2px);
+}
+.soft-skills-transition-enter-active {
+  opacity: 1;
+  transform: translate(0, 0);
+  transition: all 250ms;
+}
+.soft-skills-transition-exit {
+  opacity: 1;
+}
+.soft-skills-transition-exit-active {
+  opacity: 0;
+  transition: all 250ms linear;
+}
+// transition ends

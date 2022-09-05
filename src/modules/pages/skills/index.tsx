@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import type { SkillType } from './types/types';
 import { SkillToggler } from './components/skillsToggler/SkillToggler';
-import { HardSkills } from './components/hardSkills/HardSkills';
+import { SkillList } from './components/skillList/skillList';
 import { ReactComponent as SkillsWaterMark } from 'assets/images/skills_watermark.svg';
 import { ReactComponent as SkillsSVG } from 'assets/images/skills.svg';
 
 export const Skills = () => {
   const [skillType, setSkillType] = useState<SkillType>('hard');
-  useEffect(() => console.log(skillType), [skillType]);
+
   return (
     <section
       className='container--layout'
@@ -33,7 +33,7 @@ export const Skills = () => {
         </h1>
 
         <div className='skill--list'>
-          <HardSkills />
+          <SkillList displaySkill={skillType} />
         </div>
       </div>
     </section>
