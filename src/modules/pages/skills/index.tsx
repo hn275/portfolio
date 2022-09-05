@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import type { SkillType } from '../types/types';
-import { SkillToggler } from './skillsToggler/SkillToggler';
-import { HardSkills } from './hardSkills/HardSkills';
+import type { SkillType } from './types/types';
+import { SkillToggler } from './components/skillsToggler/SkillToggler';
+import { HardSkills } from './components/hardSkills/HardSkills';
 import { ReactComponent as SkillsWaterMark } from 'assets/images/skills_watermark.svg';
 import { ReactComponent as SkillsSVG } from 'assets/images/skills.svg';
 

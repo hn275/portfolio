@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { Navbar } from 'modules/common/components/nav';
 import { Home } from 'modules/pages/home';
-import { Skills } from 'modules/skills';
+import { Skills } from 'modules/pages/skills';
 
 function App() {
   const [hasNav, setHasNav] = useState<boolean>(true);
@@ -13,7 +13,7 @@ function App() {
       <main>
         <Routes>
           <Route
-            path='/home'
+            path='/'
             element={<Home setHasNav={setHasNav} />}
           />
           <Route
