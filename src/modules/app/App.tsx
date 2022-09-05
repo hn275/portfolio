@@ -1,6 +1,7 @@
 import React from 'react';
-import { Navbar } from 'modules/nav';
-import { Header } from 'modules/header';
+import { Routes, Route } from 'react-router-dom';
+import { Navbar } from 'modules/common/components/nav';
+import { Home } from 'modules/pages/home';
 import { Skills } from 'modules/skills';
 
 function App() {
@@ -9,8 +10,16 @@ function App() {
       <Navbar />
       Hello world
       <main>
-        <Header />
-        <Skills />
+        <Routes>
+          <Route
+            path='/home'
+            element={<Home />}
+          />
+          <Route
+            path='/skills'
+            element={<Skills />}
+          />
+        </Routes>
       </main>
     </div>
   );

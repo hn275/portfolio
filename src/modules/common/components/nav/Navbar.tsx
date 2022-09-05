@@ -1,24 +1,36 @@
 import React, { useRef } from 'react';
-import { ResumeButton } from 'modules/common/resumeButton';
-import { ReactComponent as Logo } from '../../assets/images/Logo.svg';
-import { Hamburger } from '../../assets/images/svgs/Hamburger/Hamburger';
+import { ResumeButton } from 'modules/common/components/resumeButton';
+import { ReactComponent as Logo } from 'assets/images/Logo.svg';
+import { Hamburger } from 'assets/images/svgs/Hamburger/Hamburger';
+import { NavLink, useNavigate } from 'react-router-dom';
 import './Navbar.scss';
 
 export const Navbar = () => {
+  // mobile screen slide in menu toggle
   const menuRef = useRef<HTMLDivElement | null>(null);
   const handleMenuOpen = () => {
     menuRef.current!.classList.add('is-open');
-    console.log('clicked');
   };
+  // close menu
   const handleMenuClose = () => {
     menuRef.current!.classList.remove('is-open');
+  };
+
+  // Navigate back home
+  const navigate = useNavigate();
+  const handleHomeClick = (event: React.MouseEvent) => {
+    event.preventDefault();
+    navigate('/home', { replace: true });
   };
 
   // TSX
   return (
     <div className='nav--main-wrapper'>
       <nav className='nav--main'>
-        <div className='nav--logo'>
+        <div
+          className='nav--logo'
+          onClick={handleHomeClick}
+        >
           <Logo />
         </div>
 
@@ -32,12 +44,19 @@ export const Navbar = () => {
           >
             close menu
           </div>
-          {/* display: none for 820px+ */}
           <ul>
-            <li>Skills</li>
-            <li>Portfolio</li>
-            <li>About</li>
-            <li>Contact</li>
+            <li>
+              <NavLink to='skills'>Skills</NavLink>
+            </li>
+            <li>
+              <NavLink to='portfolio'>Portfolio</NavLink>
+            </li>
+            <li>
+              <NavLink to='about'>About</NavLink>
+            </li>
+            <li>
+              <NavLink to='contact'>Contact</NavLink>
+            </li>
           </ul>
         </div>
 

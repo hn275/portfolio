@@ -1,10 +1,9 @@
 import React from 'react';
-import { ResumeButton } from 'modules/common/resumeButton';
-import { ReactComponent as StaticAssets } from '../../assets/images/static_assets.svg';
-import { Scroll } from '../../assets/images/svgs/Scroll/Scroll';
-import './Header.scss';
+import { ResumeButton } from 'modules/common/components/resumeButton';
+import { ReactComponent as StaticAssets } from 'assets/images/static_assets.svg';
+import './Home.scss';
 
-export const Header = () => {
+export const Home = () => {
   return (
     <header className='container--layout'>
       <div className='svg--static-header'>
@@ -19,8 +18,6 @@ export const Header = () => {
           <ResumeButton />
         </div>
       </div>
-
-      <Scroll />
     </header>
   );
 };
