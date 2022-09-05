@@ -8,7 +8,10 @@ function App() {
   const [hasNav, setHasNav] = useState<boolean>(true);
 
   return (
-    <div className='App'>
+    <div
+      className='App'
+      style={{ overflowX: 'hidden' }}
+    >
       <Navbar hasNav={hasNav} />
       <main>
         <Routes>

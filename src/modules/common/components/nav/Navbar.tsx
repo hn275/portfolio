@@ -24,7 +24,7 @@ export const Navbar: React.FC<NavbarProps> = ({ hasNav }) => {
   const redirect = useRedirect();
   const handleHomeClick = (event: React.MouseEvent) => {
     event.preventDefault();
-    redirect('/home');
+    redirect('/');
   };
 
   // TSX
@@ -52,16 +52,16 @@ export const Navbar: React.FC<NavbarProps> = ({ hasNav }) => {
             close menu
           </div>
           <ul>
-            <li>
+            <li onClick={handleMenuClose}>
               <NavLink to='portfolio'>Portfolio</NavLink>
             </li>
-            <li>
+            <li onClick={handleMenuClose}>
               <NavLink to='skills'>Skills</NavLink>
             </li>
-            <li>
+            <li onClick={handleMenuClose}>
               <NavLink to='about'>About</NavLink>
             </li>
-            <li>
+            <li onClick={handleMenuClose}>
               <NavLink to='contact'>Contact</NavLink>
             </li>
           </ul>
