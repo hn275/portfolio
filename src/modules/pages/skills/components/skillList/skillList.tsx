@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef } from 'react';
 import type { SkillType } from '../../types/types';
 import { HardSkills } from '../hardSkills/HardSkills';
 import { CSSTransition } from 'react-transition-group';
