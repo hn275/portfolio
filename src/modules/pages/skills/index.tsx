@@ -30,7 +30,7 @@ export const Skills = () => {
         />
 
         <h1>
-          <span className='text-dropshadow'>skills</span> I've accquired
+          <span className='text-dropshadow'>skills </span> I've accquired
         </h1>
 
         <div className='skill--list'>

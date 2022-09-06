@@ -1,0 +1,41 @@
+@use 'globals/styles';
+
+.contact--page-wrapper {
+  width: 100%;
+  @include styles.flex-center;
+}
+@media only screen and (max-width: 820px) {
+  #contact {
+    .contact--page-wrapper {
+      flex-direction: column;
+      .svg--contact {
+        @include styles.flex-center;
+        flex-direction: column;
+        .svg--contact-asset {
+          width: 85%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 821px) {
+  #contact {
+    .contact--page-wrapper {
+      align-items: flex-start;
+      font-size: 1.5em;
+      gap: 1em;
+      .svg--contact {
+        position: relative;
+        .svg--watermark {
+          position: absolute;
+          bottom: 0;
+          right: 0;
+        }
+        .svg--contact-asset {
+          width: 15em;
+        }
+      }
+    }
+  }
+}

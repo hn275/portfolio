@@ -1,8 +1,8 @@
 @use 'colors';
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;900&display=swap');
 
 :root {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: colors.$bg-main;
   color: colors.$fg-main;
   scroll-behavior: smooth;
@@ -20,8 +20,7 @@
   text-shadow: 4px 4px 0px colors.$accent-main;
   -webkit-text-stroke: 1px black;
   -webkit-text-fill-color: white;
-  font-size: 2em;
-  font-family: sans-serif;
+  font-size: 1.8em;
 }
 
 html {

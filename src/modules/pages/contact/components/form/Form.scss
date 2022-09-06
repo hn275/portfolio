@@ -1,0 +1,22 @@
+@use 'globals/styles';
+
+#contact--form {
+  display: flex;
+  flex-direction: column;
+  background-color: red;
+  input {
+    border: none;
+    outline: none;
+  }
+  input[type='text'] {
+    background-color: styles.$bg-main;
+    border: 1px solid styles.$bg-nav;
+    border-radius: 15px;
+    padding: 0.5em;
+    color: styles.$fg-main;
+  }
+  .contact--form-message input {
+    border-radius: 10px;
+    flex-grow: 1;
+  }
+}
