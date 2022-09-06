@@ -1,0 +1,46 @@
+@media only screen and (max-width: 480px) {
+  #skills {
+    .svg--skills-page {
+      .svg--skills {
+        display: none;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 820px) {
+  #skills {
+    flex-direction: column;
+    gap: 1em;
+    .svg--skills-page {
+      .svg--skills {
+        width: 15em;
+      }
+      .svg--watermark {
+        width: 15em;
+      }
+    }
+
+    h1 {
+      font-size: 1em;
+    }
+    .skill--list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1em;
+    }
+  }
+}
+
+@media only screen and (min-width: 821px) {
+  #skills {
+    gap: 4em;
+    .svg--skills-page {
+      .svg--skills,
+      .svg--watermark {
+        width: 20em;
+      }
+    }
+  }
+}

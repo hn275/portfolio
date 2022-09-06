@@ -61,6 +61,12 @@ a {
   align-items: center;
 }
 
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 // for button
 $padding: 0.4em 1em;
 $borderRadius: 1.2em;

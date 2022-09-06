@@ -4,13 +4,14 @@ import { SkillToggler } from './components/skillsToggler/SkillToggler';
 import { SkillList } from './components/skillList/skillList';
 import { ReactComponent as SkillsWaterMark } from 'assets/images/skills_watermark.svg';
 import { ReactComponent as SkillsSVG } from 'assets/images/skills.svg';
+import './styles/Skills.scss';
 
 export const Skills = () => {
   const [skillType, setSkillType] = useState<SkillType>('hard');
 
   return (
     <section
-      className='container--layout'
+      className='container--layout flex-center'
       id='skills'
     >
       <div className='svg--skills-page'>

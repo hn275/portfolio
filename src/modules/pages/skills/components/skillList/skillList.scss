@@ -1,7 +1,9 @@
 .skills--hard-skills {
   display: grid;
+  width: 100%;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 1em;
+  grid-gap: 1.5em;
+  place-items: center;
 }
 
 // transition
