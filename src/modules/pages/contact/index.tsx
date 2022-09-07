@@ -31,7 +31,6 @@ export const Contact = () => {
           </div>
         </div>
       </div>
-      <p>contact page</p>
     </section>
   );
 };

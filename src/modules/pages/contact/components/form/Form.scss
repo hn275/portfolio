@@ -1,16 +1,28 @@
 @use 'globals/styles';
 
+textarea#message {
+  border-radius: 10px;
+  padding: 0.4em;
+}
+
+.field {
+  color: styles.$fg-main;
+  background-color: styles.$bg-main;
+  border: 1px solid styles.$accent-main;
+}
+
 #contact--form {
-  display: flex;
-  flex-direction: column;
-  background-color: red;
+  label,
+  input,
+  textarea {
+    display: block;
+  }
+  /* display: grid; */
+  /* grid-gap: 1em; */
   input {
-    border: none;
     outline: none;
   }
   input[type='text'] {
-    background-color: styles.$bg-main;
-    border: 1px solid styles.$bg-nav;
     border-radius: 15px;
     padding: 0.5em;
     color: styles.$fg-main;
@@ -18,5 +30,24 @@
   .contact--form-message input {
     border-radius: 10px;
     flex-grow: 1;
+  }
+
+  .contact--form-field {
+    label {
+      font-size: 0.7em;
+      opacity: 0.6;
+      transform: translateX(1.3em);
+      transition: all 250ms ease-out;
+    }
+
+    label.has-text {
+      opacity: 1 !important;
+      transform: translate(0.3em) !important;
+      color: styles.$accent-main !important;
+    }
+
+    &:focus-within label {
+      opacity: 1;
+    }
   }
 }
