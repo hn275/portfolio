@@ -16,10 +16,6 @@ textarea#message {
   input,
   textarea {
     display: block;
-  }
-  /* display: grid; */
-  /* grid-gap: 1em; */
-  input {
     outline: none;
   }
   input[type='text'] {
@@ -40,7 +36,8 @@ textarea#message {
       transition: all 250ms ease-out;
     }
 
-    label.has-text {
+    &[data-text='has-text'] label,
+    &[data-text='has-text'] textarea {
       opacity: 1 !important;
       transform: translate(0.3em) !important;
       color: styles.$accent-main !important;

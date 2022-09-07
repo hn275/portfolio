@@ -2,11 +2,23 @@ import React from 'react';
 
 interface BtnMainProps {
   children: React.ReactChild;
+  btnType?: 'submit' | undefined;
+  handleClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
-export const BtnMain: React.FC<BtnMainProps> = ({ children }) => {
+export const BtnMain: React.FC<BtnMainProps> = ({
+  btnType,
+  children,
+  handleClick,
+}) => {
   return (
     <>
-      <button className='btn--main'>{children}</button>
+      <button
+        type={btnType}
+        className='btn--main'
+        onClick={handleClick}
+      >
+        {children}
+      </button>
     </>
   );
 };

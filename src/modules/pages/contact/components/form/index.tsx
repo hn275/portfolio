@@ -11,11 +11,11 @@ export const Form = () => {
     message: '',
   });
 
+  const handleSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {
+    event.preventDefault(); // BUG: this is wrong
+    console.log(event.target.value);
+  };
+
   // TSX
-  return (
-    <FormView
-      formData={formData}
-      setFormData={setFormData}
-    />
-  );
+  return <FormView handleSubmit={handleSubmit} />;
 };
