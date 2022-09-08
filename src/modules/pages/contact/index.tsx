@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { ReactComponent as ContactSVG } from './assets/contact.svg';
 import { ReactComponent as WaterMark } from './assets/contact_watermark.svg';
 import { Form } from './components/form';
 import './styles/Contact.scss';
 
 export const Contact = () => {
-  useEffect(() => console.log('contact me mounted'));
   return (
     <section
       id='contact'

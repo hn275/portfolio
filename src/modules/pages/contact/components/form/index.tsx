@@ -1,21 +1,58 @@
-import React, { useState, useEffect } from 'react';
-import { FormView } from './FormView';
-import type { FormType } from './types';
+import React, { useState } from 'react';
+import { FormField } from './FormField';
+import { SubmitButton } from './SubmitButton';
 import './Form.scss';
 
-export const Form = () => {
-  const [formData, setFormData] = useState<FormType>({
-    firstName: '',
-    lastName: '',
-    email: '',
-    message: '',
-  });
+interface FormType {}
 
-  const handleSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {
-    event.preventDefault(); // BUG: this is wrong
-    console.log(event.target.value);
+export const Form: React.FC<FormType> = ({}) => {
+  const [firstName, setFirstName] = useState<string>('');
+  const [lastName, setLastName] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
+
+  const handleSubmit = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    setFirstName(() => '');
+    setLastName(() => '');
+    setEmail(() => '');
+    setMessage(() => '');
   };
 
   // TSX
-  return <FormView handleSubmit={handleSubmit} />;
+  return (
+    <form id='contact--form'>
+      <FormField
+        value={firstName}
+        setValue={setFirstName}
+        fieldType='firstName'
+      >
+        First name:
+      </FormField>
+
+      <FormField
+        value={lastName}
+        setValue={setLastName}
+        fieldType='lastName'
+      >
+        Last name:
+      </FormField>
+      <FormField
+        value={email}
+        setValue={setEmail}
+        fieldType='email'
+      >
+        Email:
+      </FormField>
+      <FormField
+        fieldType='message'
+        isTextArea
+        value={message}
+        setValue={setMessage}
+      >
+        Message:
+      </FormField>
+      <SubmitButton handleSubmit={handleSubmit} />
+    </form>
+  );
 };

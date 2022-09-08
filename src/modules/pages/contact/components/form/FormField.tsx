@@ -1,31 +1,40 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import './Form.scss';
 
 interface FormFieldType {
   fieldType: string;
   children: React.ReactNode;
   isTextArea?: boolean;
+  value: string;
+  setValue: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export const FormField: React.FC<FormFieldType> = ({
   fieldType,
   children,
   isTextArea,
+  setValue,
+  value,
 }) => {
   const inputRef = useRef<HTMLInputElement | null>(null);
   const fieldContainerRef = useRef<HTMLDivElement | null>(null);
 
-  const handleInput = () => {
+  useEffect(() => {
     /**
      * If the input field is empty, label is white and spacing to the left
      * if the input field has text, label is blue and the alignment is reset to
      */
-    const text = inputRef.current!.value;
-    if (text.length > 0) {
+    if (value) {
       fieldContainerRef.current!.dataset.text = 'has-text';
     } else {
       fieldContainerRef.current!.dataset.text = '';
     }
+  }, [value]);
+
+  const handleInput = (
+    event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    setValue(() => event.target.value);
   };
 
   if (isTextArea) {
@@ -47,6 +56,7 @@ export const FormField: React.FC<FormFieldType> = ({
           placeholder="Let's get in touch!"
           onChange={handleInput}
           ref={inputRef as any}
+          value={value}
         ></textarea>
       </div>
     );
@@ -66,6 +76,7 @@ export const FormField: React.FC<FormFieldType> = ({
         id={fieldType}
         className='field'
         onChange={handleInput}
+        value={value}
       />
     </div>
   );
