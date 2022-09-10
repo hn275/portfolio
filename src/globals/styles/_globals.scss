@@ -23,6 +23,14 @@
   font-size: 1.8em;
 }
 
+.bold {
+  font-weight: 700;
+}
+
+.italic {
+  font-style: italic;
+}
+
 html {
   overflow: hidden;
 }
@@ -92,4 +100,8 @@ $borderRadius: 1.2em;
   font-family: inherit;
   font-weight: inherit;
   font-size: 1em;
+}
+
+.watermark {
+  opacity: 0.4;
 }
