@@ -23,8 +23,8 @@ export const About = () => {
         </h1>
         <p>
           Located in the beautiful island of Victoria, British Columbia, I am
-          currently a student of the Software Engineering department of
-          University of Victoria
+          currently a <span className='bold'>Software Engineering</span> student
+          of University of Victoria
         </p>
         <p>
           I picked up Python as the first programming language in 2019. Shortly
@@ -33,9 +33,9 @@ export const About = () => {
         </p>
         <p>
           Long story short, I landed on&nbsp;
-          <span className='bold'>Web development</span> and started my journey
-          with <span className='italic'>Codecademy</span>. I've learned a lot
-          since, and I'm eager to learn a lot more.
+          <span className='bold'>Full Stack Web Development</span> and started
+          my journey with <span className='italic'>Codecademy</span>. I've
+          learned a lot since, and I'm eager to learn a lot more.
         </p>
         <p>
           Currently I am honing my backend development skills, but I am up for
