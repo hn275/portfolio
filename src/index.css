@@ -5,10 +5,12 @@
 html {
   @apply bg-gray-900;
   @apply text-gray-50;
+  @apply scroll-smooth;
+  @apply scroll-p-16 lg:scroll-p-28;
 }
 
 main {
-  @apply max-w-[1280];
+  @apply max-w-[1280px];
   @apply mx-auto;
 }
 

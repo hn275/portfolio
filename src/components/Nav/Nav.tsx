@@ -15,11 +15,11 @@ export function Nav({}: Props) {
     { key: shortid.generate(), text: "Projects", href: "#projects" },
     {
       key: shortid.generate(),
-      text: "Work Experience",
+      text: "Experiences",
       href: "#experiences",
     },
     { key: shortid.generate(), text: "Educations", href: "#educations" },
-    { key: shortid.generate(), text: "Contact", href: "#contact" },
+    { key: shortid.generate(), text: "About me", href: "#about" },
   ];
 
   const socials = [
@@ -44,12 +44,12 @@ export function Nav({}: Props) {
           "sticky top-0 left-0 right-0",
           "h-14 lg:h-24",
           "bg-gray-900/5 backdrop-blur z-50 isolate",
-          "border-b border-gray-500/10",
+          "border-b border-gray-500/10 z-50",
         ])}
       >
         <div
           className={cx([
-            "max-w-[1280] mx-auto relative",
+            "max-w-[1280px] mx-auto relative",
             "flex items-center h-full lg:flex-row lg:justify-between",
             "lg:px-10",
           ])}
@@ -64,6 +64,9 @@ export function Nav({}: Props) {
             src={Logo}
             alt="logo"
             className={cx(["mx-auto w-20 lg:w-32 lg:mx-0"])}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            role="button"
+            aria-label="scroll-to-top"
           />
 
           <AnimatePresence>
@@ -73,7 +76,7 @@ export function Nav({}: Props) {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 id="overlay"
-                className="overlay absolute top-0 left-0 w-[100vw] h-[100vh] lg:hidden"
+                className="bg-gray-900/80 absolute top-0 left-0 w-[100vw] h-[100vh] lg:hidden"
               />
             )}
           </AnimatePresence>
