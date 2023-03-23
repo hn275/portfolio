@@ -5,6 +5,8 @@ import { BsChevronLeft, BsGithub, BsLinkedin } from "react-icons/bs";
 import { useToggle } from "hooks";
 import { AnimatePresence, motion } from "framer-motion";
 import shortid from "shortid";
+import { LINKS } from "assets/content";
+import { MdAlternateEmail } from "react-icons/md";
 
 interface Props {}
 
@@ -12,7 +14,7 @@ export function Nav({}: Props) {
   const { open, onOpen, onClose } = useToggle();
 
   const links = [
-    { key: shortid.generate(), text: "Projects", href: "#projects" },
+    { key: shortid.generate(), text: "Portfolio", href: "#portfolio" },
     {
       key: shortid.generate(),
       text: "Experiences",
@@ -25,15 +27,21 @@ export function Nav({}: Props) {
   const socials = [
     {
       key: shortid.generate(),
+      icon: <MdAlternateEmail />,
+      text: "Email",
+      href: LINKS.email,
+    },
+    {
+      key: shortid.generate(),
       icon: <BsLinkedin />,
       text: "LinkedIn",
-      href: "https://www.linkedin.com/in/hal-nguyen-48a22b22a/",
+      href: LINKS.linkedin,
     },
     {
       key: shortid.generate(),
       icon: <BsGithub />,
       text: "Github",
-      href: "https://github.com/hn275",
+      href: LINKS.github,
     },
   ];
 
@@ -43,7 +51,7 @@ export function Nav({}: Props) {
         className={cx([
           "sticky top-0 left-0 right-0",
           "h-14 lg:h-24",
-          "bg-gray-900/5 backdrop-blur z-50 isolate",
+          "bg-gray-900/50 backdrop-blur z-50 isolate",
           "border-b border-gray-500/10 z-50",
         ])}
       >
@@ -51,7 +59,7 @@ export function Nav({}: Props) {
           className={cx([
             "max-w-[1280px] mx-auto relative",
             "flex items-center h-full lg:flex-row lg:justify-between",
-            "lg:px-10",
+            "lg:px-5",
           ])}
         >
           <CgMenuLeft
@@ -92,7 +100,6 @@ export function Nav({}: Props) {
               "p-5 pb-10 pl-10 md:pl-5 lg:px-0",
               "flex flex-col items-center gap-10",
               "h-[100vh] lg:h-max z-50 bg-gray-800",
-              "text-gray-50",
               "lg:mt-6 lg:flex lg:flex-row",
             ])}
           >
@@ -126,7 +133,7 @@ export function Nav({}: Props) {
               ))}
             </ul>
 
-            <ul className="w-full flex justify-center items-end gap-4 grow lg:w-max lg:ml-3">
+            <ul className="w-full flex justify-center items-end gap-4 grow lg:w-max">
               {socials.map(({ text, key, icon, href }) => (
                 <li key={key}>
                   <a
@@ -140,6 +147,8 @@ export function Nav({}: Props) {
                 </li>
               ))}
             </ul>
+
+            <button className="btn btn-outline">Resume</button>
           </div>
         </div>
       </nav>

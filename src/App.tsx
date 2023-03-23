@@ -5,7 +5,7 @@ import Profile from "assets/profile.svg";
 import cx from "classnames";
 import { Alert, ContactMe, Section } from "components";
 import shortid from "shortid";
-import { MdAlternateEmail, MdContentCopy, MdEmail } from "react-icons/md";
+import { MdAlternateEmail } from "react-icons/md";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { useAlert } from "hooks";
 
@@ -60,12 +60,14 @@ function App() {
             <a target="_blank" className="btn btn-primary">
               Resume
             </a>
-            <a className="btn btn-outline">Portfolio</a>
+            <a href="#portfolio" className="btn btn-outline">
+              Portfolio
+            </a>
           </div>
         </section>
 
         {/* BANNER */}
-        <Section id="projects" _title="Projects" _count="00"></Section>
+        <Section id="portfolio" _title="Portfolio" _count="00"></Section>
 
         {/* EXPERIENCES */}
         <Section id="experiences" _title="Experiences" _count="01"></Section>
@@ -99,7 +101,7 @@ function App() {
               hole to another, I&apos;ve discovered a passion for programming in
               general, COVID happened and I saw the opportunity to teach myself
               how to code, then finally made the academic switch from Physics to
-              Computer Science in 2021!
+              Computer Science September 2021!
             </p>
 
             <p>
@@ -139,7 +141,7 @@ function App() {
           className="mt-20 mb-10 flex flex-col justify-center items-center gap-5"
         >
           <h2 className="text-2xl text-brand-300">
-            Thanks for checking seeing this through!
+            Thanks for seeing this through!
           </h2>
           <p>
             You&apos;ve made it this far, might as well connect with me. I would
@@ -148,7 +150,7 @@ function App() {
 
           <ContactMe onAlert={onAlert} />
 
-          <p className="text-sm">Happy coding.</p>
+          <p className="text-sm text-gray-600">Happy recruiting.</p>
         </section>
       </main>
       <Alert isMounted={alert}>Copied to clipboard.</Alert>
