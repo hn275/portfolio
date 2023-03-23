@@ -140,7 +140,7 @@ function App() {
           id="footer"
           className="mt-20 mb-10 flex flex-col justify-center items-center gap-5"
         >
-          <h2 className="text-2xl text-brand-300">
+          <h2 className="text-2xl text-brand-50">
             Thanks for seeing this through!
           </h2>
           <p>
