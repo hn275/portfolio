@@ -27,9 +27,14 @@ export function Nav({}: Props) {
       key: shortid.generate(),
       icon: <BsLinkedin />,
       text: "LinkedIn",
-      href: "",
+      href: "https://www.linkedin.com/in/hal-nguyen-48a22b22a/",
     },
-    { key: shortid.generate(), icon: <BsGithub />, text: "Github", href: "" },
+    {
+      key: shortid.generate(),
+      icon: <BsGithub />,
+      text: "Github",
+      href: "https://github.com/hn275",
+    },
   ];
 
   return (
@@ -85,7 +90,7 @@ export function Nav({}: Props) {
               "flex flex-col items-center gap-10",
               "h-[100vh] lg:h-max z-50 bg-gray-800",
               "text-gray-50",
-              "lg:mt-6",
+              "lg:mt-6 lg:flex lg:flex-row",
             ])}
           >
             <BsChevronLeft
@@ -109,7 +114,7 @@ export function Nav({}: Props) {
                     <span
                       className={cx([
                         "absolute bottom-0 left-0 block",
-                        "h-[2px] w-0 lg:group-hover:w-full bg-gray-500 skew-x-12",
+                        "h-[2px] w-0 lg:group-hover:w-full bg-brand-100 skew-x-12",
                         "transition-all duration-150",
                       ])}
                     />
@@ -118,14 +123,14 @@ export function Nav({}: Props) {
               ))}
             </ul>
 
-            <ul className="w-full flex justify-center items-end gap-4 grow hidden">
+            <ul className="w-full flex justify-center items-end gap-4 grow lg:w-max lg:ml-3">
               {socials.map(({ text, key, icon, href }) => (
                 <li key={key}>
                   <a
                     href={href}
                     aria-label={text}
                     target="_blank"
-                    className="text-xl"
+                    className="text-xl lg:text-md hover:text-brand-200 transition-all duration-200"
                   >
                     {icon}
                   </a>

@@ -5,7 +5,14 @@ module.exports = {
     fontFamily: {
       mono: "JetBrains Mono",
     },
-    extend: {},
+    extend: {
+      colors: {
+        "brand-50": "#8095D1",
+        "brand-100": "#6587E4",
+        "brand-200": "#4463B9",
+        "brand-300": "#385593",
+      },
+    },
   },
   plugins: [],
 };

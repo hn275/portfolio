@@ -16,4 +16,30 @@ main {
   .overlay {
     background-color: hsla(0deg, 0%, 20%, 10%);
   }
+
+  .btn {
+    @apply px-4 py-3;
+    @apply rounded-sm;
+    @apply transition-all duration-200;
+    @apply font-semibold;
+    @apply cursor-pointer;
+  }
+
+  .btn-primary {
+    @apply bg-brand-200;
+    @apply border border-brand-200;
+    @apply hover:brightness-125;
+  }
+
+  .btn-outline {
+    @apply border border-brand-200;
+    @apply text-brand-100 hover:text-white;
+    @apply bg-gray-900 hover:bg-brand-200;
+    @apply hover:brightness-125;
+  }
+
+  .accent-main {
+    box-shadow: 4px 4px 0px;
+    @apply shadow-brand-300;
+  }
 }
