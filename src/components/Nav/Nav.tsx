@@ -17,11 +17,11 @@ export function Nav({}: Props) {
     { key: shortid.generate(), text: "Portfolio", href: "#portfolio" },
     {
       key: shortid.generate(),
-      text: "Experiences",
-      href: "#experiences",
+      text: "Skills",
+      href: "#skills",
     },
     { key: shortid.generate(), text: "Educations", href: "#educations" },
-    { key: shortid.generate(), text: "About me", href: "#about" },
+    { key: shortid.generate(), text: "About", href: "#about" },
   ];
 
   const socials = [

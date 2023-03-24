@@ -4,7 +4,7 @@
 
 html {
   @apply bg-gray-900;
-  @apply text-gray-400;
+  @apply text-gray-200;
   @apply scroll-smooth;
   @apply scroll-p-16 lg:scroll-p-28;
 }
@@ -15,10 +15,6 @@ main {
 }
 
 @layer utilities {
-  .overlay {
-    background-color: hsla(0deg, 0%, 20%, 10%);
-  }
-
   .btn {
     @apply px-4 py-3;
     @apply rounded-sm;
