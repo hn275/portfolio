@@ -15,7 +15,7 @@ export function TextInput(props: Props) {
         "position relative group",
         "border-b border-b-gray-700",
         "focus-within:border-b-brand-50",
-        "p-3 group",
+        "p-3 m-5 group",
       ])}
     >
       <label
