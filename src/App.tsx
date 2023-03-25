@@ -9,6 +9,7 @@ import { MdAlternateEmail } from "react-icons/md";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { useAlert } from "hooks";
 import { PROJECTS } from "assets/content";
+import { ContactForm } from "components/Footer";
 
 function App() {
   const links = [
@@ -257,6 +258,8 @@ function App() {
           </p>
 
           <ContactMe onAlert={onAlert} />
+
+          <ContactForm />
 
           <p className="text-sm text-gray-600">Happy recruiting.</p>
         </section>
