@@ -184,6 +184,10 @@ function App() {
         </section>
       </main>
       <Alert isMounted={alert}>Copied to clipboard.</Alert>
+
+      <Alert isMounted={contactMeProps.onSuccess.alert}>
+        Email sent! Talk to you soon, {contactMeProps.onSuccess.alertName}.
+      </Alert>
     </>
   );
 }
