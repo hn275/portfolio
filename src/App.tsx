@@ -3,39 +3,22 @@ import "./index.css";
 import BannerSVG from "assets/banner.svg";
 import Profile from "assets/profile.svg";
 import cx from "classnames";
-import { Alert, ContactMe, Project, Section } from "components";
-import shortid from "shortid";
-import { MdAlternateEmail } from "react-icons/md";
-import { BsGithub, BsLinkedin } from "react-icons/bs";
+import { Alert, ContactMe, Project, Section, SocialLinks } from "components";
 import { useAlert, useContactMe } from "hooks";
 import { PROJECTS } from "assets/content";
 import { ContactForm } from "components/Footer";
+import {
+  Collabify,
+  GoVikes,
+  GradeTracker,
+  StudySpaceFinder,
+} from "components/Project";
 
 function App() {
   const contactMeProps = useContactMe();
-  const links = [
-    {
-      key: shortid.generate(),
-      alt: "email",
-      href: "",
-      icon: <MdAlternateEmail />,
-    },
-    {
-      key: shortid.generate(),
-      alt: "Linkedin",
-      href: "",
-      icon: <BsLinkedin />,
-    },
-    {
-      key: shortid.generate(),
-      alt: "github",
-      href: "",
-      icon: <BsGithub />,
-    },
-  ];
-
   const { alert, onAlert } = useAlert();
   const { collabify, studySpaceFinder, govikes, gradetracker } = PROJECTS;
+
   return (
     <>
       <Nav />
@@ -84,22 +67,7 @@ function App() {
             _github={collabify.github}
             _live={collabify.liveSite}
           >
-            <p>
-              Collabify is a tech-startup by students of University of Victoria.
-            </p>
-            <p>
-              Collabify allows users to easily share their availability with
-              others and receive text notifications if an event is created.
-              Users can opt in for a private group that requires a password to
-              access and to share their availability, authentication is done
-              with JSON Web Token. This app is great for coordinating schedules
-              and planning events with friends, family, or colleagues.
-            </p>
-            <p>
-              I&apos;m greatful to be selected by the project manager to lead a
-              team of 4. Within the months of the Winter semester, we&apos;ve
-              managed to pass all of our courses, and to have a MVP hosted!
-            </p>
+            <Collabify />
           </Project>
 
           {/* study space finder */}
@@ -110,26 +78,7 @@ function App() {
             _github={studySpaceFinder.github}
             id="spf"
           >
-            <p>
-              Study Space Finder is an app that helps students find available
-              study spaces on campus (University of Victoria.) It allows
-              students to search for spaces by location and time of day, and
-              view detailed schedules of each room/building.
-            </p>
-            <p>
-              The majority of my code is pushed into the backend, and the
-              backend contains only my code. I&apos;ve put in a lot of the work
-              to reverse engineer the&nbsp;
-              <a
-                href="https://github.com/hn275/StudySpaceFinder/blob/main/db/get_data.py"
-                target="_blank"
-                className="italic hover:underline"
-              >
-                requests
-              </a>
-              &nbsp;a student has to make to register for courses, as it was
-              impossible for me to access the university's database directly.
-            </p>
+            <StudySpaceFinder />
           </Project>
 
           {/* GoVikes */}
@@ -139,20 +88,7 @@ function App() {
             _github={govikes.github}
             _live={govikes.liveSite}
           >
-            <p>
-              After figuring out how to get data from University of Victoria
-              for&nbsp;
-              <a href="#spf" className="italic hover:underline">
-                Study Space Finder
-              </a>
-              , I wanted to fully expose the API (with permission, of course!),
-              and to benefit from the performance the Go programming language
-              has to offer.
-            </p>
-            <p>
-              This project is in development, and it will likely remain in
-              development for a long time, as there is just so much I can do.
-            </p>
+            <GoVikes />
           </Project>
 
           {/* GradeTracker*/}
@@ -162,12 +98,7 @@ function App() {
             _github={gradetracker.github}
             _live={gradetracker.liveSite}
           >
-            <p>
-              Grade Tracker is an app for students to log and track their
-              grades. It calculates the total grade of each entry and its
-              weight, helping students stay organized and achieve their academic
-              goals.
-            </p>
+            <GradeTracker />
           </Project>
         </Section>
 
@@ -220,20 +151,7 @@ function App() {
             />
 
             <ul className="flex gap-4 justify-center items-center">
-              {links.map(({ key, alt, href, icon }) => (
-                <li key={key}>
-                  <a
-                    href={href}
-                    aria-label={alt}
-                    className={cx([
-                      "text-brand-300 hover:text-brand-50 text-3xl",
-                      "transition-colors duration-150",
-                    ])}
-                  >
-                    {icon}
-                  </a>
-                </li>
-              ))}
+              <SocialLinks />
             </ul>
           </div>
         </Section>
