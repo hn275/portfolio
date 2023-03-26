@@ -5,39 +5,39 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
 }
 export function TextInput(props: Props) {
-  const { label, id, className } = props;
+  const { label, id } = props;
 
   const ref = useRef<HTMLInputElement | null>(null);
 
   return (
     <div
-      className={cx([
-        "position relative group",
-        "border-b border-b-gray-700",
-        "focus-within:border-b-brand-50",
-        "p-3 m-5 group",
-      ])}
+      className={cx(
+        "relative p-3",
+        "my-3",
+        "border border-brand-300 rounded-sm",
+        "group"
+      )}
     >
+      <input
+        ref={ref}
+        {...props}
+        className="bg-transparent peer outline-none w-full"
+        placeholder=""
+      />
       <label
         className={cx([
-          "absolute top-0 left-3",
-          "text-gray-600 group-focus-within:text-sm",
-          "group-focus-within:text-brand-50",
-          "translate-y-1/2 group-focus-within:-translate-y-3",
-          { "-translate-y-3 text-sm text-brand-50": props.value !== "" },
-          "transition-all duration-200 ease-out",
-          "cursor-text",
+          "absolute top-0 left-2 -translate-y-1/2",
+          "scale-75 text-brand-300 bg-gray-900 px-2 cursor-text",
+          "peer-placeholder-shown:top-1/2 peer-placeholder-shown:scale-100",
+          "peer-placeholder-shown:text-gray-600",
+          "peer-focus:top-0 peer-focus:scale-75 peer-focus:text-brand-50",
+          "transition-all duration-200 origin-left",
         ])}
         htmlFor={id}
         onClick={() => ref.current?.focus()}
       >
         {label}
       </label>
-      <input
-        ref={ref}
-        {...props}
-        className={cx(["bg-transparent outline-none group", className])}
-      />
     </div>
   );
 }

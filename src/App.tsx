@@ -7,11 +7,12 @@ import { Alert, ContactMe, Project, Section } from "components";
 import shortid from "shortid";
 import { MdAlternateEmail } from "react-icons/md";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
-import { useAlert } from "hooks";
+import { useAlert, useContactMe } from "hooks";
 import { PROJECTS } from "assets/content";
 import { ContactForm } from "components/Footer";
 
 function App() {
+  const contactMeProps = useContactMe();
   const links = [
     {
       key: shortid.generate(),
@@ -259,7 +260,7 @@ function App() {
 
           <ContactMe onAlert={onAlert} />
 
-          <ContactForm />
+          <ContactForm formprops={contactMeProps} />
 
           <p className="text-sm text-gray-600">Happy recruiting.</p>
         </section>
