@@ -5,8 +5,9 @@ import { BsChevronLeft } from "react-icons/bs";
 import { useToggle } from "hooks";
 import { AnimatePresence, motion } from "framer-motion";
 import shortid from "shortid";
+import { HTMLAttributes } from "react";
 
-export function Nav() {
+export function Nav(props: HTMLAttributes<HTMLElement>) {
   const { open, onOpen, onClose } = useToggle();
 
   const links = [
@@ -22,14 +23,7 @@ export function Nav() {
 
   return (
     <>
-      <nav
-        className={cx([
-          "sticky top-0 left-0 right-0",
-          "h-14 lg:h-24",
-          "bg-gray-900/50 backdrop-blur z-50 isolate",
-          "border-b border-gray-500/10 z-50",
-        ])}
-      >
+      <nav {...props}>
         <div
           className={cx([
             "max-w-[1280px] mx-auto relative",
@@ -108,7 +102,7 @@ export function Nav() {
               ))}
             </ul>
 
-            <a className="btn btn-outline" href="#contact">
+            <a className="btn btn-outline transition-smooth" href="#contact">
               Contact
             </a>
           </div>

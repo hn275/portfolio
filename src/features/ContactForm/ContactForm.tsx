@@ -65,7 +65,7 @@ export function ContactForm(props: Props) {
           className={cx([
             "peer w-full text-gray-50 outline-none",
             "bg-transparent p-3 min-h-[8rem]",
-            "border border-brand-300 rounded-sm",
+            "border border-brand-300 rounded-lg",
             "placeholder:text-brand-100/25",
           ])}
           placeholder="This project is awesome..."

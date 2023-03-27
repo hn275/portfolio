@@ -1,13 +1,11 @@
-import { Nav, ContactForm } from "features";
+import { Nav, ContactForm, Banner } from "features";
 import { ProjectCard } from "features/Project";
 import "./index.css";
-import BannerSVG from "assets/banner.svg";
 import Profile from "assets/profile.svg";
 import cx from "classnames";
 import { Alert, ContactMe, Section, SocialLinks } from "components";
 import { useAlert, useContactMe } from "hooks";
 import { PROJECTS } from "assets/content";
-import shortid from "shortid";
 
 function App() {
   const contactMeProps = useContactMe();
@@ -16,46 +14,24 @@ function App() {
 
   return (
     <>
-      <Nav />
+      <Nav
+        className={cx([
+          "sticky top-0 left-0 right-0",
+          "h-14 lg:h-24",
+          "bg-gray-900/50 backdrop-blur z-50 isolate",
+          "border-b border-gray-500/10 z-50",
+        ])}
+      />
       <main className="px-10 leading-relaxed">
         {/* BANNER */}
         <section
           id="banner"
           className={cx([
-            "w-full h-[70vh] max-h-[500px] my-20",
+            "w-full h-[calc(100vh-3.5rem)] max-h-[800px]",
             "flex flex-col justify-center items-center gap-10",
           ])}
         >
-          <img src={BannerSVG} className="h-80" />
-
-          <div className="flex flex-col justify-center items-center gap-4 text-md">
-            <h1 className="font-bold text-brand-100 text-2xl md:text-5xl">
-              Hal Nguyen
-            </h1>
-            <p className="text-lg group">
-              <span className="relative isolate font-semibold">
-                Full-stack
-                <span
-                  className={cx([
-                    "absolute bottom-0 left-0 w-full h-2",
-                    "bg-brand-50/40 -z-10",
-                  ])}
-                />
-              </span>
-              &nbsp;Developer
-            </p>
-
-            <SocialLinks className="flex flex-row gap-3 text-2xl" />
-          </div>
-
-          <div className="flex gap-3">
-            <a target="_blank" className="btn btn-primary">
-              Resume
-            </a>
-            <a href="#portfolio" className="btn btn-outline">
-              Portfolio
-            </a>
-          </div>
+          <Banner />
         </section>
 
         {/* PORTFOLIO */}
