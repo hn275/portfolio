@@ -3,7 +3,13 @@ import "./index.css";
 import BannerSVG from "assets/banner.svg";
 import Profile from "assets/profile.svg";
 import cx from "classnames";
-import { Alert, ContactMe, Project, Section, SocialLinks } from "components";
+import {
+  Alert,
+  ContactMe,
+  ProjectCard,
+  Section,
+  SocialLinks,
+} from "components";
 import { useAlert, useContactMe } from "hooks";
 import { PROJECTS } from "assets/content";
 import { ContactForm } from "components/Footer";
@@ -69,45 +75,40 @@ function App() {
           className="grid lg:grid-cols-2 gap-6"
         >
           {/* collabify */}
-          <Project
-            _title={collabify.title}
-            _stacks={collabify.stacks}
-            _github={collabify.github}
-            _live={collabify.liveSite}
-          >
-            <Collabify />
-          </Project>
+          <ProjectCard
+            title={collabify.title}
+            stacks={collabify.stacks}
+            github={collabify.github}
+            live={collabify.liveSite}
+            imageSrc=""
+          />
 
           {/* study space finder */}
-          <Project
-            _title={studySpaceFinder.title}
-            _stacks={studySpaceFinder.stacks}
-            _live={studySpaceFinder.liveSite}
-            _github={studySpaceFinder.github}
-            id="spf"
-          >
-            <StudySpaceFinder />
-          </Project>
+          <ProjectCard
+            title={studySpaceFinder.title}
+            stacks={studySpaceFinder.stacks}
+            live={studySpaceFinder.liveSite}
+            github={studySpaceFinder.github}
+            imageSrc=""
+          />
 
           {/* GoVikes */}
-          <Project
-            _title={govikes.title}
-            _stacks={govikes.stacks}
-            _github={govikes.github}
-            _live={govikes.liveSite}
-          >
-            <GoVikes />
-          </Project>
+          <ProjectCard
+            title={govikes.title}
+            stacks={govikes.stacks}
+            github={govikes.github}
+            live={govikes.liveSite}
+            imageSrc=""
+          />
 
           {/* GradeTracker*/}
-          <Project
-            _title={gradetracker.title}
-            _stacks={gradetracker.stacks}
-            _github={gradetracker.github}
-            _live={gradetracker.liveSite}
-          >
-            <GradeTracker />
-          </Project>
+          <ProjectCard
+            title={gradetracker.title}
+            stacks={gradetracker.stacks}
+            github={gradetracker.github}
+            live={gradetracker.liveSite}
+            imageSrc=""
+          />
         </Section>
 
         {/* SKILLS */}
