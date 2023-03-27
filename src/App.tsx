@@ -7,11 +7,12 @@ import cx from "classnames";
 import { Alert, ContactMe, Section, SocialLinks } from "components";
 import { useAlert, useContactMe } from "hooks";
 import { PROJECTS } from "assets/content";
+import shortid from "shortid";
 
 function App() {
   const contactMeProps = useContactMe();
   const { alert, onAlert } = useAlert();
-  const { collabify, studySpaceFinder, govikes, gradetracker } = PROJECTS;
+  const [collabify, gradeTracker, goVikes, spf] = PROJECTS;
 
   return (
     <>
@@ -64,41 +65,10 @@ function App() {
           _count="00"
           className="grid lg:grid-cols-2 gap-6"
         >
-          {/* collabify */}
-          <ProjectCard
-            title={collabify.title}
-            stacks={collabify.stacks}
-            github={collabify.github}
-            live={collabify.liveSite}
-            imageSrc=""
-          />
-
-          {/* study space finder */}
-          <ProjectCard
-            title={studySpaceFinder.title}
-            stacks={studySpaceFinder.stacks}
-            live={studySpaceFinder.liveSite}
-            github={studySpaceFinder.github}
-            imageSrc=""
-          />
-
-          {/* GoVikes */}
-          <ProjectCard
-            title={govikes.title}
-            stacks={govikes.stacks}
-            github={govikes.github}
-            live={govikes.liveSite}
-            imageSrc=""
-          />
-
-          {/* GradeTracker*/}
-          <ProjectCard
-            title={gradetracker.title}
-            stacks={gradetracker.stacks}
-            github={gradetracker.github}
-            live={gradetracker.liveSite}
-            imageSrc=""
-          />
+          <ProjectCard {...collabify} />
+          <ProjectCard {...gradeTracker} />
+          <ProjectCard {...spf} />
+          <ProjectCard {...goVikes} />
         </Section>
 
         {/* SKILLS */}

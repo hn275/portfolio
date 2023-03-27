@@ -1,4 +1,5 @@
-import shortid from "shortid";
+import Collabify from "assets/collabify/collabify_0.png";
+import { ProjectProps } from "features/Project";
 
 export enum LINKS {
   email = "haln_01@proton.me",
@@ -6,23 +7,17 @@ export enum LINKS {
   github = "https://github.com/hn275",
 }
 
-export const PROJECTS = {
-  collabify: {
-    key: shortid.generate(),
+export const PROJECTS: ProjectProps[] = [
+  {
     title: "Collabify",
     stacks: ["PostGreSQL", "Node.js", "Prisma", "Next.js", "Material UI"],
     github: null,
     liveSite: "https://collabify.space",
+    imageSrc: Collabify,
+    fromLeft: true,
+    tags: ["#fullstack", "#startup"],
   },
-  govikes: {
-    key: shortid.generate(),
-    title: "GoVikes",
-    stacks: ["Go", "Gin", "Docker"],
-    github: "https://github.com/hn275/govikes",
-    liveSite: null,
-  },
-  gradetracker: {
-    key: shortid.generate(),
+  {
     title: "GradeTracker",
     stacks: [
       "Go",
@@ -34,10 +29,21 @@ export const PROJECTS = {
       "TailwindCSS",
     ],
     github: "https://github.com/hn275/gradetracker",
-    liveSite: null,
+    liveSite: "",
+    imageSrc: "",
+    fromLeft: false,
+    tags: ["#fullstack", "#auth"],
   },
-  studySpaceFinder: {
-    key: shortid.generate(),
+  {
+    title: "Go-Vikes",
+    stacks: ["Go", "Gin", "Docker"],
+    github: "https://github.com/hn275/govikes",
+    liveSite: "",
+    imageSrc: "",
+    fromLeft: false,
+    tags: ["#backend", "#restAPI"],
+  },
+  {
     title: "Study Space Finder",
     stacks: [
       "Python",
@@ -50,5 +56,8 @@ export const PROJECTS = {
     ],
     github: "https://github.com/hn275/StudySpaceFinder",
     liveSite: "https://study-space-finder.vercel.app/",
+    imageSrc: "",
+    fromLeft: true,
+    tags: ["#backend", "#restAPI"],
   },
-};
+];
