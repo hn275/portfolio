@@ -11,6 +11,8 @@ module.exports = {
         "brand-100": "#6587E4",
         "brand-200": "#4463B9",
         "brand-300": "#385593",
+        "text-main": "#f3f4f6",
+        "bg-main": "#0f172a",
       },
     },
   },

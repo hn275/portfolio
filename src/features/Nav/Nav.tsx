@@ -6,9 +6,7 @@ import { useToggle } from "hooks";
 import { AnimatePresence, motion } from "framer-motion";
 import shortid from "shortid";
 
-interface Props {}
-
-export function Nav({}: Props) {
+export function Nav() {
   const { open, onOpen, onClose } = useToggle();
 
   const links = [
@@ -72,7 +70,7 @@ export function Nav({}: Props) {
               "fixed left-0 top-0 bottom-0 lg:bg-transparent",
               "lg:static lg:translate-x-0",
               { "-translate-x-full": !open },
-              "transition-all duration-200 ease-out",
+              "transition-smooth",
               "w-3/4 md:w-1/2 lg:w-max",
               "p-5 pb-10 pl-10 md:pl-5 lg:px-0",
               "flex flex-col items-center gap-10",
@@ -102,7 +100,7 @@ export function Nav({}: Props) {
                       className={cx([
                         "absolute bottom-0 left-0 block",
                         "h-[2px] w-0 lg:group-hover:w-full bg-brand-100 skew-x-12",
-                        "transition-all duration-150",
+                        "transition-smooth",
                       ])}
                     />
                   </a>

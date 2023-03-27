@@ -1,4 +1,4 @@
-import { Nav } from "components/Nav/Nav";
+import { Nav } from "features";
 import "./index.css";
 import BannerSVG from "assets/banner.svg";
 import Profile from "assets/profile.svg";
@@ -22,7 +22,7 @@ function App() {
   return (
     <>
       <Nav />
-      <main className="App px-10 leading-relaxed">
+      <main className="px-10 leading-relaxed">
         {/* BANNER */}
         <section
           id="banner"
@@ -34,12 +34,20 @@ function App() {
           <img src={BannerSVG} className="h-80" />
 
           <div className="flex flex-col justify-center items-center gap-3 text-md">
-            <h1 className="font-bold text-brand-50 text-3xl md:text-6xl">
+            <h1 className="font-bold text-brand-100 text-2xl md:text-5xl">
               Hal Nguyen
             </h1>
-            <p className="font-bold">Full-stack Developer</p>
-            <p className="text-sm md:text-md">
-              Computer Science @ University of Victoria
+            <p className="text-lg group">
+              <span className="relative isolate font-semibold">
+                Full-stack
+                <span
+                  className={cx([
+                    "absolute bottom-0 left-0 w-full h-2",
+                    "bg-brand-50/40 -z-10",
+                  ])}
+                />
+              </span>
+              &nbsp;Developer
             </p>
           </div>
 

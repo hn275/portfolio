@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 html {
-  @apply bg-gray-900;
-  @apply text-gray-200;
+  @apply bg-bg-main;
+  @apply text-slate-200;
   @apply scroll-smooth;
   @apply scroll-p-16 lg:scroll-p-28;
 }
@@ -12,6 +12,12 @@ html {
 main {
   @apply max-w-[1280px];
   @apply mx-auto;
+}
+
+@layer components {
+  .transition-smooth {
+    @apply transition-all duration-200;
+  }
 }
 
 @layer utilities {
