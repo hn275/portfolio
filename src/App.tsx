@@ -1,9 +1,8 @@
 import { Nav, ContactForm, Banner } from "features";
-import { ProjectCard } from "features/Project";
 import "./index.css";
 import Profile from "assets/profile.svg";
 import cx from "classnames";
-import { Alert, ContactMe, Section, SocialLinks } from "components";
+import { Alert, ContactMe, Section, SocialLinks, Image } from "components";
 import { useAlert, useContactMe } from "hooks";
 import { PROJECTS } from "assets/content";
 
@@ -39,12 +38,9 @@ function App() {
           id="portfolio"
           _title="Portfolio"
           _count="00"
-          className="grid lg:grid-cols-2 gap-6"
+          className="flex flex-col gap-5"
         >
-          <ProjectCard {...collabify} />
-          <ProjectCard {...gradeTracker} />
-          <ProjectCard {...spf} />
-          <ProjectCard {...goVikes} />
+          <Image src={collabify.imageSrc} />
         </Section>
 
         {/* SKILLS */}
