@@ -28,13 +28,13 @@ export function ProjectCard({
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: "all", margin: "400px" }}
-      transition={{ duration: 0.6, delay: fromLeft ? 0.4 : 0.6 }}
+      transition={{ duration: 0.3, delay: fromLeft ? 0.4 : 0.6 }}
       variants={{
         visible: { opacity: 1, x: 0 },
         hidden: { opacity: 0, x: fromLeft ? "-20%" : "20%" },
       }}
       className={cx([
-        "max-w-lg w-full bg-slate-800 p-5 rounded-lg shadow-lg shadow-black/30 mx-auto",
+        "w-full bg-slate-800 p-5 rounded-lg shadow-lg shadow-black/30 mx-auto",
         "flex flex-col gap-5",
       ])}
     >
@@ -62,7 +62,7 @@ export function ProjectCard({
       <img
         src={imageSrc}
         alt={title}
-        className="rounded-sm shadow-lg shadow-black/50"
+        className="rounded-sm shadow-lg shadow-gray-900/50"
         loading="lazy"
       />
 

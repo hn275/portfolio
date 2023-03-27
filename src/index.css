@@ -36,9 +36,9 @@ main {
   }
 
   .btn-outline {
-    @apply border border-brand-200;
-    @apply text-brand-100 hover:text-white;
-    @apply bg-transparent hover:bg-brand-200/20;
+    @apply border border-brand-200 hover:border-brand-50;
+    @apply text-brand-200 hover:text-brand-50;
+    @apply bg-transparent hover:bg-brand-300/20;
     @apply hover:brightness-125;
   }
 

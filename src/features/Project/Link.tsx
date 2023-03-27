@@ -7,9 +7,11 @@ export function Link(props: AnchorHTMLAttributes<HTMLAnchorElement>) {
   return (
     <a
       {...props}
+      target="_blank"
       className={cx([
         "flex gap-2 items-center rounded-full p-2 bg-slate-900 text-white",
         "bg-brand-50 lg:bg-slate-900 lg:hover:bg-brand-50",
+        "hover:scale-110",
         "text-base lg:hover:text-slate-900",
         "transition-smooth",
         className,
