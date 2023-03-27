@@ -1,5 +1,5 @@
 import Collabify from "assets/collabify/collabify_0.png";
-import { ProjectProps } from "features/Project";
+import { ProjectProps } from "features/Project/types";
 
 export enum LINKS {
   email = "haln_01@proton.me",
