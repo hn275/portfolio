@@ -12,12 +12,6 @@ import {
 } from "components";
 import { useAlert, useContactMe } from "hooks";
 import { PROJECTS } from "assets/content";
-import {
-  Collabify,
-  GoVikes,
-  GradeTracker,
-  StudySpaceFinder,
-} from "components/Project";
 
 function App() {
   const contactMeProps = useContactMe();
@@ -38,7 +32,7 @@ function App() {
         >
           <img src={BannerSVG} className="h-80" />
 
-          <div className="flex flex-col justify-center items-center gap-3 text-md">
+          <div className="flex flex-col justify-center items-center gap-4 text-md">
             <h1 className="font-bold text-brand-100 text-2xl md:text-5xl">
               Hal Nguyen
             </h1>
@@ -54,6 +48,8 @@ function App() {
               </span>
               &nbsp;Developer
             </p>
+
+            <SocialLinks className="flex flex-row gap-3 text-2xl" />
           </div>
 
           <div className="flex gap-3">
@@ -158,9 +154,7 @@ function App() {
               className={cx(["hidden lg:block", "w-64"])}
             />
 
-            <ul className="flex gap-4 justify-center items-center">
-              <SocialLinks />
-            </ul>
+            <SocialLinks className="flex gap-4 justify-center items-center text-3xl" />
           </div>
         </Section>
 
