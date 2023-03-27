@@ -1,15 +1,10 @@
 import { Nav, ContactForm } from "features";
+import { ProjectCard } from "features/Project";
 import "./index.css";
 import BannerSVG from "assets/banner.svg";
 import Profile from "assets/profile.svg";
 import cx from "classnames";
-import {
-  Alert,
-  ContactMe,
-  ProjectCard,
-  Section,
-  SocialLinks,
-} from "components";
+import { Alert, ContactMe, Section, SocialLinks } from "components";
 import { useAlert, useContactMe } from "hooks";
 import { PROJECTS } from "assets/content";
 

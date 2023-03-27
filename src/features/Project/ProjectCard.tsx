@@ -1,13 +1,13 @@
-import { HTMLAttributes } from "react";
 import { BsGithub } from "react-icons/bs";
 import { FiExternalLink } from "react-icons/fi";
 
-interface Props extends HTMLAttributes<HTMLDivElement> {
+interface Props {
   title: string;
   stacks: string[];
   github: string | null;
   live: string | null;
   imageSrc: string;
+  tags: string[];
 }
 
 export function ProjectCard({ title, stacks, github, live, imageSrc }: Props) {
@@ -33,8 +33,7 @@ export function ProjectCard({ title, stacks, github, live, imageSrc }: Props) {
           )}
         </div>
       </div>
-
-      <hr className="my-5 opacity-40" />
+      <img src={imageSrc} />
     </section>
   );
 }
