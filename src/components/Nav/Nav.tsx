@@ -1,12 +1,10 @@
 import cx from "classnames";
 import Logo from "assets/logo.svg";
 import { CgMenuLeft } from "react-icons/cg";
-import { BsChevronLeft, BsGithub, BsLinkedin } from "react-icons/bs";
+import { BsChevronLeft } from "react-icons/bs";
 import { useToggle } from "hooks";
 import { AnimatePresence, motion } from "framer-motion";
 import shortid from "shortid";
-import { LINKS } from "assets/content";
-import { MdAlternateEmail } from "react-icons/md";
 
 interface Props {}
 
@@ -22,27 +20,6 @@ export function Nav({}: Props) {
     },
     { key: shortid.generate(), text: "Educations", href: "#educations" },
     { key: shortid.generate(), text: "About", href: "#about" },
-  ];
-
-  const socials = [
-    {
-      key: shortid.generate(),
-      icon: <MdAlternateEmail />,
-      text: "Email",
-      href: LINKS.email,
-    },
-    {
-      key: shortid.generate(),
-      icon: <BsLinkedin />,
-      text: "LinkedIn",
-      href: LINKS.linkedin,
-    },
-    {
-      key: shortid.generate(),
-      icon: <BsGithub />,
-      text: "Github",
-      href: LINKS.github,
-    },
   ];
 
   return (
@@ -133,22 +110,9 @@ export function Nav({}: Props) {
               ))}
             </ul>
 
-            <ul className="w-full flex justify-center items-end gap-4 grow lg:w-max">
-              {socials.map(({ text, key, icon, href }) => (
-                <li key={key}>
-                  <a
-                    href={href}
-                    aria-label={text}
-                    target="_blank"
-                    className="text-xl lg:text-md hover:text-brand-200 transition-all duration-200"
-                  >
-                    {icon}
-                  </a>
-                </li>
-              ))}
-            </ul>
-
-            <button className="btn btn-outline">Resume</button>
+            <a className="btn btn-outline" href="#contact">
+              Contact
+            </a>
           </div>
         </div>
       </nav>

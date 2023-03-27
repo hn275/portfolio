@@ -176,9 +176,16 @@ function App() {
             .
           </p>
 
-          <ContactMe onAlert={onAlert} />
+          <ContactForm id="contact" formprops={contactMeProps} />
 
-          <ContactForm formprops={contactMeProps} />
+          <div className="relative">
+            <hr className="border-[1px] border-gray-300/30 w-24" />
+            <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gray-900">
+              Or
+            </p>
+          </div>
+
+          <ContactMe onAlert={onAlert} />
 
           <p className="text-sm text-gray-600">Happy recruiting.</p>
         </section>
