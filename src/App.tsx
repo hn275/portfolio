@@ -5,6 +5,7 @@ import cx from "classnames";
 import { Alert, ContactMe, Section, SocialLinks, Image } from "components";
 import { useAlert, useContactMe } from "hooks";
 import { PROJECTS } from "assets/content";
+import { Collabify } from "features/Project/contents";
 
 function App() {
   const contactMeProps = useContactMe();
@@ -40,7 +41,7 @@ function App() {
           _count="00"
           className="flex flex-col gap-5"
         >
-          <Image src={collabify.imageSrc} />
+          <Collabify {...collabify} />
         </Section>
 
         {/* SKILLS */}

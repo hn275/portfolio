@@ -18,9 +18,22 @@ main {
   .transition-smooth {
     @apply transition-all duration-200;
   }
+
+  .link-icon {
+    @apply rounded-full p-2 text-sm;
+    @apply bg-brand-50 lg:bg-slate-900 lg:hover:bg-brand-50;
+    @apply text-slate-900 lg:text-white lg:hover:text-slate-900;
+    @apply grid place-items-center;
+    @apply transition-smooth;
+  }
 }
 
 @layer utilities {
+  .project-card {
+    @apply bg-slate-800/95 p-5;
+    @apply shadow-lg shadow-black/30;
+  }
+
   .btn {
     @apply px-5 py-3;
     @apply rounded-3xl;
@@ -40,10 +53,5 @@ main {
     @apply text-brand-200 hover:text-brand-50;
     @apply bg-transparent hover:bg-brand-300/20;
     @apply hover:brightness-125;
-  }
-
-  .accent-main {
-    box-shadow: 4px 4px 0px;
-    @apply shadow-brand-300;
   }
 }
