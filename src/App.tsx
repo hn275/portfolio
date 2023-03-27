@@ -1,4 +1,4 @@
-import { Nav } from "features";
+import { Nav, ContactForm } from "features";
 import "./index.css";
 import BannerSVG from "assets/banner.svg";
 import Profile from "assets/profile.svg";
@@ -12,7 +12,6 @@ import {
 } from "components";
 import { useAlert, useContactMe } from "hooks";
 import { PROJECTS } from "assets/content";
-import { ContactForm } from "components/Footer";
 import {
   Collabify,
   GoVikes,

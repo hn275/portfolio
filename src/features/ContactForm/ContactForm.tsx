@@ -48,25 +48,25 @@ export function ContactForm(props: Props) {
         onChange={onSubject}
       />
 
-      <div
-        className={cx([
-          "text-gray-600 focus-within:text-brand-50 transition-all duration-200",
-          "flex flex-col items-start",
-        ])}
-      >
+      <div className="relative group mt-6">
         <label
           htmlFor="message"
-          className="text-brand-300 group-focus:text-brand-50 scale-75"
+          className={cx([
+            "absolute top-0 -translate-y-1/2",
+            "bg-slate-900 scale-75 px-3 text-brand-100/25",
+            "group-focus-within:text-brand-50",
+            "transition-smooth",
+          ])}
         >
           Message
         </label>
         <textarea
           id="message"
           className={cx([
-            "group w-full text-gray-50 outline-none",
+            "peer w-full text-gray-50 outline-none",
             "bg-transparent p-3 min-h-[8rem]",
             "border border-brand-300 rounded-sm",
-            "placeholder:text-gray-700",
+            "placeholder:text-brand-100/25",
           ])}
           placeholder="This project is awesome..."
           value={message}
