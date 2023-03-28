@@ -7,6 +7,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import shortid from "shortid";
 import { HTMLAttributes } from "react";
 import { useAutoHide } from "./useAutoHide";
+import { scrollToID } from "lib/scrollToID";
 
 export function Nav(props: HTMLAttributes<HTMLElement>) {
   const { open, onOpen, onClose } = useToggle();
@@ -14,9 +15,21 @@ export function Nav(props: HTMLAttributes<HTMLElement>) {
   const ref = useAutoHide(350);
 
   const links = [
-    { key: shortid.generate(), text: "About", href: "#about" },
-    { key: shortid.generate(), text: "Project", href: "#project" },
-    { key: shortid.generate(), text: "Contact", href: "#contact" },
+    {
+      key: shortid.generate(),
+      text: "About",
+      handleClick: () => scrollToID("#about"),
+    },
+    {
+      key: shortid.generate(),
+      text: "Project",
+      handleClick: () => scrollToID("#project"),
+    },
+    {
+      key: shortid.generate(),
+      text: "Contact",
+      handleClick: () => scrollToID("#contact"),
+    },
   ];
 
   return (
@@ -84,14 +97,14 @@ export function Nav(props: HTMLAttributes<HTMLElement>) {
             />
 
             <ul className="flex flex-col lg:flex-row gap-5">
-              {links.map(({ key, href, text }, index) => (
+              {links.map(({ key, text, handleClick }, index) => (
                 <li key={key} className="relative">
                   <span className="font-mono text-gray-500">
                     {index.toString().padStart(2, "0")}.&nbsp;
                   </span>
 
-                  <a
-                    href={href}
+                  <button
+                    onClick={handleClick}
                     className="relative text-gray-200 font-mono font-semibold group"
                   >
                     {text}
@@ -102,14 +115,17 @@ export function Nav(props: HTMLAttributes<HTMLElement>) {
                         "transition-smooth",
                       ])}
                     />
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
 
-            <a className="btn btn-outline" href="#contact">
+            <button
+              className="btn btn-outline"
+              onClick={() => scrollToID("#contact")}
+            >
               Contact
-            </a>
+            </button>
           </div>
         </div>
       </nav>

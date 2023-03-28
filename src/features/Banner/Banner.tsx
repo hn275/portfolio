@@ -2,6 +2,7 @@ import BannerSVG from "assets/banner.svg";
 import { SocialLinks } from "components";
 import cx from "classnames";
 import { motion, Variants } from "framer-motion";
+import { scrollToID } from "lib/scrollToID";
 
 export function Banner() {
   const variants: Variants = {
@@ -76,7 +77,7 @@ export function Banner() {
         </motion.div>
       </div>
 
-      <div className="flex gap-3">
+      <div className="flex items-center gap-3">
         <motion.div
           variants={variants}
           initial="initResume"
@@ -91,7 +92,7 @@ export function Banner() {
           initial="initPortfolio"
           animate="animatedPortfolio"
         >
-          <a href="#portfolio" className="btn btn-outline">
+          <a className="btn btn-outline" onClick={() => scrollToID("#about")}>
             Portfolio
           </a>
         </motion.div>

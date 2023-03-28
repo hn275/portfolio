@@ -3,15 +3,10 @@ import cx from "classnames";
 import { BsLinkedin, BsGithub } from "react-icons/bs";
 import { MdAlternateEmail } from "react-icons/md";
 import { HTMLAttributes } from "react";
+import { scrollToID } from "lib/scrollToID";
 
 export function SocialLinks(props: HTMLAttributes<HTMLUListElement>) {
   const links = [
-    {
-      key: shortid.generate(),
-      alt: "email",
-      href: "#contact",
-      icon: <MdAlternateEmail />,
-    },
     {
       key: shortid.generate(),
       alt: "LinkedIn",
@@ -28,12 +23,21 @@ export function SocialLinks(props: HTMLAttributes<HTMLUListElement>) {
 
   return (
     <ul {...props}>
+      <li>
+        <a
+          aria-label="email"
+          onClick={() => scrollToID("#contact")}
+          className="text-brand-300 hover:text-brand-50 transition-smooth"
+        >
+          <MdAlternateEmail />
+        </a>
+      </li>
       {links.map(({ key, alt, href, icon }) => (
         <li key={key}>
           <a
-            href={href}
+            href={href || undefined}
             aria-label={alt}
-            target={`${href !== "#contact" ? "_blank" : ""}`}
+            target="_blank"
             className={cx([
               "text-brand-300 hover:text-brand-50",
               "transition-smooth",
