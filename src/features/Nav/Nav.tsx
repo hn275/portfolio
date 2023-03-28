@@ -6,24 +6,29 @@ import { useToggle } from "hooks";
 import { AnimatePresence, motion } from "framer-motion";
 import shortid from "shortid";
 import { HTMLAttributes } from "react";
+import { useAutoHide } from "./useAutoHide";
 
 export function Nav(props: HTMLAttributes<HTMLElement>) {
   const { open, onOpen, onClose } = useToggle();
 
+  const ref = useAutoHide(350);
+
   const links = [
-    { key: shortid.generate(), text: "Portfolio", href: "#portfolio" },
-    {
-      key: shortid.generate(),
-      text: "Skills",
-      href: "#skills",
-    },
-    { key: shortid.generate(), text: "Educations", href: "#educations" },
     { key: shortid.generate(), text: "About", href: "#about" },
+    { key: shortid.generate(), text: "Project", href: "#project" },
+    { key: shortid.generate(), text: "Contact", href: "#contact" },
   ];
 
   return (
     <>
-      <nav {...props}>
+      <nav
+        {...props}
+        ref={ref}
+        className={cx([
+          props.className,
+          "transition-smooth -translate-y-[100%]",
+        ])}
+      >
         <div
           className={cx([
             "max-w-[1280px] mx-auto relative",
