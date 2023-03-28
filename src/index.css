@@ -26,6 +26,13 @@ main {
     @apply grid place-items-center;
     @apply transition-smooth;
   }
+
+  .underline-accent {
+    @apply absolute bottom-0 left-0;
+    @apply h-2 w-full;
+    @apply bg-brand-50/40;
+    @apply rounded-sm;
+  }
 }
 
 @layer utilities {

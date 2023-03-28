@@ -2,10 +2,10 @@ import { Nav, ContactForm, Banner } from "features";
 import "./index.css";
 import Profile from "assets/profile.svg";
 import cx from "classnames";
-import { Alert, ContactMe, Section, SocialLinks, Image } from "components";
+import { Alert, ContactMe, Section, SocialLinks } from "components";
 import { useAlert, useContactMe } from "hooks";
 import { PROJECTS } from "assets/content";
-import { Collabify } from "features/Project/contents";
+import { ProjectCard } from "features/Project/ProjectCard";
 
 function App() {
   const contactMeProps = useContactMe();
@@ -41,7 +41,54 @@ function App() {
           _count="00"
           className="flex flex-col gap-5"
         >
-          <Collabify {...collabify} />
+          <ProjectCard {...collabify}>
+            <p>
+              Collabify is an app for scheduling and event planning. It lets
+              users share their availability and receive text notifications.
+              Private groups are available with password protection, and
+              authentication is done with JSON Web Token.
+            </p>
+          </ProjectCard>
+
+          <ProjectCard {...gradeTracker}>
+            <>
+              <p>
+                Grade Tracker is an&nbsp;
+                <span className="font-semibold inline-block">open source</span>,
+                secure and user-friendly web app for students to log and track
+                their grades. It has a built-in authentication system, here are
+                the mock credentials.
+              </p>
+              <div className="flex">
+                <p>fake email</p>
+                <p>fake password</p>
+              </div>
+            </>
+          </ProjectCard>
+
+          <ProjectCard {...spf}>
+            <p>
+              This collaborative project helps students locate available
+              classrooms on campus (University of Victoria.) I wrote the backend
+              for this project, and as we don&apos;t have direct access to UVic
+              database, a lot of work has been put in to&nbsp;
+              <a
+                className="italic hover:underline"
+                href="https://github.com/hn275/StudySpaceFinder/blob/main/db/get_data.py"
+                target="_blank"
+              >
+                retrieve these data
+              </a>
+              .
+            </p>
+          </ProjectCard>
+
+          <ProjectCard {...goVikes}>
+            <p>
+              This is a proxy server that expose University of Victoria's API
+              (with permission), open to all developers/students to use.
+            </p>
+          </ProjectCard>
         </Section>
 
         {/* SKILLS */}
@@ -56,31 +103,32 @@ function App() {
           _title="About"
           _count="03"
           className={cx([
-            "flex flex-col items-center justify-between lg:flex-row lg:items-start gap-5",
+            "flex flex-col items-center justify-between lg:flex-row lg:items-start gap-5 md:px-10",
           ])}
         >
-          <div className="flex flex-col gap-3 max-w-[75ch] grow text-justify">
+          <div className="flex flex-col gap-3 max-w-[65ch] text-justify">
             <p>
               I&apos;m a Computer Science student at University of Victoria,
-              although in school, the majority of my skills are self-taught. If
-              not grinding my way through school and work, I enjoy
-              building&nbsp;
-              <span className="font-semibold">full-stack</span> web
-              applications!
+              although in school, the majority of my skills are self-taught.
+              Outside of my curriculums, I enjoy building&nbsp;
+              <span className="font-semibold relative">
+                <span className="underline-accent -z-10" />
+                full-stack
+              </span>
+              &nbsp;web applications!
             </p>
 
             <p>
-              My programming journey actually began when I was a Physics major
-              doing signal analysis for a lab, I wrote my first line of code in
-              Python to generate graphs from the results. Down from one rabit
-              hole to another, I&apos;ve discovered a passion for programming in
-              general, COVID happened and I saw the opportunity to teach myself
-              how to code, then finally made the academic switch from Physics to
-              Computer Science September 2021!
+              My programming journey began when I was a Physics major, I wrote
+              my first line of code in Python for a lab, and quickly I
+              discovered a passion for programming. When the world went into
+              isolation, I saw the opportunity to teach myself how to code, then
+              finally made the academic switch to Computer Science September
+              2021!
             </p>
 
             <p>
-              While not writing code, I can be found rock climbing, hiking, and
+              In my free time, I can be found rock climbing, hiking, and
               sometimes chasing the sunset.
             </p>
           </div>

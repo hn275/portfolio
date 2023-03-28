@@ -29,19 +29,15 @@ export function ProjectCard(props: Props) {
         src={imageSrc}
         className={cx([
           "aspect-auto h-[400px] w-full lg:h-full object-cover rounded-sm lg:rounded-md",
-          {
-            "lg:rounded-tr-none lg:rounded-br-none": fromLeft,
-            "lg:rounded-tl-none lg:rounded-bl-none": !fromLeft,
-          },
+          "lg:rounded-tr-none lg:rounded-br-none",
         ])}
       />
       <section
         className={cx([
-          "absolute h-full lg:h-auto lg:relative",
+          "absolute h-full w-full/2 lg:h-auto lg:relative",
           "project-card rounded-none lg:rounded-md",
           "flex flex-col gap-3",
-          { "lg:rounded-tl-none lg:rounded-bl-none": fromLeft },
-          { "lg:rounded-tr-none lg:rounded-br-none": !fromLeft },
+          "lg:rounded-tl-none lg:rounded-bl-none",
         ])}
       >
         <div className="flex justify-between items-center">
@@ -53,8 +49,9 @@ export function ProjectCard(props: Props) {
             <motion.span
               initial={{ width: 0 }}
               whileInView={{ width: "100%" }}
+              viewport={{ once: true }}
               transition={{ delay: 0.6, duration: 0.3 }}
-              className="absolute bottom-[2px] left-0 h-2 w-full bg-brand-50/60 -z-10"
+              className="absolute bottom-[2px] left-0 h-2 w-full bg-brand-50/60 -z-10 rounded-sm"
             />
             {title}
           </h2>
@@ -75,7 +72,9 @@ export function ProjectCard(props: Props) {
 
         <p className="text-sm text-slate-400">{stacks.join(", ")}</p>
 
-        <p className="flex flex-col gap-1 text-slate-300">{children}</p>
+        <div className="flex flex-col gap-1 text-slate-300 overflow-y-scroll h-full">
+          {children}
+        </div>
 
         <p className="text-slate-400 text-sm p-3 bg-slate-900 w-max rounded-md">
           {tags.join(" ")}

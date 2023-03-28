@@ -1,4 +1,5 @@
 import Collabify from "assets/collabify/collabify_0.png";
+import GradeTracker from "assets/gradetracker/gradetracker_0.png";
 import { ProjectProps } from "features/Project/types";
 
 export enum LINKS {
@@ -10,7 +11,7 @@ export enum LINKS {
 export const PROJECTS: ProjectProps[] = [
   {
     title: "Collabify",
-    stacks: ["PostGreSQL", "Node.js", "Prisma", "Next.js", "Material UI"],
+    stacks: ["PostGreSQL", "Prisma", "Next.js", "Material UI"],
     github: null,
     liveSite: "https://collabify.space",
     imageSrc: Collabify,
@@ -25,14 +26,13 @@ export const PROJECTS: ProjectProps[] = [
       "PostGreSQL",
       "TypeScript",
       "React.js",
-      "Node.js",
       "TailwindCSS",
     ],
     github: "https://github.com/hn275/gradetracker",
-    liveSite: "",
-    imageSrc: "",
+    liveSite: null,
+    imageSrc: GradeTracker,
     fromLeft: false,
-    tags: ["#fullstack", "#auth"],
+    tags: ["#fullstack", "#open-source"],
   },
   {
     title: "Go-Vikes",
@@ -45,15 +45,7 @@ export const PROJECTS: ProjectProps[] = [
   },
   {
     title: "Study Space Finder",
-    stacks: [
-      "Python",
-      "FastAPI",
-      "SQLite",
-      "Docker",
-      "TypeScript",
-      "React.js",
-      "Node.js",
-    ],
+    stacks: ["Python", "FastAPI", "SQLite", "Docker", "TypeScript", "React.js"],
     github: "https://github.com/hn275/StudySpaceFinder",
     liveSite: "https://study-space-finder.vercel.app/",
     imageSrc: "",
