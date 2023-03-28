@@ -26,6 +26,9 @@ export function Banner() {
 
     initPortfolio: { x: 20, opacity: 0 },
     animatedPortfolio: { x: 0, opacity: 1, transition: { delay: 0.7 } },
+
+    initUnderline: { width: 0 },
+    animatedUnderline: { width: "100%", transition: { delay: 1 } },
   };
   return (
     <>
@@ -34,7 +37,7 @@ export function Banner() {
         initial="initBanner"
         animate="animatedBanner"
         src={BannerSVG}
-        className="h-80"
+        className="max-h-72"
       />
 
       <div className="flex flex-col justify-center items-center gap-4 text-md">
@@ -54,7 +57,10 @@ export function Banner() {
         >
           <span className="relative isolate font-semibold">
             Full-stack
-            <span
+            <motion.span
+              variants={variants}
+              initial="initUnderline"
+              animate="animatedUnderline"
               className={cx([
                 "absolute bottom-0 left-0 w-full h-2",
                 "bg-brand-50/40 -z-10",

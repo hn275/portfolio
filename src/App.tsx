@@ -27,7 +27,7 @@ function App() {
         <section
           id="banner"
           className={cx([
-            "w-full h-[calc(100vh-3.5rem)] max-h-[800px]",
+            "w-full h-[calc(100vh-3.5rem)] max-h-[800px] pb-12 md:pb-20",
             "flex flex-col justify-center items-center gap-10",
           ])}
         >

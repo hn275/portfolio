@@ -5,6 +5,7 @@ import cx from "classnames";
 import { BsGithub } from "react-icons/bs";
 import { MdOutlineComputer } from "react-icons/md";
 import { ReactNode } from "react";
+import { motion } from "framer-motion";
 
 interface Props extends ProjectProps {
   children: ReactNode;
@@ -21,8 +22,9 @@ export function ProjectCard(props: Props) {
     tags,
     children,
   } = props;
+
   return (
-    <ProjectLayout>
+    <ProjectLayout fromLeft={fromLeft}>
       <ProjectImage
         src={imageSrc}
         className={cx([
@@ -35,8 +37,8 @@ export function ProjectCard(props: Props) {
       />
       <section
         className={cx([
-          "absolute lg:relative",
-          "project-card rounded-none lg:rounded-md lg:h-auto",
+          "absolute h-full lg:h-auto lg:relative",
+          "project-card rounded-none lg:rounded-md",
           "flex flex-col gap-3",
           { "lg:rounded-tl-none lg:rounded-bl-none": fromLeft },
           { "lg:rounded-tr-none lg:rounded-br-none": !fromLeft },
@@ -48,7 +50,12 @@ export function ProjectCard(props: Props) {
               "text-white font-bold text-xl relative w-max isolate",
             ])}
           >
-            <span className="absolute bottom-[2px] left-0 h-2 w-full bg-brand-50/60 -z-10" />
+            <motion.span
+              initial={{ width: 0 }}
+              whileInView={{ width: "100%" }}
+              transition={{ delay: 0.6, duration: 0.3 }}
+              className="absolute bottom-[2px] left-0 h-2 w-full bg-brand-50/60 -z-10"
+            />
             {title}
           </h2>
 
