@@ -2,20 +2,13 @@ import { Nav, ContactForm, Banner } from "features";
 import "./index.css";
 import Profile from "assets/profile.svg";
 import cx from "classnames";
-import {
-  Alert,
-  ContactMe,
-  CopyToClipboard,
-  Section,
-  SocialLinks,
-} from "components";
-import { useAlert, useContactMe } from "hooks";
+import { Alert, CopyToClipboard, Section, SocialLinks } from "components";
+import { useContactMe } from "hooks";
 import { PROJECTS } from "assets/content";
-import { ProjectCard } from "features/Project/ProjectCard";
+import { ProjectCard } from "features/Project";
 
 function App() {
   const contactMeProps = useContactMe();
-  const { alert, onAlert } = useAlert();
   const [collabify, gradeTracker, goVikes, spf] = PROJECTS;
 
   return (
@@ -198,7 +191,6 @@ function App() {
           <p className="text-sm text-gray-600">Happy recruiting.</p>
         </section>
       </main>
-      <Alert isMounted={alert}>Copied to clipboard.</Alert>
 
       <Alert isMounted={contactMeProps.onSuccess.alert}>
         Email sent! Talk to you soon, {contactMeProps.onSuccess.alertName}.
