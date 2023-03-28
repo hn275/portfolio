@@ -1,5 +1,7 @@
 import Collabify from "assets/collabify/collabify_0.png";
 import GradeTracker from "assets/gradetracker/gradetracker_0.png";
+import StudySpaceFinder from "assets/spf/spf_0.png";
+import GoVikes from "assets/goVikes/goVikes_0.png";
 import { ProjectProps } from "features/Project/types";
 
 export enum LINKS {
@@ -39,7 +41,7 @@ export const PROJECTS: ProjectProps[] = [
     stacks: ["Go", "Gin", "Docker"],
     github: "https://github.com/hn275/govikes",
     liveSite: "",
-    imageSrc: "",
+    imageSrc: GoVikes,
     fromLeft: false,
     tags: ["#backend", "#restAPI"],
   },
@@ -48,7 +50,7 @@ export const PROJECTS: ProjectProps[] = [
     stacks: ["Python", "FastAPI", "SQLite", "Docker", "TypeScript", "React.js"],
     github: "https://github.com/hn275/StudySpaceFinder",
     liveSite: "https://study-space-finder.vercel.app/",
-    imageSrc: "",
+    imageSrc: StudySpaceFinder,
     fromLeft: true,
     tags: ["#backend", "#restAPI"],
   },

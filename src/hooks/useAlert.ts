@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export function useAlert() {
+export function useAlert(delay = 5000) {
   const [alert, setAlert] = useState<boolean>(false);
 
   useEffect(() => {
@@ -8,10 +8,10 @@ export function useAlert() {
 
     const id = setTimeout(() => {
       setAlert(() => false);
-    }, 5000);
+    }, delay);
 
     return () => clearTimeout(id);
-  }, [alert, setAlert]);
+  }, [alert, setAlert, delay]);
 
   return {
     onAlert: () => setAlert(() => true),

@@ -2,7 +2,13 @@ import { Nav, ContactForm, Banner } from "features";
 import "./index.css";
 import Profile from "assets/profile.svg";
 import cx from "classnames";
-import { Alert, ContactMe, Section, SocialLinks } from "components";
+import {
+  Alert,
+  ContactMe,
+  CopyToClipboard,
+  Section,
+  SocialLinks,
+} from "components";
 import { useAlert, useContactMe } from "hooks";
 import { PROJECTS } from "assets/content";
 import { ProjectCard } from "features/Project/ProjectCard";
@@ -59,9 +65,12 @@ function App() {
                 their grades. It has a built-in authentication system, here are
                 the mock credentials.
               </p>
-              <div className="flex">
-                <p>fake email</p>
-                <p>fake password</p>
+              <div className="flex flex-col items-center lg:flex-row gap-3 text-brand-50 mx-auto mb-1">
+                <CopyToClipboard
+                  value="email@email.com"
+                  className="bg-slate-900"
+                />
+                <CopyToClipboard value="password" className="bg-slate-900" />
               </div>
             </>
           </ProjectCard>
@@ -80,6 +89,14 @@ function App() {
                 retrieve these data
               </a>
               .
+            </p>
+            <p>
+              While the UI is still being developed, server is&nbsp;
+              <span className="relative">
+                deployed
+                <span className="underline-accent" />
+              </span>
+              !
             </p>
           </ProjectCard>
 
@@ -173,7 +190,10 @@ function App() {
             </p>
           </div>
 
-          <ContactMe onAlert={onAlert} />
+          <CopyToClipboard
+            value="haln_01@proton.me"
+            className="bg-slate-800 text-brand-50 font-mono"
+          />
 
           <p className="text-sm text-gray-600">Happy recruiting.</p>
         </section>

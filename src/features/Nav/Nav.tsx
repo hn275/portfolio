@@ -102,7 +102,7 @@ export function Nav(props: HTMLAttributes<HTMLElement>) {
               ))}
             </ul>
 
-            <a className="btn btn-outline transition-smooth" href="#contact">
+            <a className="btn btn-outline" href="#contact">
               Contact
             </a>
           </div>

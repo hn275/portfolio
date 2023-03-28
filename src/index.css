@@ -50,14 +50,15 @@ main {
   }
 
   .btn-primary {
-    @apply bg-brand-200;
+    @apply bg-gradient-to-br from-brand-50 to-brand-300;
     @apply border border-brand-200;
     @apply hover:brightness-125;
+    @apply transition-smooth;
   }
 
   .btn-outline {
-    @apply border border-brand-200 hover:border-brand-50;
-    @apply text-brand-200 hover:text-brand-50;
+    @apply border-2 border-brand-300 hover:border-brand-50;
+    @apply text-brand-300 hover:text-brand-50;
     @apply bg-transparent hover:bg-brand-300/20;
     @apply hover:brightness-125;
   }

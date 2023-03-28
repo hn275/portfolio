@@ -45,7 +45,7 @@ export function Banner() {
           variants={variants}
           initial="initHeader"
           animate="animatedHeader"
-          className="font-bold text-brand-100 text-2xl md:text-5xl"
+          className="font-bold text-brand-50 text-2xl md:text-5xl"
         >
           Hal Nguyen
         </motion.h1>
@@ -61,10 +61,7 @@ export function Banner() {
               variants={variants}
               initial="initUnderline"
               animate="animatedUnderline"
-              className={cx([
-                "absolute bottom-0 left-0 w-full h-2",
-                "bg-brand-50/40 -z-10",
-              ])}
+              className={cx(["underline-accent"])}
             />
           </span>
           &nbsp;Developer
