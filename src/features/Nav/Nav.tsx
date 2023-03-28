@@ -120,12 +120,9 @@ export function Nav(props: HTMLAttributes<HTMLElement>) {
               ))}
             </ul>
 
-            <button
-              className="btn btn-outline"
-              onClick={() => scrollToID("#contact")}
-            >
-              Contact
-            </button>
+            <a className="btn btn-outline" onClick={() => null}>
+              Resume
+            </a>
           </div>
         </div>
       </nav>

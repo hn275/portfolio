@@ -28,16 +28,18 @@ export function ProjectCard(props: Props) {
       <ProjectImage
         src={imageSrc}
         className={cx([
-          "aspect-auto h-[400px] w-full lg:h-full object-cover rounded-sm lg:rounded-md",
+          "aspect-auto h-[480px] w-full lg:h-full object-cover rounded-lg lg:rounded-md",
           "lg:rounded-tr-none lg:rounded-br-none",
         ])}
       />
       <section
         className={cx([
           "absolute h-full w-full/2 lg:h-auto lg:relative",
-          "project-card rounded-none lg:rounded-md",
-          "flex flex-col gap-3",
+          "rounded-none lg:rounded-md",
+          "flex flex-col gap-3 p-5",
           "lg:rounded-tl-none lg:rounded-bl-none",
+          "bg-gradient-to-b from-slate-800/90 to-slate-800/100 lg:bg-slate-800",
+          "shadow-lg shadow-black/30",
         ])}
       >
         <div className="flex justify-between items-center">

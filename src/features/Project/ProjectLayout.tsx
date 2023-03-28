@@ -16,7 +16,7 @@ export function ProjectLayout({ children, fromLeft }: Props) {
       transition={{ duration: 0.3, delay: 0.3 }}
       className={cx([
         "lg:px-10 lg:gap-0",
-        "grid lg:grid-cols-2 relative rounded-md overflow-hidden",
+        "grid lg:grid-cols-[60%,1fr] relative rounded-md overflow-hidden",
       ])}
     >
       {children}

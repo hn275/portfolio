@@ -36,11 +36,6 @@ main {
 }
 
 @layer utilities {
-  .project-card {
-    @apply bg-slate-800/95 p-5;
-    @apply shadow-lg shadow-black/30;
-  }
-
   .btn {
     @apply px-5 py-3;
     @apply rounded-3xl;
