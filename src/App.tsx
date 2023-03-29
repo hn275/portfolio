@@ -1,10 +1,12 @@
 import { Nav, ContactForm, Banner, About, Work } from "features";
 import "./index.css";
 import cx from "classnames";
-import { Alert, CopyToClipboard, Section } from "components";
+import { Alert, CopyToClipboard, Section, SlideIn } from "components";
 import { useContactMe } from "hooks";
 import { PROJECTS, WORK } from "assets/content";
 import { ProjectCard } from "features/Project";
+import Collabify from "features/Work/assets/collabify_code.svg";
+import Telus from "features/Work/assets/telus_phone.svg";
 
 function App() {
   const contactMeProps = useContactMe();
@@ -115,9 +117,29 @@ function App() {
         </Section>
 
         {/* WORK */}
-        <Section id="work" _title="Work" _count="02" className="lg:px-10">
-          <Work {...workCollabify} />
-          <Work {...telus} />
+        <Section
+          id="work"
+          _title="Work"
+          _count="02"
+          className="grid place-items-center gap-20 lg:px-10"
+        >
+          <section className="lg:grid grid-cols-[50%,1fr] gap-5 items-center">
+            <SlideIn fromLeft>
+              <Work {...workCollabify} />
+            </SlideIn>
+            <SlideIn>
+              <img className="hidden lg:block" src={Collabify} />
+            </SlideIn>
+          </section>
+
+          <section className="lg:grid grid-cols-[1fr,60%] place-items-center gap-5">
+            <SlideIn fromLeft>
+              <img className="max-h-80 hidden lg:block" src={Telus} />
+            </SlideIn>
+            <SlideIn className="lg:pl-14">
+              <Work {...telus} />
+            </SlideIn>
+          </section>
         </Section>
 
         <section

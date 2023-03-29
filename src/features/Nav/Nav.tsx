@@ -27,6 +27,11 @@ export function Nav(props: HTMLAttributes<HTMLElement>) {
     },
     {
       key: shortid.generate(),
+      text: "Work",
+      handleClick: () => scrollToID("#work"),
+    },
+    {
+      key: shortid.generate(),
       text: "Contact",
       handleClick: () => scrollToID("#contact"),
     },
