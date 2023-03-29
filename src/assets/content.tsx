@@ -3,6 +3,7 @@ import GradeTracker from "assets/gradetracker/gradetracker_0.png";
 import StudySpaceFinder from "assets/spf/spf_0.png";
 import GoVikes from "assets/goVikes/goVikes_0.png";
 import { ProjectProps } from "features/Project/types";
+import { WorkProps } from "features/Work/types";
 
 export enum LINKS {
   email = "haln_01@proton.me",
@@ -53,5 +54,35 @@ export const PROJECTS: ProjectProps[] = [
     imageSrc: StudySpaceFinder,
     fromLeft: true,
     tags: ["#backend", "#restAPI"],
+  },
+];
+
+export const WORK: WorkProps[] = [
+  {
+    work: "Collabify (start-up)",
+    title: "Team lead",
+    duration: "October 2022 - February 2023",
+    tasks: [
+      "Coordinated developers to meet task requirements and deadlines.",
+      "Reviewed and ensured code quality, wrote unit tests.",
+      "Helped debug deployments.",
+      "Designed and developed authentication system for private groups.",
+      "Developed UI as per Figma designs.",
+      "Migrated database (MongoDB → PostGreSQL).",
+    ],
+  },
+  {
+    work: "TELUS Retails LTD.",
+    title: "Sales Representative",
+    duration: "April 2017 - December 2022",
+    tasks: [
+      "Communicated and delivered solutions to meet clients requirements.",
+      "Managed client accounts, assisted with bill payments, credit checks.",
+      "Resolved potential fraudulent accounts.",
+      "Handled inventories, returns, and various product shipments.",
+      "Migrated client's home solutions from legacy technologies.",
+      "Apple Ambassador (2020 - 2021).",
+      "Google Ambassador (2021 - 2022).",
+    ],
   },
 ];

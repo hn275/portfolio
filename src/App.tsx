@@ -1,14 +1,15 @@
-import { Nav, ContactForm, Banner, About } from "features";
+import { Nav, ContactForm, Banner, About, Work } from "features";
 import "./index.css";
 import cx from "classnames";
 import { Alert, CopyToClipboard, Section } from "components";
 import { useContactMe } from "hooks";
-import { PROJECTS } from "assets/content";
+import { PROJECTS, WORK } from "assets/content";
 import { ProjectCard } from "features/Project";
 
 function App() {
   const contactMeProps = useContactMe();
   const [collabify, gradeTracker, goVikes, spf] = PROJECTS;
+  const [workCollabify, telus] = WORK;
 
   return (
     <>
@@ -113,8 +114,11 @@ function App() {
           </ProjectCard>
         </Section>
 
-        {/* EDUCATIONS */}
-        <Section id="work" _title="Work" _count="02"></Section>
+        {/* WORK */}
+        <Section id="work" _title="Work" _count="02" className="lg:px-10">
+          <Work {...workCollabify} />
+          <Work {...telus} />
+        </Section>
 
         <section
           id="footer"

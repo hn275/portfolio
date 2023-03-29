@@ -1,15 +1,17 @@
 import { HTMLAttributes } from "react";
 import { motion } from "framer-motion";
+import cx from "classnames";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   _title: string;
   _count: string;
+  paddingX?: string;
 }
 
 export function Section(props: Props) {
-  const { _title, _count, children, className } = props;
+  const { _title, _count, children, className, paddingX } = props;
   return (
-    <section {...props} className="my-20">
+    <section {...props} className={cx(["my-20", paddingX])}>
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         viewport={{ once: true, amount: "all" }}
