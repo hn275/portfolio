@@ -32,13 +32,14 @@ export function ProjectCard(props: Props) {
       transition: {
         duration: 0.3,
         delay: 0.3,
+        when: "beforeChildren",
       },
     },
   };
 
   const underlineVars: Variants = {
     hidden: { width: 0 },
-    visible: { width: "100%", transition: { delay: 1 } },
+    visible: { width: "100%", transition: { delay: 0.2 } },
   };
 
   return (
@@ -60,7 +61,7 @@ export function ProjectCard(props: Props) {
           "lg:rounded-tr-none lg:rounded-br-none",
         ])}
       />
-      <section
+      <motion.section
         className={cx([
           "absolute h-full w-full/2 lg:h-auto lg:relative",
           "rounded-none lg:rounded-md",
@@ -78,10 +79,6 @@ export function ProjectCard(props: Props) {
           >
             <motion.span
               variants={underlineVars}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              transition={{ duration: 0.3 }}
               className="absolute bottom-[2px] left-0 h-2 w-full bg-brand-50/60 -z-10 rounded-sm"
             />
             {title}
@@ -110,7 +107,7 @@ export function ProjectCard(props: Props) {
         <p className="text-slate-400 text-sm p-3 bg-slate-900 w-max rounded-md">
           {tags.join(" ")}
         </p>
-      </section>
+      </motion.section>
     </motion.section>
   );
 }

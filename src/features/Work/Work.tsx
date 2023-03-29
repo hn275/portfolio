@@ -4,11 +4,12 @@ import shortid from "shortid";
 import { motion, Variants } from "framer-motion";
 
 export function Work({ title, work, tasks, duration }: WorkProps) {
+  const baseDelay = 0.5;
   const li: Variants = {
     hidden: { opacity: 0 },
     show: (i: number) => ({
       opacity: 1,
-      transition: { delay: (i + 1) * 0.1 + 0.5 },
+      transition: { delay: 0.1 * i + baseDelay },
     }),
   };
 
@@ -21,14 +22,11 @@ export function Work({ title, work, tasks, duration }: WorkProps) {
 
       <p className="text-sm text-slate-500 py-2">{duration}</p>
 
-      <ul className="flex flex-col gap-1">
+      <motion.ul className="flex flex-col gap-1">
         {tasks.map((task, index) => (
           <motion.li
             variants={li}
             custom={index}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: "some" }}
             key={shortid.generate()}
             style={{ listStyle: "circle" }}
             className="grid grid-cols-[20px,1fr] gap-2"
@@ -37,7 +35,7 @@ export function Work({ title, work, tasks, duration }: WorkProps) {
             <p className="text-gray-100">{task}</p>
           </motion.li>
         ))}
-      </ul>
+      </motion.ul>
     </>
   );
 }

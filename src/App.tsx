@@ -124,19 +124,19 @@ function App() {
           className="grid place-items-center gap-20 lg:px-10"
         >
           <section className="lg:grid grid-cols-[50%,1fr] gap-5 items-center">
-            <SlideIn fromLeft>
+            <SlideIn fromLeft delay={0.4}>
               <Work {...workCollabify} />
             </SlideIn>
-            <SlideIn>
+            <SlideIn delay={0.8}>
               <img className="hidden lg:block" src={Collabify} />
             </SlideIn>
           </section>
 
           <section className="lg:grid grid-cols-[1fr,60%] place-items-center gap-5">
-            <SlideIn fromLeft>
+            <SlideIn fromLeft delay={0.8}>
               <img className="max-h-80 hidden lg:block" src={Telus} />
             </SlideIn>
-            <SlideIn className="lg:pl-14">
+            <SlideIn className="lg:pl-14" delay={0.4}>
               <Work {...telus} />
             </SlideIn>
           </section>
