@@ -1,6 +1,5 @@
 import { useAlert } from "hooks";
 import { ChangeEvent, useState } from "react";
-import { useToggle } from "./useToggle";
 
 export function useContactMe() {
   const [name, onName, nameReset] = useInput();
@@ -10,17 +9,34 @@ export function useContactMe() {
   const resetFunctions = [nameReset, emailReset, subjectReset, messageReset];
 
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [error, setError] = useState<string>();
+  const [errorMessage, setErrorMessage] = useState<string>();
 
-  const { alert, onAlert } = useAlert();
+  const success = useAlert();
+  const error = useAlert();
 
-  const [alertName, setAlertName] = useState<string>("");
+  const [successAlert, setSuccessAlert] = useState<string>("");
   async function handleSubmit(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
-    setAlertName(() => "");
+    // form validation
+    for (const i of [name, email, subject, message]) {
+      if (i === "") {
+        setErrorMessage(() => "Input fields can't be empty!");
+        error.onAlert();
+        return;
+      }
+    }
+
+    const regex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+    if (!email.match(regex)) {
+      setErrorMessage(() => "Invalid email format, please try again.");
+      error.onAlert();
+      return;
+    }
+
+    setSuccessAlert(() => "");
     setIsLoading(() => true);
     try {
-      console.log(name, email, error, isLoading, message);
+      console.log(name, email, errorMessage, isLoading, message);
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "content-type": "application/json" },
@@ -30,16 +46,20 @@ export function useContactMe() {
 
       switch (status) {
         case 200:
-          setAlertName(() => name);
-          onAlert();
+          setSuccessAlert(() => `Email sent! Talk to you soon, ${name}`);
+          success.onAlert();
           setTimeout(() => resetFunctions.forEach((f) => f()), 200);
           break;
         default:
           const payload = await res.json();
-          setError(() => payload["error"]);
+          error.onAlert();
+          setErrorMessage(() => payload["error"]);
       }
     } catch (e) {
-      setError(() => "Server isn't responding right now, try again later");
+      setErrorMessage(
+        () => "Server isn't responding right now, try again later"
+      );
+      error.onAlert();
     } finally {
       setIsLoading(() => false);
     }
@@ -56,8 +76,8 @@ export function useContactMe() {
     onMessage,
     handleSubmit,
     isLoading,
-    error,
-    onSuccess: { alert, alertName },
+    success: { onSuccess: success.alert, message: successAlert },
+    error: { onError: error.alert, message: errorMessage },
   };
 }
 

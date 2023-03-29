@@ -60,7 +60,7 @@ export const PROJECTS: ProjectProps[] = [
 export const WORK: WorkProps[] = [
   {
     work: "Collabify (start-up)",
-    title: "Team lead",
+    title: "Team Lead",
     duration: "October 2022 - February 2023",
     tasks: [
       "Coordinated developers to meet task requirements.",

@@ -32,6 +32,7 @@ export function ContactForm(props: Props) {
           label="Name"
           value={name}
           onChange={onName}
+          required
         />
         <TextInput
           id="email"
@@ -39,6 +40,7 @@ export function ContactForm(props: Props) {
           label="Email"
           value={email}
           onChange={onEmail}
+          required
         />
       </div>
       <TextInput
@@ -46,6 +48,7 @@ export function ContactForm(props: Props) {
         label="Subject"
         value={subject}
         onChange={onSubject}
+        required
       />
 
       <div className="relative group mt-6">
@@ -71,6 +74,7 @@ export function ContactForm(props: Props) {
           placeholder="This project is awesome..."
           value={message}
           onInput={onMessage as FormEventHandler<HTMLTextAreaElement>}
+          required
         />
       </div>
 

@@ -1,7 +1,13 @@
 import { Nav, ContactForm, Banner, About, Work } from "features";
 import "./index.css";
 import cx from "classnames";
-import { Alert, CopyToClipboard, Section, SlideIn } from "components";
+import {
+  Alert,
+  CopyToClipboard,
+  Section,
+  SlideIn,
+  SocialLinks,
+} from "components";
 import { useContactMe } from "hooks";
 import { PROJECTS, WORK } from "assets/content";
 import { ProjectCard } from "features/Project";
@@ -10,7 +16,8 @@ import Telus from "features/Work/assets/telus_phone.svg";
 
 function App() {
   const contactMeProps = useContactMe();
-  const [collabify, gradeTracker, goVikes, spf] = PROJECTS;
+  const { success, error } = contactMeProps;
+  const [projectCollabify, gradeTracker, goVikes, spf] = PROJECTS;
   const [workCollabify, telus] = WORK;
 
   return (
@@ -19,8 +26,7 @@ function App() {
         className={cx([
           "sticky top-0 left-0 right-0",
           "h-14 lg:h-24",
-          "bg-gray-900/50 backdrop-blur z-50 isolate",
-          "border-b border-gray-500/10 z-50",
+          "bg-slate-900/70 backdrop-blur z-50 isolate",
         ])}
       />
       <main className="px-10 leading-relaxed">
@@ -41,7 +47,7 @@ function App() {
           _title="About"
           _count="00"
           className={cx([
-            "lg:grid grid-cols-[60%,1fr] justify-items-center items-start gap-3",
+            "lg:grid grid-cols-[60%,1fr] justify-items-center items-center gap-3",
             "lg:px-20",
           ])}
         >
@@ -55,7 +61,7 @@ function App() {
           _count="01"
           className="flex flex-col gap-5"
         >
-          <ProjectCard {...collabify}>
+          <ProjectCard {...projectCollabify}>
             <p>
               Collabify is an app for scheduling and event planning. It lets
               users share their availability and receive text notifications.
@@ -65,22 +71,20 @@ function App() {
           </ProjectCard>
 
           <ProjectCard {...gradeTracker}>
-            <>
-              <p>
-                Grade Tracker is an&nbsp;
-                <span className="font-semibold inline-block">open source</span>,
-                secure and user-friendly web app for students to log and track
-                their grades. It has a built-in authentication system, here are
-                the mock credentials.
-              </p>
-              <div className="flex flex-col items-center lg:flex-row gap-3 text-brand-50 mx-auto mb-1">
-                <CopyToClipboard
-                  value="email@email.com"
-                  className="bg-slate-900"
-                />
-                <CopyToClipboard value="password" className="bg-slate-900" />
-              </div>
-            </>
+            <p>
+              Grade Tracker is an&nbsp;
+              <span className="font-semibold inline-block">open source</span>,
+              secure and user-friendly web app for students to log and track
+              their grades. It has a built-in authentication system, here are
+              the mock credentials.
+            </p>
+            <div className="flex flex-col items-center lg:flex-row gap-3 text-brand-50 mx-auto mb-1">
+              <CopyToClipboard
+                value="email@email.com"
+                className="bg-slate-900"
+              />
+              <CopyToClipboard value="password" className="bg-slate-900" />
+            </div>
           </ProjectCard>
 
           <ProjectCard {...spf}>
@@ -143,8 +147,8 @@ function App() {
         </Section>
 
         <section
-          id="footer"
-          className="mt-20 mb-10 flex flex-col justify-center items-center gap-5 text-center"
+          id="contact"
+          className="mt-32 mb-10 flex flex-col justify-center items-center gap-5 text-center"
         >
           <h2 className="text-2xl text-brand-50">
             Thanks for seeing this through!
@@ -162,12 +166,12 @@ function App() {
             .
           </p>
 
-          <ContactForm id="contact" formprops={contactMeProps} />
+          <ContactForm formprops={contactMeProps} />
 
-          <div className="relative">
-            <hr className="border-[1px] border-gray-300/30 w-24" />
-            <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gray-900">
-              Or
+          <div className="relative text-slate-400 my-2">
+            <hr className="border-[1px] border-slate-500/10 w-24" />
+            <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gray-900 px-3">
+              or
             </p>
           </div>
 
@@ -175,13 +179,27 @@ function App() {
             value="haln_01@proton.me"
             className="bg-slate-800 text-brand-50 font-mono"
           />
-
-          <p className="text-sm text-gray-600">Happy recruiting.</p>
         </section>
       </main>
 
-      <Alert isMounted={contactMeProps.onSuccess.alert}>
-        Email sent! Talk to you soon, {contactMeProps.onSuccess.alertName}.
+      <footer className="p-4 text-slate-500 text-xs bg-slate-800/30">
+        <div className="max-w-[1280px] mx-auto flex justify-between items-center">
+          <div className="flex gap-3">
+            <p>&copy; 2023 Hal Nguyen</p>
+          </div>
+          <div className="flex gap-5">
+            <a className="cursor-pointer hover:underline">Resume</a>
+            <SocialLinks className="flex items-center gap-4" />
+          </div>
+        </div>
+      </footer>
+
+      <Alert
+        className="fixed bottom-8 left-8"
+        isMounted={success.onSuccess || error.onError}
+        error={error.onError}
+      >
+        {success.message ? success.message : error.message}
       </Alert>
     </>
   );

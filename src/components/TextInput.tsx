@@ -35,6 +35,7 @@ export function TextInput(props: Props) {
         onClick={() => ref.current?.focus()}
       >
         {label}
+        {props.required && <span className="text-sm"> *</span>}
       </label>
     </div>
   );

@@ -32,6 +32,7 @@ main {
     @apply h-2 w-full;
     @apply bg-brand-50/40;
     @apply rounded-sm;
+    @apply -z-10;
   }
 }
 

@@ -73,7 +73,7 @@ export function Banner() {
           initial="initSocials"
           animate="animatedSocials"
         >
-          <SocialLinks className="flex flex-row gap-3 text-2xl" />
+          <SocialLinks className="flex flex-row gap-3 text-2xl text-brand-300" />
         </motion.div>
       </div>
 

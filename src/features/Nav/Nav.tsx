@@ -16,24 +16,16 @@ export function Nav(props: HTMLAttributes<HTMLElement>) {
 
   const links = [
     {
-      key: shortid.generate(),
       text: "About",
       handleClick: () => scrollToID("#about"),
     },
     {
-      key: shortid.generate(),
       text: "Project",
       handleClick: () => scrollToID("#project"),
     },
     {
-      key: shortid.generate(),
       text: "Work",
       handleClick: () => scrollToID("#work"),
-    },
-    {
-      key: shortid.generate(),
-      text: "Contact",
-      handleClick: () => scrollToID("#contact"),
     },
   ];
 
@@ -102,9 +94,9 @@ export function Nav(props: HTMLAttributes<HTMLElement>) {
             />
 
             <ul className="flex flex-col lg:flex-row gap-5">
-              {links.map(({ key, text, handleClick }, index) => (
-                <li key={key} className="relative">
-                  <span className="font-mono text-gray-500">
+              {links.map(({ text, handleClick }, index) => (
+                <li key={shortid.generate()} className="relative">
+                  <span className="font-mono text-brand-50">
                     {index.toString().padStart(2, "0")}.&nbsp;
                   </span>
 
@@ -125,9 +117,14 @@ export function Nav(props: HTMLAttributes<HTMLElement>) {
               ))}
             </ul>
 
-            <a className="btn btn-outline" onClick={() => null}>
-              Resume
-            </a>
+            <div>
+              <button
+                className="btn btn-outline"
+                onClick={() => scrollToID("#contact")}
+              >
+                Contact
+              </button>
+            </div>
           </div>
         </div>
       </nav>

@@ -6,6 +6,7 @@ export function useAutoHide(value: number) {
   useEffect(() => {
     const listener = () => {
       const className = "-translate-y-[100%]";
+
       window.scrollY < value
         ? ref.current?.classList.add(className)
         : ref.current?.classList.remove(className);
