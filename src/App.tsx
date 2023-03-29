@@ -1,8 +1,7 @@
-import { Nav, ContactForm, Banner } from "features";
+import { Nav, ContactForm, Banner, About } from "features";
 import "./index.css";
-import Profile from "assets/profile.svg";
 import cx from "classnames";
-import { Alert, CopyToClipboard, Section, SocialLinks } from "components";
+import { Alert, CopyToClipboard, Section } from "components";
 import { useContactMe } from "hooks";
 import { PROJECTS } from "assets/content";
 import { ProjectCard } from "features/Project";
@@ -33,51 +32,17 @@ function App() {
           <Banner />
         </section>
 
-        {/* CONTACT */}
+        {/* ABOUT */}
         <Section
           id="about"
           _title="About"
           _count="00"
           className={cx([
-            "flex flex-col items-center justify-between lg:flex-row lg:items-start gap-5 md:px-10",
+            "lg:grid grid-cols-[60%,1fr] justify-items-center items-start gap-3",
+            "lg:px-20",
           ])}
         >
-          <div className="flex flex-col gap-3 max-w-[65ch] text-justify">
-            <p>
-              I&apos;m a Computer Science student at University of Victoria,
-              although in school, the majority of my skills are self-taught.
-              Outside of my curriculums, I enjoy building&nbsp;
-              <span className="font-semibold relative">
-                <span className="underline-accent -z-10" />
-                full-stack
-              </span>
-              &nbsp;web applications!
-            </p>
-
-            <p>
-              My programming journey began when I was a Physics major, I wrote
-              my first line of code in Python for a lab, and quickly I
-              discovered a passion for programming. When the world went into
-              isolation, I saw the opportunity to teach myself how to code, then
-              finally made the academic switch to Computer Science September
-              2021!
-            </p>
-
-            <p>
-              In my free time, I can be found rock climbing, hiking, and
-              sometimes chasing the sunset.
-            </p>
-          </div>
-
-          <div className="flex flex-col gap-6 justify-center w-full lg:w-max">
-            <img
-              src={Profile}
-              alt="profile"
-              className={cx(["hidden lg:block", "w-64"])}
-            />
-
-            <SocialLinks className="flex gap-4 justify-center items-center text-3xl" />
-          </div>
+          <About />
         </Section>
 
         {/* PROJECT */}
@@ -140,7 +105,7 @@ function App() {
             </p>
           </ProjectCard>
 
-          <ProjectCard {...goVikes}>
+          <ProjectCard className="h-[350px]" {...goVikes}>
             <p>
               This is a proxy server that expose University of Victoria's API
               (with permission), open to all developers/students to use.

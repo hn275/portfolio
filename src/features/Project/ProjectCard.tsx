@@ -1,14 +1,14 @@
 import { ProjectImage } from "./ProjectImage";
-import { ProjectLayout } from "./ProjectLayout";
 import { ProjectProps } from "./types";
 import cx from "classnames";
 import { BsGithub } from "react-icons/bs";
 import { MdOutlineComputer } from "react-icons/md";
 import { ReactNode } from "react";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 interface Props extends ProjectProps {
   children: ReactNode;
+  className?: string;
 }
 
 export function ProjectCard(props: Props) {
@@ -21,10 +21,37 @@ export function ProjectCard(props: Props) {
     github,
     tags,
     children,
+    className,
   } = props;
 
+  const vars: Variants = {
+    cardHidden: { x: fromLeft ? -40 : 40, opacity: 0 },
+    cardVisible: {
+      x: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.3,
+        delay: 0.3,
+        delayChildren: 0.5,
+        when: "beforeChildren",
+      },
+    },
+    underlineHidden: { width: 0 },
+    underlineVisible: { width: "100%" },
+  };
+
   return (
-    <ProjectLayout fromLeft={fromLeft}>
+    <motion.section
+      viewport={{ once: true, amount: "all", margin: "200px" }}
+      variants={vars}
+      initial="cardHidden"
+      whileInView="cardVisible"
+      className={cx([
+        "lg:px-10 lg:gap-0",
+        "grid lg:grid-cols-[60%,1fr] relative rounded-md overflow-hidden",
+        className,
+      ])}
+    >
       <ProjectImage
         src={imageSrc}
         className={cx([
@@ -49,10 +76,11 @@ export function ProjectCard(props: Props) {
             ])}
           >
             <motion.span
-              initial={{ width: 0 }}
-              whileInView={{ width: "100%" }}
+              variants={vars}
+              initial="underlineHidden"
+              whileInView="underlineVisible"
               viewport={{ once: true }}
-              transition={{ delay: 0.6, duration: 0.3 }}
+              transition={{ duration: 0.3, delayChildren: 0.3 }}
               className="absolute bottom-[2px] left-0 h-2 w-full bg-brand-50/60 -z-10 rounded-sm"
             />
             {title}
@@ -82,6 +110,6 @@ export function ProjectCard(props: Props) {
           {tags.join(" ")}
         </p>
       </section>
-    </ProjectLayout>
+    </motion.section>
   );
 }
