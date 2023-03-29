@@ -114,7 +114,7 @@ function App() {
         </Section>
 
         {/* EDUCATIONS */}
-        <Section id="educations" _title="Educations" _count="02"></Section>
+        <Section id="work" _title="Work" _count="02"></Section>
 
         <section
           id="footer"

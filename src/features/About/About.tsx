@@ -28,22 +28,22 @@ export function About() {
         className="flex flex-col gap-3 max-w-[65ch] text-justify"
       >
         <p>
-          I&apos;m a Computer Science student at University of Victoria,
-          although in school, the majority of my skills are self-taught. Outside
-          of my curriculums, I enjoy building&nbsp;
+          I&apos;m a&nbsp;
           <span className="font-semibold relative">
             <span className="underline-accent -z-10" />
             full-stack
           </span>
-          &nbsp;web applications!
+          &nbsp;software developer, who specialized in&nbsp;
+          <span className="font-semibold text-brand-50">Golang</span> and&nbsp;
+          <span className="font-semibold text-brand-50">TypeScript</span>.
         </p>
 
         <p>
-          My programming journey began when I was a Physics major, I wrote my
-          first line of code in Python for a lab, and quickly I discovered a
-          passion for programming. When the world went into isolation, I saw the
-          opportunity to teach myself how to code, then finally made the
-          academic switch to Computer Science September 2021!
+          While I&apos;m an undergrad student in the department of Computer
+          Science at University of Victoria, my web development skills are
+          self-taught, I started with CodeCademy for the basic of HTML, CSS, and
+          JavaScript, then quickly took to the internet for its infinite wisdom
+          and learning materials.
         </p>
 
         <p>
