@@ -24,28 +24,29 @@ export function ProjectCard(props: Props) {
     className,
   } = props;
 
-  const vars: Variants = {
-    cardHidden: { x: fromLeft ? -40 : 40, opacity: 0 },
-    cardVisible: {
+  const cardVars: Variants = {
+    hidden: { x: fromLeft ? -40 : 40, opacity: 0 },
+    visible: {
       x: 0,
       opacity: 1,
       transition: {
         duration: 0.3,
         delay: 0.3,
-        delayChildren: 0.5,
-        when: "beforeChildren",
       },
     },
-    underlineHidden: { width: 0 },
-    underlineVisible: { width: "100%" },
+  };
+
+  const underlineVars: Variants = {
+    hidden: { width: 0 },
+    visible: { width: "100%", transition: { delay: 1 } },
   };
 
   return (
     <motion.section
-      viewport={{ once: true, amount: "all", margin: "200px" }}
-      variants={vars}
-      initial="cardHidden"
-      whileInView="cardVisible"
+      viewport={{ once: true }}
+      variants={cardVars}
+      initial="hidden"
+      whileInView="visible"
       className={cx([
         "lg:px-10 lg:gap-0",
         "grid lg:grid-cols-[60%,1fr] relative rounded-md overflow-hidden",
@@ -76,11 +77,11 @@ export function ProjectCard(props: Props) {
             ])}
           >
             <motion.span
-              variants={vars}
-              initial="underlineHidden"
-              whileInView="underlineVisible"
+              variants={underlineVars}
+              initial="hidden"
+              whileInView="visible"
               viewport={{ once: true }}
-              transition={{ duration: 0.3, delayChildren: 0.3 }}
+              transition={{ duration: 0.3 }}
               className="absolute bottom-[2px] left-0 h-2 w-full bg-brand-50/60 -z-10 rounded-sm"
             />
             {title}
