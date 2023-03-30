@@ -1,14 +1,9 @@
 import BannerSVG from "assets/banner.svg";
-import { SocialLinks } from "components";
-import { motion, Variants } from "framer-motion";
+import { AnimatedUnderline, SocialLinks } from "components";
+import { motion } from "framer-motion";
 import { scrollToID } from "lib/scrollToID";
 
 export function Banner() {
-  const vars: Variants = {
-    hidden: { width: 0 },
-    show: { width: "100%", transition: { delay: 0.3 } },
-  };
-
   return (
     <>
       <img src={BannerSVG} className="max-h-72" />
@@ -19,10 +14,9 @@ export function Banner() {
         </h1>
 
         <motion.p className="text-lg group">
-          <motion.span className="relative isolate font-semibold">
+          <AnimatedUnderline className="font-semibold">
             Full-stack
-            <motion.span variants={vars} className="underline-accent" />
-          </motion.span>
+          </AnimatedUnderline>
           &nbsp;Developer
         </motion.p>
 

@@ -4,8 +4,9 @@ import cx from "classnames";
 import { BsGithub } from "react-icons/bs";
 import { MdOutlineComputer } from "react-icons/md";
 import { ReactNode } from "react";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import { SlideIn } from "layout";
+import { AnimatedUnderline } from "components";
 
 interface Props extends ProjectProps {
   children: ReactNode;
@@ -24,12 +25,6 @@ export function ProjectCard(props: Props) {
     children,
     className,
   } = props;
-
-  const vars: Variants = {
-    hidden: { width: 0 },
-    show: { width: "100%", transition: { delay: 0.2 } },
-  };
-
   return (
     <SlideIn
       fromLeft={fromLeft}
@@ -57,42 +52,32 @@ export function ProjectCard(props: Props) {
           "overflow-y-hidden",
         ])}
       >
-        <motion.div className="flex justify-between items-center">
-          <motion.h2
-            className={cx([
-              "text-white font-bold text-lg md:text-xl relative w-max isolate",
-            ])}
-          >
-            <motion.span
-              variants={vars}
-              className="absolute bottom-[2px] left-0 h-2 w-full bg-brand-50/60 -z-10 rounded-sm"
-            />
-            {title}
-          </motion.h2>
-
-          <div className="flex gap-3 items-center">
-            {github && (
-              <a className="link-icon" href={github} target="_blank">
-                <BsGithub title={github} className="" />
-              </a>
-            )}
-            {liveSite && (
-              <a className="link-icon" href={liveSite} target="_blank">
-                <MdOutlineComputer title={liveSite} className="" />
-              </a>
-            )}
-          </div>
-        </motion.div>
+        <motion.h2
+          className={cx([
+            "text-white font-bold text-lg md:text-xl relative w-max isolate",
+          ])}
+        >
+          <AnimatedUnderline h={9}>{title}</AnimatedUnderline>
+        </motion.h2>
 
         <p className="text-sm text-slate-400">{stacks.join(", ")}</p>
 
-        <div className="flex flex-col gap-1 text-slate-300 overflow-y-scroll h-full">
+        <div className="flex flex-col gap-1 text-slate-300 overflow-y-hidden overflow-x-hidden h-full">
           {children}
         </div>
 
-        <p className="text-slate-400 text-sm p-3 bg-slate-900 w-max rounded-md">
-          {tags.join(" ")}
-        </p>
+        <div className="flex gap-3 items-center justify-end">
+          {github && (
+            <a className="link-icon" href={github} target="_blank">
+              <BsGithub title={github} className="" />
+            </a>
+          )}
+          {liveSite && (
+            <a className="link-icon" href={liveSite} target="_blank">
+              <MdOutlineComputer title={liveSite} className="" />
+            </a>
+          )}
+        </div>
       </motion.section>
     </SlideIn>
   );

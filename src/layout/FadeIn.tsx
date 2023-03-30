@@ -3,8 +3,9 @@ import { motion, Variants } from "framer-motion";
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   delay?: number;
+  amount?: number;
 }
-export function FadeIn({ children, className, delay }: Props) {
+export function FadeIn({ children, className, delay, amount }: Props) {
   const vars: Variants = {
     hidden: { opacity: 0 },
     show: {
@@ -19,7 +20,7 @@ export function FadeIn({ children, className, delay }: Props) {
 
   return (
     <motion.div
-      viewport={{ once: true, amount: "all", margin: "100px" }}
+      viewport={{ once: true, amount: amount || 0.8 }}
       variants={vars}
       initial="hidden"
       whileInView="show"

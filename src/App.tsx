@@ -35,7 +35,7 @@ function App() {
           "bg-slate-900/70 backdrop-blur z-50 isolate",
         ])}
       />
-      <main className="px-10 leading-relaxed">
+      <main className="px-10 leading-relaxed overflow-x-hidden">
         {/* BANNER */}
         <AnimatedBanner
           className={cx([
@@ -83,7 +83,7 @@ function App() {
               their grades. It has a built-in authentication system, here are
               the mock credentials.
             </p>
-            <div className="flex flex-col items-center lg:flex-row gap-3 text-brand-50 mx-auto mb-1">
+            <div className="flex flex-col items-center lg:items-start gap-2 text-brand-50">
               <CopyToClipboard
                 value="email@email.com"
                 className="bg-slate-900"

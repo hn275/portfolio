@@ -58,5 +58,6 @@ main {
     @apply text-brand-50 hover:text-brand-50;
     @apply bg-transparent hover:bg-brand-300/20;
     @apply hover:brightness-125;
+    @apply shadow-md shadow-transparent hover:shadow-brand-50/10;
   }
 }

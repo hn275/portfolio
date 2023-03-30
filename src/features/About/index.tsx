@@ -1,7 +1,8 @@
 import Profile from "assets/profile.svg";
 import { SlideIn } from "layout";
-import { SocialLinks } from "components";
+import { AnimatedUnderline, SocialLinks } from "components";
 import cx from "classnames";
+import { motion } from "framer-motion";
 
 export function About() {
   return (
@@ -9,22 +10,21 @@ export function About() {
       <SlideIn
         fromLeft
         className="flex flex-col gap-3 max-w-[65ch] text-justify"
+        amount={0.4}
       >
-        <p>
+        <motion.p>
           I&apos;m a&nbsp;
           <span className="italic">full-stack</span>
           &nbsp;software developer who specializes in&nbsp;
-          <span className="font-semibold relative">
+          <AnimatedUnderline className="font-semibold">
             Golang
-            <span className="underline-accent -z-10" />
-          </span>
+          </AnimatedUnderline>
           &nbsp; and&nbsp;
-          <span className="font-semibold relative">
+          <AnimatedUnderline delay={0.3} className="font-semibold">
             TypeScript
-            <span className="underline-accent" />
-          </span>
+          </AnimatedUnderline>
           .
-        </p>
+        </motion.p>
 
         <p>
           While I&apos;m an undergrad student in the department of Computer
@@ -40,7 +40,10 @@ export function About() {
         </p>
       </SlideIn>
 
-      <SlideIn className="flex flex-col gap-6 justify-center w-full lg:w-max">
+      <SlideIn
+        amount={0.4}
+        className="flex flex-col gap-6 justify-center w-full lg:w-max"
+      >
         <img
           src={Profile}
           alt="profile"

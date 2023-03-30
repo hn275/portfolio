@@ -4,8 +4,15 @@ import { motion, Variants } from "framer-motion";
 interface Props extends HTMLAttributes<HTMLDivElement> {
   fromLeft?: boolean;
   delay?: number;
+  amount?: number;
 }
-export function SlideIn({ fromLeft, children, className, delay }: Props) {
+export function SlideIn({
+  fromLeft,
+  children,
+  className,
+  delay,
+  amount,
+}: Props) {
   const vars: Variants = {
     hidden: { x: fromLeft ? -40 : 40, opacity: 0 },
     show: {
@@ -21,7 +28,7 @@ export function SlideIn({ fromLeft, children, className, delay }: Props) {
 
   return (
     <motion.div
-      viewport={{ once: true, amount: "some", margin: "100px" }}
+      viewport={{ once: true, amount: amount || 0.4 }}
       variants={vars}
       initial="hidden"
       whileInView="show"
