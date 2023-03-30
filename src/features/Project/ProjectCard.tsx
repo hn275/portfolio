@@ -5,6 +5,7 @@ import { BsGithub } from "react-icons/bs";
 import { MdOutlineComputer } from "react-icons/md";
 import { ReactNode } from "react";
 import { motion, Variants } from "framer-motion";
+import { SlideIn } from "layout";
 
 interface Props extends ProjectProps {
   children: ReactNode;
@@ -24,30 +25,14 @@ export function ProjectCard(props: Props) {
     className,
   } = props;
 
-  const cardVars: Variants = {
-    hidden: { x: fromLeft ? -40 : 40, opacity: 0 },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.3,
-        delay: 0.3,
-        when: "beforeChildren",
-      },
-    },
-  };
-
-  const underlineVars: Variants = {
+  const vars: Variants = {
     hidden: { width: 0 },
-    visible: { width: "100%", transition: { delay: 0.2 } },
+    show: { width: "100%", transition: { delay: 0.2 } },
   };
 
   return (
-    <motion.section
-      viewport={{ once: true }}
-      variants={cardVars}
-      initial="hidden"
-      whileInView="visible"
+    <SlideIn
+      fromLeft={fromLeft}
       className={cx([
         "lg:px-10 lg:gap-0",
         "grid lg:grid-cols-[60%,1fr] relative rounded-md overflow-hidden",
@@ -72,18 +57,18 @@ export function ProjectCard(props: Props) {
           "overflow-y-hidden",
         ])}
       >
-        <div className="flex justify-between items-center">
-          <h2
+        <motion.div className="flex justify-between items-center">
+          <motion.h2
             className={cx([
               "text-white font-bold text-xl relative w-max isolate",
             ])}
           >
             <motion.span
-              variants={underlineVars}
+              variants={vars}
               className="absolute bottom-[2px] left-0 h-2 w-full bg-brand-50/60 -z-10 rounded-sm"
             />
             {title}
-          </h2>
+          </motion.h2>
 
           <div className="flex gap-3 items-center">
             {github && (
@@ -97,7 +82,7 @@ export function ProjectCard(props: Props) {
               </a>
             )}
           </div>
-        </div>
+        </motion.div>
 
         <p className="text-sm text-slate-400">{stacks.join(", ")}</p>
 
@@ -109,6 +94,6 @@ export function ProjectCard(props: Props) {
           {tags.join(" ")}
         </p>
       </motion.section>
-    </motion.section>
+    </SlideIn>
   );
 }
