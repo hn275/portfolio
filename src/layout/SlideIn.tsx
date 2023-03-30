@@ -19,7 +19,7 @@ export function SlideIn({
       x: 0,
       opacity: 1,
       transition: {
-        delay: delay || 0.4,
+        delay,
         duration: 0.4,
         when: "beforeChildren",
       },

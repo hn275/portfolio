@@ -5,5 +5,4 @@ export interface ProjectProps {
   liveSite?: string | null;
   imageSrc: string;
   fromLeft: boolean;
-  tags: string[];
 }

@@ -21,7 +21,6 @@ export function ProjectCard(props: Props) {
     fromLeft,
     stacks,
     github,
-    tags,
     children,
     className,
   } = props;

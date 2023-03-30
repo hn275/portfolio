@@ -19,7 +19,6 @@ export const PROJECTS: ProjectProps[] = [
     liveSite: "https://collabify.space",
     imageSrc: Collabify,
     fromLeft: true,
-    tags: ["#fullstack", "#startup"],
   },
   {
     title: "GradeTracker",
@@ -35,7 +34,6 @@ export const PROJECTS: ProjectProps[] = [
     liveSite: null,
     imageSrc: GradeTracker,
     fromLeft: false,
-    tags: ["#fullstack", "#open-source"],
   },
   {
     title: "Go-Vikes",
@@ -44,7 +42,6 @@ export const PROJECTS: ProjectProps[] = [
     liveSite: "",
     imageSrc: GoVikes,
     fromLeft: false,
-    tags: ["#backend", "#restAPI"],
   },
   {
     title: "Study Space Finder",
@@ -53,7 +50,6 @@ export const PROJECTS: ProjectProps[] = [
     liveSite: "https://study-space-finder.vercel.app/",
     imageSrc: StudySpaceFinder,
     fromLeft: true,
-    tags: ["#backend", "#restAPI"],
   },
 ];
 

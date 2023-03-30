@@ -11,7 +11,7 @@ export function FadeIn({ children, className, delay, amount }: Props) {
     show: {
       opacity: 1,
       transition: {
-        delay: delay,
+        delay,
         duration: 0.4,
         when: "beforeChildren",
       },
@@ -20,7 +20,7 @@ export function FadeIn({ children, className, delay, amount }: Props) {
 
   return (
     <motion.div
-      viewport={{ once: true, amount: amount || 0.8 }}
+      viewport={{ once: true, amount: amount || 0.3 }}
       variants={vars}
       initial="hidden"
       whileInView="show"
