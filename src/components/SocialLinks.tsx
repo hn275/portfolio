@@ -1,17 +1,18 @@
 import shortid from "shortid";
 import { BsLinkedin, BsGithub } from "react-icons/bs";
 import { HTMLAttributes } from "react";
+import { LINKS } from "lib/links";
 
 export function SocialLinks(props: HTMLAttributes<HTMLUListElement>) {
   const links = [
     {
       alt: "github",
-      href: "https://www.github.com/hn275",
+      href: LINKS.github,
       icon: <BsGithub title="GitHub" />,
     },
     {
       alt: "LinkedIn",
-      href: "https://www.linkedin.com/in/hal-nguyen-48a22b22a/",
+      href: LINKS.linkedin,
       icon: <BsLinkedin title="LinkedIn" />,
     },
   ];

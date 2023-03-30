@@ -1,4 +1,4 @@
-import Profile from "assets/profile.svg";
+import Profile from "./assets/profile.svg";
 import { SlideIn } from "layout";
 import { AnimatedUnderline, SocialLinks } from "components";
 import cx from "classnames";

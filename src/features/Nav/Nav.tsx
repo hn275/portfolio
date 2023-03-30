@@ -1,5 +1,5 @@
 import cx from "classnames";
-import Logo from "assets/logo.svg";
+import Logo from "./assets/logo.svg";
 import { CgMenuLeft } from "react-icons/cg";
 import { BsChevronLeft } from "react-icons/bs";
 import { useToggle } from "hooks";

@@ -8,13 +8,12 @@ import {
   AnimatedUnderline,
 } from "components";
 import { useContactMe } from "hooks";
-import { PROJECTS, WORK } from "assets/content";
-import { ProjectCard } from "features/Project";
+import { ProjectCard, PROJECTS } from "features/Project";
 import Collabify from "features/Work/assets/collabify_code.svg";
 import Telus from "features/Work/assets/telus_phone.svg";
 import { AnimatedBanner, Banner } from "features/Banner";
 import { Nav } from "features/Nav";
-import { Work } from "features/Work";
+import { WORK, Work } from "features/Work";
 import { About } from "features/About";
 import { ContactForm } from "features/ContactForm";
 import { FadeIn, SlideIn } from "layout";

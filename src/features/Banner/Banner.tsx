@@ -1,4 +1,4 @@
-import BannerSVG from "assets/banner.svg";
+import BannerSVG from "./assets/banner.svg";
 import { AnimatedUnderline, SocialLinks } from "components";
 import { motion } from "framer-motion";
 import { scrollToID } from "lib/scrollToID";
