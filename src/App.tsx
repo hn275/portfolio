@@ -1,10 +1,13 @@
-import { Nav, ContactForm, Banner, About, Work } from "features";
+import { Work } from "features/Work";
+import { About } from "features/About";
+import { ContactForm } from "features/ContactForm";
+import { Nav } from "features/Nav";
 import "./index.css";
 import cx from "classnames";
 import {
   Alert,
   CopyToClipboard,
-  Section,
+  AnimatedSection,
   SlideIn,
   SocialLinks,
 } from "components";
@@ -13,6 +16,7 @@ import { PROJECTS, WORK } from "assets/content";
 import { ProjectCard } from "features/Project";
 import Collabify from "features/Work/assets/collabify_code.svg";
 import Telus from "features/Work/assets/telus_phone.svg";
+import { AnimatedBanner, Banner } from "features/Banner";
 
 function App() {
   const contactMeProps = useContactMe();
@@ -31,18 +35,17 @@ function App() {
       />
       <main className="px-10 leading-relaxed">
         {/* BANNER */}
-        <section
-          id="banner"
+        <AnimatedBanner
           className={cx([
             "w-full h-[calc(100vh-3.5rem)] max-h-[800px] pb-12 md:pb-20",
             "flex flex-col justify-center items-center gap-10",
           ])}
         >
           <Banner />
-        </section>
+        </AnimatedBanner>
 
         {/* ABOUT */}
-        <Section
+        <AnimatedSection
           id="about"
           _title="About"
           _count="00"
@@ -52,10 +55,10 @@ function App() {
           ])}
         >
           <About />
-        </Section>
+        </AnimatedSection>
 
         {/* PROJECT */}
-        <Section
+        <AnimatedSection
           id="project"
           _title="Project"
           _count="01"
@@ -118,10 +121,10 @@ function App() {
               (with permission), open to all developers/students to use.
             </p>
           </ProjectCard>
-        </Section>
+        </AnimatedSection>
 
         {/* WORK */}
-        <Section
+        <AnimatedSection
           id="work"
           _title="Work"
           _count="02"
@@ -144,7 +147,7 @@ function App() {
               <Work {...telus} />
             </SlideIn>
           </section>
-        </Section>
+        </AnimatedSection>
 
         <section
           id="contact"

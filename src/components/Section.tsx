@@ -8,7 +8,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
   paddingX?: string;
 }
 
-export function Section(props: Props) {
+export function AnimatedSection(props: Props) {
   const { _title, _count, children, className, paddingX } = props;
   return (
     <section {...props} className={cx(["my-20", paddingX])}>
