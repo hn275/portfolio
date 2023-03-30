@@ -55,7 +55,7 @@ export function Nav(props: HTMLAttributes<HTMLElement>) {
           <img
             src={Logo}
             alt="logo"
-            className={cx(["mx-auto w-20 lg:w-32 lg:mx-0"])}
+            className={cx(["mx-auto w-14 lg:w-28 lg:mx-0"])}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             role="button"
             aria-label="scroll-to-top"
