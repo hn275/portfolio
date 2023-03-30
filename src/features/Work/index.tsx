@@ -14,7 +14,7 @@ export function Work({ title, work, tasks, duration }: WorkProps) {
 
   return (
     <>
-      <div className="flex gap-2 text-lg">
+      <div className="flex gap-2 text-base md:text-lg">
         <h3 className="font-semibold">{title}</h3>
         <h4 className="font-semibold text-brand-50">@ {work}</h4>
       </div>

@@ -6,7 +6,7 @@ import { scrollToID } from "lib/scrollToID";
 export function Banner() {
   const vars: Variants = {
     hidden: { width: 0 },
-    show: { width: "100%" },
+    show: { width: "100%", transition: { delay: 0.3 } },
   };
 
   return (

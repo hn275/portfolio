@@ -60,7 +60,7 @@ export function ProjectCard(props: Props) {
         <motion.div className="flex justify-between items-center">
           <motion.h2
             className={cx([
-              "text-white font-bold text-xl relative w-max isolate",
+              "text-white font-bold text-lg md:text-xl relative w-max isolate",
             ])}
           >
             <motion.span

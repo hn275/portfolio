@@ -5,6 +5,7 @@ import {
   CopyToClipboard,
   AnimatedSection,
   SocialLinks,
+  AnimatedUnderline,
 } from "components";
 import { useContactMe } from "hooks";
 import { PROJECTS, WORK } from "assets/content";
@@ -17,6 +18,7 @@ import { Work } from "features/Work";
 import { About } from "features/About";
 import { ContactForm } from "features/ContactForm";
 import { FadeIn, SlideIn } from "layout";
+import { motion } from "framer-motion";
 
 function App() {
   const contactMeProps = useContactMe();
@@ -150,7 +152,7 @@ function App() {
         </AnimatedSection>
 
         <FadeIn>
-          <section
+          <motion.section
             id="contact"
             className="mt-32 mb-10 flex flex-col justify-center items-center gap-5 text-center"
           >
@@ -158,7 +160,11 @@ function App() {
               Thanks for seeing this through!
             </h2>
             <p>
-              You&apos;ve made it this far, might as well connect with me.
+              You&apos;ve made it this far, might as well&nbsp;
+              <AnimatedUnderline className="font-semibold">
+                say hello
+              </AnimatedUnderline>
+              .
               <br /> I would love to hear what you think about&nbsp;
               <a
                 className="italic hover:underline"
@@ -183,7 +189,7 @@ function App() {
               value="haln_01@proton.me"
               className="bg-slate-800 text-brand-50 font-mono"
             />
-          </section>
+          </motion.section>
         </FadeIn>
       </main>
 
