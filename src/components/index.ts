@@ -4,4 +4,3 @@ export * from "./SocialLinks";
 export * from "./TextInput";
 export * from "./Image";
 export * from "./CopyToClipboard";
-export * from "./SlideIn";

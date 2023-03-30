@@ -7,6 +7,7 @@ html {
   @apply text-slate-200;
   @apply scroll-smooth;
   @apply scroll-p-16 lg:scroll-p-28;
+  @apply overflow-x-hidden;
 }
 
 main {

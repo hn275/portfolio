@@ -69,6 +69,7 @@ export function ProjectCard(props: Props) {
           "lg:rounded-tl-none lg:rounded-bl-none",
           "bg-gradient-to-b from-slate-800/90 to-slate-800/100 lg:bg-slate-800",
           "shadow-lg shadow-black/30",
+          "overflow-y-hidden",
         ])}
       >
         <div className="flex justify-between items-center">

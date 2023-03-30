@@ -1,14 +1,9 @@
-import { Work } from "features/Work";
-import { About } from "features/About";
-import { ContactForm } from "features/ContactForm";
-import { Nav } from "features/Nav";
 import "./index.css";
 import cx from "classnames";
 import {
   Alert,
   CopyToClipboard,
   AnimatedSection,
-  SlideIn,
   SocialLinks,
 } from "components";
 import { useContactMe } from "hooks";
@@ -17,6 +12,11 @@ import { ProjectCard } from "features/Project";
 import Collabify from "features/Work/assets/collabify_code.svg";
 import Telus from "features/Work/assets/telus_phone.svg";
 import { AnimatedBanner, Banner } from "features/Banner";
+import { Nav } from "features/Nav";
+import { Work } from "features/Work";
+import { About } from "features/About";
+import { ContactForm } from "features/ContactForm";
+import { FadeIn, SlideIn } from "layout";
 
 function App() {
   const contactMeProps = useContactMe();
@@ -131,71 +131,75 @@ function App() {
           className="grid place-items-center gap-20 lg:px-10"
         >
           <section className="lg:grid grid-cols-[50%,1fr] gap-5 items-center">
-            <SlideIn fromLeft delay={0.4}>
+            <SlideIn fromLeft>
               <Work {...workCollabify} />
             </SlideIn>
-            <SlideIn delay={0.8}>
+            <SlideIn>
               <img className="hidden lg:block" src={Collabify} />
             </SlideIn>
           </section>
 
           <section className="lg:grid grid-cols-[1fr,60%] place-items-center gap-5">
-            <SlideIn fromLeft delay={0.8}>
+            <SlideIn fromLeft>
               <img className="max-h-80 hidden lg:block" src={Telus} />
             </SlideIn>
-            <SlideIn className="lg:pl-14" delay={0.4}>
+            <SlideIn className="lg:pl-14">
               <Work {...telus} />
             </SlideIn>
           </section>
         </AnimatedSection>
 
-        <section
-          id="contact"
-          className="mt-32 mb-10 flex flex-col justify-center items-center gap-5 text-center"
-        >
-          <h2 className="text-2xl text-brand-50">
-            Thanks for seeing this through!
-          </h2>
-          <p>
-            You&apos;ve made it this far, might as well connect with me.
-            <br /> I would love to hear what you think about&nbsp;
-            <a
-              className="italic hover:underline"
-              target="_blank"
-              href="https://github.com/hn275/portfolio"
-            >
-              this project
-            </a>
-            .
-          </p>
-
-          <ContactForm formprops={contactMeProps} />
-
-          <div className="relative text-slate-400 my-2">
-            <hr className="border-[1px] border-slate-500/10 w-24" />
-            <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gray-900 px-3">
-              or
+        <FadeIn>
+          <section
+            id="contact"
+            className="mt-32 mb-10 flex flex-col justify-center items-center gap-5 text-center"
+          >
+            <h2 className="text-2xl text-brand-50">
+              Thanks for seeing this through!
+            </h2>
+            <p>
+              You&apos;ve made it this far, might as well connect with me.
+              <br /> I would love to hear what you think about&nbsp;
+              <a
+                className="italic hover:underline"
+                target="_blank"
+                href="https://github.com/hn275/portfolio"
+              >
+                this project
+              </a>
+              .
             </p>
-          </div>
 
-          <CopyToClipboard
-            value="haln_01@proton.me"
-            className="bg-slate-800 text-brand-50 font-mono"
-          />
-        </section>
+            <ContactForm formprops={contactMeProps} />
+
+            <div className="relative text-slate-400 my-2">
+              <hr className="border-[1px] border-slate-500/10 w-24" />
+              <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gray-900 px-3">
+                or
+              </p>
+            </div>
+
+            <CopyToClipboard
+              value="haln_01@proton.me"
+              className="bg-slate-800 text-brand-50 font-mono"
+            />
+          </section>
+        </FadeIn>
       </main>
 
-      <footer className="p-4 text-slate-500 text-xs bg-slate-800/30">
-        <div className="max-w-[1280px] mx-auto flex justify-between items-center">
-          <div className="flex gap-3">
-            <p>&copy; 2023 Hal Nguyen</p>
+      <FadeIn delay={0.2}>
+        <footer className="p-4 text-slate-500 text-xs bg-slate-800/30">
+          <div className="max-w-[1280px] mx-auto flex justify-between items-center">
+            <div className="flex gap-3">
+              <p>&copy; 2023 Hal Nguyen, all rights reserved.</p>
+            </div>
+            <div className="flex gap-5">
+              <a className="cursor-pointer hover:underline">Resume</a>
+              <SocialLinks className="flex items-center gap-4" />
+            </div>
           </div>
-          <div className="flex gap-5">
-            <a className="cursor-pointer hover:underline">Resume</a>
-            <SocialLinks className="flex items-center gap-4" />
-          </div>
-        </div>
-      </footer>
+        </footer>
+      </FadeIn>
 
       <Alert
         className="fixed bottom-8 left-8"

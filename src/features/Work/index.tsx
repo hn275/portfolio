@@ -4,12 +4,11 @@ import shortid from "shortid";
 import { motion, Variants } from "framer-motion";
 
 export function Work({ title, work, tasks, duration }: WorkProps) {
-  const baseDelay = 0.5;
   const li: Variants = {
     hidden: { opacity: 0 },
     show: (i: number) => ({
       opacity: 1,
-      transition: { delay: 0.1 * i + baseDelay },
+      transition: { delay: 0.1 * i },
     }),
   };
 
