@@ -77,11 +77,9 @@ function App() {
 
           <ProjectCard {...gradeTracker}>
             <p>
-              Grade Tracker is an&nbsp;
-              <span className="font-semibold inline-block">open source</span>,
-              secure and user-friendly web app for students to log and track
-              their grades. It has a built-in authentication system, here are
-              the mock credentials.
+              Grade Tracker is a secure and user-friendly web app for students
+              to log and track their grades. It has a built-in authentication
+              system, here are the mock credentials.
             </p>
             <div className="flex flex-col items-center lg:items-start gap-2 text-brand-50">
               <CopyToClipboard
@@ -106,14 +104,6 @@ function App() {
                 retrieve these data
               </a>
               .
-            </p>
-            <p>
-              While the UI is still being developed, server is&nbsp;
-              <span className="relative">
-                deployed
-                <span className="underline-accent" />
-              </span>
-              !
             </p>
           </ProjectCard>
 
@@ -199,8 +189,15 @@ function App() {
             <div className="flex gap-3">
               <p>&copy; 2023 Hal Nguyen, all rights reserved.</p>
             </div>
-            <div className="flex gap-5">
-              <a className="cursor-pointer hover:underline">Resume</a>
+            <div>
+              SVGs by&nbsp;
+              <a
+                target="_blank"
+                href="https://undraw.co/"
+                className="underline"
+              >
+                unDraw
+              </a>
             </div>
           </div>
         </footer>
