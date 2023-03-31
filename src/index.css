@@ -61,3 +61,18 @@ main {
     @apply shadow-md shadow-transparent hover:shadow-brand-50/10;
   }
 }
+
+/* CHROME SCROLL BAR BAD*/
+body::-webkit-scrollbar {
+  @apply w-2;
+  @apply cursor-pointer;
+}
+
+body::-webkit-scrollbar-track {
+  @apply bg-slate-800/30;
+}
+
+body::-webkit-scrollbar-thumb {
+  @apply bg-slate-500/20 rounded-lg mx-3;
+  @apply border border-slate-800/90;
+}
