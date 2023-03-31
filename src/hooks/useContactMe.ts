@@ -36,7 +36,6 @@ export function useContactMe() {
     setSuccessAlert(() => "");
     setIsLoading(() => true);
     try {
-      console.log(name, email, errorMessage, isLoading, message);
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "content-type": "application/json" },
