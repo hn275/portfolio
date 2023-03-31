@@ -13,7 +13,7 @@ import Telus from "features/Work/assets/telus_phone.svg";
 import { AnimatedBanner, Banner } from "features/Banner";
 import { Nav } from "features/Nav";
 import { WORK, Work } from "features/Work";
-import { About } from "features/About";
+import { About, Skills } from "features/About";
 import { ContactForm } from "features/ContactForm";
 import { FadeIn, SlideIn } from "layout";
 import { motion } from "framer-motion";
@@ -51,12 +51,30 @@ function App() {
           id="about"
           _title="About"
           _count="00"
-          className={cx([
-            "lg:grid grid-cols-[60%,1fr] justify-items-center items-center gap-3",
-            "lg:px-20",
-          ])}
+          className={cx("flex flex-col gap-9", " lg:px-20")}
         >
-          <About />
+          <section
+            className={cx([
+              "lg:grid grid-cols-[60%,1fr] justify-items-center items-center gap-3",
+            ])}
+          >
+            <About />
+          </section>
+
+          <motion.hr
+            initial={{ width: 0, opacity: 0 }}
+            whileInView={{
+              width: "100%",
+              opacity: 1,
+              transition: { delay: 0.4 },
+            }}
+            viewport={{ once: true }}
+            className="border-brand-100/50 self-center"
+          />
+
+          <section className="flex flex-col gap-10">
+            <Skills />
+          </section>
         </AnimatedSection>
 
         {/* PROJECT */}

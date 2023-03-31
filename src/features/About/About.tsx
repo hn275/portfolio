@@ -9,7 +9,7 @@ export function About() {
     <>
       <SlideIn
         fromLeft
-        className="flex flex-col gap-3 max-w-[65ch] text-justify"
+        className="flex flex-col gap-3 w-full max-w-[65ch] text-justify"
         amount={0.4}
       >
         <motion.p>
