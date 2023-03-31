@@ -1,6 +1,6 @@
 import Profile from "./assets/profile.svg";
 import { SlideIn } from "layout";
-import { AnimatedUnderline, SocialLinks } from "components";
+import { AnimatedUnderline } from "components";
 import cx from "classnames";
 import { motion } from "framer-motion";
 
@@ -16,14 +16,9 @@ export function About() {
           I&apos;m a&nbsp;
           <span className="italic">full-stack</span>
           &nbsp;software developer who specializes in&nbsp;
-          <AnimatedUnderline className="font-semibold">
-            Golang
-          </AnimatedUnderline>
+          <AnimatedUnderline>Golang</AnimatedUnderline>
           &nbsp; and&nbsp;
-          <AnimatedUnderline delay={0.3} className="font-semibold">
-            TypeScript
-          </AnimatedUnderline>
-          .
+          <AnimatedUnderline delay={0.3}>TypeScript</AnimatedUnderline>.
         </motion.p>
 
         <p>
@@ -49,7 +44,6 @@ export function About() {
           alt="profile"
           className={cx(["hidden lg:block", "w-64"])}
         />
-        <SocialLinks className="flex gap-4 justify-center items-center text-3xl mt-9 lg:mt-0 text-brand-300" />
       </SlideIn>
     </>
   );

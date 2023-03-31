@@ -53,7 +53,7 @@ export function ProjectCard(props: Props) {
       >
         <motion.h2
           className={cx([
-            "text-white font-bold text-lg md:text-xl relative w-max isolate",
+            "text-white text-lg md:text-xl relative w-max isolate",
           ])}
         >
           <AnimatedUnderline h={9}>{title}</AnimatedUnderline>

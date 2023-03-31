@@ -4,7 +4,6 @@ import {
   Alert,
   CopyToClipboard,
   AnimatedSection,
-  SocialLinks,
   AnimatedUnderline,
 } from "components";
 import { useContactMe } from "hooks";
@@ -18,6 +17,7 @@ import { About } from "features/About";
 import { ContactForm } from "features/ContactForm";
 import { FadeIn, SlideIn } from "layout";
 import { motion } from "framer-motion";
+import { FloatingSocials } from "features/FloatingSocials";
 
 function App() {
   const contactMeProps = useContactMe();
@@ -29,9 +29,10 @@ function App() {
     <>
       <Nav
         className={cx([
+          "transition-smooth -translate-y-[120%]",
           "sticky top-0 left-0 right-0",
           "h-14 lg:h-24",
-          "bg-slate-900/70 backdrop-blur z-50 isolate",
+          "bg-slate-900/70 shadow-lg shadow-black/10 backdrop-blur z-50 isolate",
         ])}
       />
       <main className="px-10 leading-relaxed overflow-x-hidden">
@@ -200,7 +201,6 @@ function App() {
             </div>
             <div className="flex gap-5">
               <a className="cursor-pointer hover:underline">Resume</a>
-              <SocialLinks className="flex items-center gap-4" />
             </div>
           </div>
         </footer>
@@ -213,6 +213,13 @@ function App() {
       >
         {success.message ? success.message : error.message}
       </Alert>
+
+      <FloatingSocials
+        className={cx(
+          " fixed right-5 top-1/2 -translate-y-1/2",
+          "hidden lg:flex flex-col gap-4"
+        )}
+      />
     </>
   );
 }

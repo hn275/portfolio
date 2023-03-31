@@ -8,37 +8,38 @@ import shortid from "shortid";
 import { HTMLAttributes } from "react";
 import { useAutoHide } from "./useAutoHide";
 import { scrollToID } from "lib/scrollToID";
+import { SocialLinks } from "./SocialLinks";
 
 export function Nav(props: HTMLAttributes<HTMLElement>) {
   const { open, onOpen, onClose } = useToggle();
 
   const ref = useAutoHide(350);
 
+  function handleClick(id: string) {
+    return () => {
+      scrollToID(id);
+      onClose();
+    };
+  }
+
   const links = [
     {
       text: "About",
-      handleClick: () => scrollToID("#about"),
+      handleClick: handleClick("#about"),
     },
     {
       text: "Project",
-      handleClick: () => scrollToID("#project"),
+      handleClick: handleClick("#project"),
     },
     {
       text: "Work",
-      handleClick: () => scrollToID("#work"),
+      handleClick: handleClick("#work"),
     },
   ];
 
   return (
     <>
-      <nav
-        {...props}
-        ref={ref}
-        className={cx([
-          props.className,
-          "transition-smooth -translate-y-[100%]",
-        ])}
-      >
+      <nav {...props} ref={ref}>
         <div
           className={cx([
             "max-w-[1280px] mx-auto relative",
@@ -69,6 +70,7 @@ export function Nav(props: HTMLAttributes<HTMLElement>) {
                 exit={{ opacity: 0 }}
                 id="overlay"
                 className="bg-gray-900/80 absolute top-0 left-0 w-[100vw] h-[100vh] lg:hidden"
+                onClick={onClose}
               />
             )}
           </AnimatePresence>
@@ -93,7 +95,7 @@ export function Nav(props: HTMLAttributes<HTMLElement>) {
               onClick={onClose}
             />
 
-            <ul className="flex flex-col lg:flex-row gap-5">
+            <ul className="flex flex-col lg:flex-row gap-5 grow">
               {links.map(({ text, handleClick }, index) => (
                 <li key={shortid.generate()} className="relative">
                   <span className="font-mono text-brand-50">
@@ -117,13 +119,15 @@ export function Nav(props: HTMLAttributes<HTMLElement>) {
               ))}
             </ul>
 
-            <div>
-              <button
-                className="btn btn-outline"
-                onClick={() => scrollToID("#contact")}
-              >
-                Contact
+            <div className="flex flex-col gap-7 items-center">
+              <button className="btn btn-outline" onClick={() => null}>
+                Resume
               </button>
+
+              <SocialLinks
+                onClose={onClose}
+                className="flex gap-4 lg:hidden text-brand-50 text-lg"
+              />
             </div>
           </div>
         </div>

@@ -30,13 +30,13 @@ export function AnimatedUnderline({
   };
 
   return (
-    <motion.span className={cx([className, "relative isolate"])}>
+    <motion.span className={cx([className, "relative isolate font-semibold"])}>
       {children}
       <motion.span
         variants={vars}
         className={cx([
-          "absolute bottom-[2px] left-0 w-full -z-10",
-          "bg-brand-50/30 rounded-sm",
+          "absolute bottom-[1px] left-0 w-full -z-10",
+          "bg-brand-100/50 rounded-sm",
           className,
         ])}
         style={{ height: h || 7 }}

@@ -1,5 +1,5 @@
 import BannerSVG from "./assets/banner.svg";
-import { AnimatedUnderline, SocialLinks } from "components";
+import { AnimatedUnderline } from "components";
 import { motion } from "framer-motion";
 import { scrollToID } from "lib/scrollToID";
 
@@ -14,15 +14,9 @@ export function Banner() {
         </h1>
 
         <motion.p className="text-lg group">
-          <AnimatedUnderline className="font-semibold">
-            Full-stack
-          </AnimatedUnderline>
+          <AnimatedUnderline>Full-stack</AnimatedUnderline>
           &nbsp;Developer
         </motion.p>
-
-        <div>
-          <SocialLinks className="flex flex-row gap-3 text-2xl text-brand-300" />
-        </div>
       </motion.div>
 
       <div className="flex items-center gap-3">
