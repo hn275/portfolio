@@ -4,8 +4,8 @@ import StudySpaceFinder from "./assets/ssf.png";
 import GoVikes from "./assets/goVikes.png";
 import { ProjectProps } from "./types";
 
-export const PROJECTS: ProjectProps[] = [
-  {
+export const PROJECTS: ProjectProps = {
+  collabify: {
     title: "Collabify",
     stacks: ["PostGreSQL", "Prisma", "Next.js", "Material UI"],
     github: null,
@@ -13,7 +13,7 @@ export const PROJECTS: ProjectProps[] = [
     imageSrc: Collabify,
     fromLeft: true,
   },
-  {
+  gradeTracker: {
     title: "GradeTracker",
     stacks: [
       "Go",
@@ -28,7 +28,7 @@ export const PROJECTS: ProjectProps[] = [
     imageSrc: GradeTracker,
     fromLeft: false,
   },
-  {
+  goVikes: {
     title: "Go-Vikes",
     stacks: ["Go", "Gin", "Docker"],
     github: "https://github.com/hn275/govikes",
@@ -36,7 +36,7 @@ export const PROJECTS: ProjectProps[] = [
     imageSrc: GoVikes,
     fromLeft: false,
   },
-  {
+  studySpaceFinder: {
     title: "Study Space Finder",
     stacks: ["Python", "FastAPI", "SQLite", "Docker", "TypeScript", "React.js"],
     github: "https://github.com/hn275/StudySpaceFinder",
@@ -44,4 +44,4 @@ export const PROJECTS: ProjectProps[] = [
     imageSrc: StudySpaceFinder,
     fromLeft: true,
   },
-];
+};

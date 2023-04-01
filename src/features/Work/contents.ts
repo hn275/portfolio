@@ -2,8 +2,8 @@ import { WorkProps } from "./types";
 import Collabify from "./assets/collabify_code.svg";
 import Telus from "./assets/telus_phone.svg";
 
-export const WORK: WorkProps[] = [
-  {
+export const WORK: WorkProps = {
+  collabify: {
     svg: Collabify,
     work: "Collabify (start-up)",
     title: "Team Lead",
@@ -17,7 +17,7 @@ export const WORK: WorkProps[] = [
       "Migrated database (MongoDB → PostGreSQL).",
     ],
   },
-  {
+  telus: {
     svg: Telus,
     work: "TELUS Retails LTD.",
     title: "Sales Representative",
@@ -32,4 +32,4 @@ export const WORK: WorkProps[] = [
       "Google Ambassador (2021 - 2022).",
     ],
   },
-];
+};

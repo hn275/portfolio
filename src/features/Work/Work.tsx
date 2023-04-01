@@ -1,9 +1,9 @@
-import { WorkProps } from "./types";
+import { Work as WorkType } from "./types";
 import { TbTriangle } from "react-icons/tb";
 import shortid from "shortid";
 import { motion, Variants } from "framer-motion";
 
-export function Work({ title, work, tasks, duration }: WorkProps) {
+export function Work({ title, work, tasks, duration }: WorkType) {
   const li: Variants = {
     hidden: { opacity: 0 },
     show: (i: number) => ({

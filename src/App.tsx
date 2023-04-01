@@ -22,8 +22,6 @@ import { FloatingSocials } from "features/FloatingSocials";
 function App() {
   const contactMeProps = useContactMe();
   const { success, error } = contactMeProps;
-  const [projectCollabify, gradeTracker, goVikes, spf] = PROJECTS;
-  const [workCollabify, telus] = WORK;
 
   return (
     <>
@@ -84,7 +82,7 @@ function App() {
           _count="01"
           className="flex flex-col gap-5"
         >
-          <ProjectCard {...projectCollabify}>
+          <ProjectCard {...PROJECTS.collabify}>
             <p>
               Collabify is an app for scheduling and event planning. It lets
               users share their availability and receive text notifications.
@@ -93,7 +91,7 @@ function App() {
             </p>
           </ProjectCard>
 
-          <ProjectCard {...gradeTracker}>
+          <ProjectCard {...PROJECTS.gradeTracker}>
             <p>
               Grade Tracker is a secure and user-friendly web app for students
               to log and track their grades. It has a built-in authentication
@@ -108,7 +106,7 @@ function App() {
             </div>
           </ProjectCard>
 
-          <ProjectCard {...spf}>
+          <ProjectCard {...PROJECTS.studySpaceFinder}>
             <p>
               This collaborative project helps students locate available
               classrooms on campus (University of Victoria.) I wrote the backend
@@ -125,7 +123,7 @@ function App() {
             </p>
           </ProjectCard>
 
-          <ProjectCard className="h-[350px]" {...goVikes}>
+          <ProjectCard {...PROJECTS.goVikes}>
             <p>
               This is a proxy server that expose University of Victoria's API
               (with permission), open to all developers/students to use.
@@ -142,7 +140,7 @@ function App() {
         >
           <section className="lg:grid grid-cols-[50%,1fr] gap-5 items-center">
             <SlideIn fromLeft>
-              <Work {...workCollabify} />
+              <Work {...WORK.collabify} />
             </SlideIn>
             <SlideIn>
               <img className="hidden lg:block" src={Collabify} />
@@ -154,7 +152,7 @@ function App() {
               <img className="max-h-80 hidden lg:block" src={Telus} />
             </SlideIn>
             <SlideIn className="lg:pl-14">
-              <Work {...telus} />
+              <Work {...WORK.telus} />
             </SlideIn>
           </section>
         </AnimatedSection>

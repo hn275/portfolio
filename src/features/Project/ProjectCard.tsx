@@ -1,4 +1,4 @@
-import { ProjectProps } from "./types";
+import { Project } from "./types";
 import cx from "classnames";
 import { BsGithub } from "react-icons/bs";
 import { MdOutlineComputer } from "react-icons/md";
@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { SlideIn } from "layout";
 import { AnimatedUnderline, Image } from "components";
 
-interface Props extends ProjectProps {
+interface Props extends Project {
   children: ReactNode;
   className?: string;
 }
@@ -29,27 +29,32 @@ export function ProjectCard(props: Props) {
       className={cx([
         "grid lg:grid-cols-[60%,1fr] relative",
         "shadow-lg shadow-black/30",
-        "lg:rounded-sm overflow-hidden",
+        "rounded-md overflow-hidden",
+        "border border-slate-900",
+        "h-max min-h-[400px] lg:min-h-max",
+        "mx-auto lg:w-[98%]",
         className,
       ])}
     >
       <div
         className={cx(
           "bg-gradient-to-r from-brand-50/70 to-slate-800",
-          "lg:p-3"
+          "lg:p-3",
+          "flex items-center"
         )}
       >
         <Image
           src={imageSrc}
-          className={cx("aspect-auto h-[480px] w-full lg:h-full object-cover")}
+          className={cx("rounded-sm", "h-full w-auto object-fit")}
         />
       </div>
       <motion.section
         className={cx([
-          "absolute h-full w-full lg:h-auto lg:relative",
+          "overflow-y-hidden",
+          "absolute top-0 left-0 bottom-0 right-0 lg:h-auto lg:relative",
           "flex flex-col gap-3 p-5",
           "bg-gradient-to-b from-slate-800/80 to-slate-800/100 lg:bg-slate-800",
-          "overflow-y-hidden",
+          "h-full",
         ])}
       >
         <motion.h2
