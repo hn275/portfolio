@@ -29,7 +29,7 @@ export function ProjectCard(props: Props) {
       className={cx([
         "grid lg:grid-cols-[60%,1fr] relative",
         "shadow-lg shadow-black/30",
-        "rounded-md overflow-hidden",
+        "lg:rounded-md overflow-hidden",
         "border border-slate-900",
         "h-max min-h-[400px] lg:min-h-max",
         "mx-auto lg:w-[98%]",
