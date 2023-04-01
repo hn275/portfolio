@@ -1,4 +1,3 @@
-import { ProjectImage } from "./ProjectImage";
 import { ProjectProps } from "./types";
 import cx from "classnames";
 import { BsGithub } from "react-icons/bs";
@@ -6,7 +5,7 @@ import { MdOutlineComputer } from "react-icons/md";
 import { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { SlideIn } from "layout";
-import { AnimatedUnderline } from "components";
+import { AnimatedUnderline, Image } from "components";
 
 interface Props extends ProjectProps {
   children: ReactNode;
@@ -28,26 +27,28 @@ export function ProjectCard(props: Props) {
     <SlideIn
       fromLeft={fromLeft}
       className={cx([
-        "lg:px-10 lg:gap-0",
-        "grid lg:grid-cols-[60%,1fr] relative rounded-md overflow-hidden",
+        "grid lg:grid-cols-[60%,1fr] relative",
+        "shadow-lg shadow-black/30",
+        "lg:rounded-sm overflow-hidden",
         className,
       ])}
     >
-      <ProjectImage
-        src={imageSrc}
-        className={cx([
-          "aspect-auto h-[480px] w-full lg:h-full object-cover rounded-lg lg:rounded-md",
-          "lg:rounded-tr-none lg:rounded-br-none",
-        ])}
-      />
+      <div
+        className={cx(
+          "bg-gradient-to-r from-brand-50/70 to-slate-800",
+          "lg:p-3"
+        )}
+      >
+        <Image
+          src={imageSrc}
+          className={cx("aspect-auto h-[480px] w-full lg:h-full object-cover")}
+        />
+      </div>
       <motion.section
         className={cx([
-          "absolute h-full w-full/2 lg:h-auto lg:relative",
-          "rounded-none lg:rounded-md",
+          "absolute h-full w-full lg:h-auto lg:relative",
           "flex flex-col gap-3 p-5",
-          "lg:rounded-tl-none lg:rounded-bl-none",
-          "bg-gradient-to-b from-slate-800/90 to-slate-800/100 lg:bg-slate-800",
-          "shadow-lg shadow-black/30",
+          "bg-gradient-to-b from-slate-800/80 to-slate-800/100 lg:bg-slate-800",
           "overflow-y-hidden",
         ])}
       >
