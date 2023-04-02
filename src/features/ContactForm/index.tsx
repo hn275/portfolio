@@ -79,10 +79,10 @@ export function ContactForm(props: Props) {
       </div>
 
       <button
-        className="btn btn-primary flex items-center gap-3 mx-auto mt-6"
+        className="btn btn-primary flex items-center gap-2 mx-auto mt-6"
         type="submit"
       >
-        Send&nbsp;
+        Send
         {isLoading ? <AiOutlineLoading className="animate-spin" /> : <MdSend />}
       </button>
     </form>

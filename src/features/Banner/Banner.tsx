@@ -21,7 +21,7 @@ export function Banner() {
 
       <div className="flex items-center gap-3">
         <div>
-          <a className="btn btn-primary" target="_blank">
+          <a className="btn btn-main" target="_blank">
             Resume
           </a>
         </div>

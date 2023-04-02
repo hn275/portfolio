@@ -14,7 +14,7 @@ export function TextInput(props: Props) {
       className={cx(
         "relative p-3",
         "my-3",
-        "border border-brand-300 rounded-lg"
+        "border border-brand-300 rounded-md"
       )}
     >
       <input

@@ -1,15 +1,11 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useState } from "react";
 
 export function useAutoHide(value: number) {
-  const ref = useRef<HTMLElement>(null);
+  const [hide, setHide] = useState<boolean>(true);
 
   useEffect(() => {
     const listener = () => {
-      const className = "-translate-y-[120%]";
-
-      window.scrollY < value
-        ? ref.current?.classList.add(className)
-        : ref.current?.classList.remove(className);
+      setHide(() => window.scrollY < value);
     };
 
     window.addEventListener("scroll", listener);
@@ -17,5 +13,5 @@ export function useAutoHide(value: number) {
     return () => window.removeEventListener("scroll", listener);
   }, [window.scrollY, value]);
 
-  return ref;
+  return hide;
 }

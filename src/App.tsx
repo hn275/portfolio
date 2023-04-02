@@ -27,17 +27,17 @@ function App() {
     <>
       <Nav
         className={cx([
-          "transition-smooth -translate-y-[120%]",
+          "transition-smooth",
           "sticky top-0 left-0 right-0",
-          "h-14 lg:h-24",
-          "bg-slate-900/70 shadow-lg shadow-black/10 backdrop-blur z-50 isolate",
+          "h-14 lg:h-24 bg-main",
+          "backdrop-blur z-50 isolate",
         ])}
       />
-      <main className="px-10 leading-relaxed overflow-x-hidden">
+      <main className="px-10 leading-relaxed overflow-x-hidden bg-main">
         {/* BANNER */}
         <AnimatedBanner
           className={cx([
-            "w-full h-[calc(100vh-3.5rem)] max-h-[800px] pb-12 md:pb-20",
+            "w-full h-[100vh] sticky top-0 max-h-[800px] pb-12 md:pb-20",
             "flex flex-col justify-center items-center gap-10",
           ])}
         >
@@ -83,7 +83,7 @@ function App() {
           className="flex flex-col gap-5"
         >
           <ProjectCard {...PROJECTS.collabify}>
-            <p>
+            <p className="text-main">
               Collabify is an app for scheduling and event planning. It lets
               users share their availability and receive text notifications.
               Private groups are available with password protection, and

@@ -3,17 +3,13 @@
 @tailwind utilities;
 
 html {
-  @apply bg-slate-900;
-  @apply text-slate-200;
-  @apply scroll-smooth;
-  @apply scroll-p-16 lg:scroll-p-28;
-  @apply overflow-x-hidden;
-  @apply outline-transparent;
+  @apply overflow-x-hidden outline-transparent;
 }
 
 main {
   @apply max-w-[1280px];
   @apply mx-auto;
+  @apply transition-colors duration-200;
 }
 
 @layer components {
@@ -39,19 +35,31 @@ main {
 }
 
 @layer utilities {
+  .text-main {
+    @apply text-gray-800 dark:text-slate-50;
+  }
+
+  .text-accent {
+    @apply text-brand-300 dark:text-brand-50;
+  }
+
+  .bg-main {
+    @apply bg-gray-50 dark:bg-slate-900;
+  }
+
   .btn {
-    @apply px-5 py-3;
-    @apply rounded-3xl;
+    @apply px-3 py-2;
+    @apply rounded-sm;
     @apply transition-smooth;
-    @apply font-semibold;
+    @apply font-[500] uppercase;
     @apply cursor-pointer;
   }
 
-  .btn-primary {
+  .btn-main {
     @apply bg-gradient-to-br from-brand-50 to-brand-300;
-    @apply px-[21px] py-[13px] border-none;
     @apply hover:brightness-125;
     @apply transition-smooth;
+    @apply text-gray-50 dark:text-slate-900;
   }
 
   .btn-outline {

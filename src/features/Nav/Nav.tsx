@@ -2,7 +2,7 @@ import cx from "classnames";
 import Logo from "./assets/logo.svg";
 import { CgMenuLeft } from "react-icons/cg";
 import { BsChevronLeft } from "react-icons/bs";
-import { useToggle } from "hooks";
+import { useTheme, useToggle } from "hooks";
 import { AnimatePresence, motion } from "framer-motion";
 import shortid from "shortid";
 import { HTMLAttributes } from "react";
@@ -13,7 +13,7 @@ import { SocialLinks } from "./SocialLinks";
 export function Nav(props: HTMLAttributes<HTMLElement>) {
   const { open, onOpen, onClose } = useToggle();
 
-  const ref = useAutoHide(350);
+  const hide = useAutoHide(350);
 
   function handleClick(id: string) {
     return () => {
@@ -21,6 +21,8 @@ export function Nav(props: HTMLAttributes<HTMLElement>) {
       onClose();
     };
   }
+
+  const { dark, toggleDarkMode } = useTheme();
 
   const links = [
     {
@@ -39,12 +41,18 @@ export function Nav(props: HTMLAttributes<HTMLElement>) {
 
   return (
     <>
-      <nav {...props} ref={ref}>
+      <nav
+        {...props}
+        className={cx(props.className, {
+          "shadow-md shadow-gray-400/10 dark:shadow-black/20": !hide,
+        })}
+      >
         <div
           className={cx([
-            "max-w-[1280px] mx-auto relative",
+            "transition-smooth max-w-[1280px] mx-auto relative",
             "flex items-center h-full lg:flex-row lg:justify-between",
             "lg:px-5",
+            { "-translate-y-[120%]": hide },
           ])}
         >
           <CgMenuLeft
@@ -128,6 +136,10 @@ export function Nav(props: HTMLAttributes<HTMLElement>) {
                 onClose={onClose}
                 className="flex gap-4 lg:hidden text-brand-50 text-lg"
               />
+
+              <button className="btn" onClick={toggleDarkMode}>
+                {dark ? "sun" : "moon"}
+              </button>
             </div>
           </div>
         </div>
