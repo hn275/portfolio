@@ -8,13 +8,10 @@ import { HTMLAttributes } from "react";
 export function DarkMode({ className }: HTMLAttributes<HTMLButtonElement>) {
   const { dark, toggleDarkMode } = useTheme();
 
-  const sunVar: Variants = {
-    hidden: { y: 30 },
-    show: { y: 0 },
-  };
-  const moonVar: Variants = {
+  const vars: Variants = {
     hidden: { y: -30 },
     show: { y: 0 },
+    exit: { y: 30 },
   };
 
   return (
@@ -33,23 +30,22 @@ export function DarkMode({ className }: HTMLAttributes<HTMLButtonElement>) {
         {dark ? (
           <motion.div
             key="sun"
-            variants={sunVar}
+            variants={vars}
             initial="hidden"
             animate="show"
-            exit="hidden"
-            className="relative"
+            exit="exit"
           >
             <FiSun />
           </motion.div>
         ) : (
           <motion.div
             key="moon"
-            variants={moonVar}
+            variants={vars}
             initial="hidden"
             animate="show"
-            exit="hidden"
+            exit="exit"
           >
-            <FaRegMoon />
+            <FaRegMoon className="text-brand-200" />
           </motion.div>
         )}
       </AnimatePresence>
