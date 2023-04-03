@@ -50,7 +50,7 @@ function App() {
           id="about"
           _title="About"
           _count="00"
-          className={cx("flex flex-col gap-9", " lg:px-20")}
+          className={cx("flex flex-col items-center gap-9", "lg:px-20")}
         >
           <section
             className={cx([

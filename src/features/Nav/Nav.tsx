@@ -10,6 +10,7 @@ import { useAutoHide } from "./useAutoHide";
 import { scrollToID } from "lib/scrollToID";
 import { SocialLinks } from "./SocialLinks";
 import { DarkMode } from "./DarkMode";
+import { Resume } from "features/Resume";
 
 export function Nav(props: HTMLAttributes<HTMLElement>) {
   const { open, onOpen, onClose } = useToggle();
@@ -130,9 +131,7 @@ export function Nav(props: HTMLAttributes<HTMLElement>) {
             </ul>
 
             <div className="flex flex-col lg:flex-row gap-7 lg:gap-2 items-center">
-              <button className="btn btn-outline" onClick={() => null}>
-                Resume
-              </button>
+              <Resume className="btn btn-outline" />
 
               <SocialLinks
                 onClose={onClose}

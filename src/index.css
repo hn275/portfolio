@@ -76,7 +76,7 @@ main {
 
   .btn-outline {
     @apply border border-brand-50 dark:border-brand-300 hover:brightness-110;
-    @apply text-brand-50 dark:text-brand-300 hover:brightness-125;
+    @apply text-brand-200 dark:text-brand-100 hover:brightness-125;
     @apply bg-transparent hover:bg-white/30 dark:hover:bg-brand-300/20;
     @apply hover:brightness-125;
     @apply shadow-md shadow-transparent hover:shadow-brand-50/10;

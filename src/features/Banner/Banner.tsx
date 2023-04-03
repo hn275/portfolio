@@ -2,6 +2,7 @@ import BannerSVG from "./assets/banner.svg";
 import { AnimatedUnderline } from "components";
 import { motion } from "framer-motion";
 import { scrollToID } from "lib/scrollToID";
+import { Resume } from "features/Resume";
 
 export function Banner() {
   return (
@@ -17,20 +18,13 @@ export function Banner() {
           <AnimatedUnderline>Full-stack</AnimatedUnderline>
           &nbsp;Developer
         </motion.p>
-      </motion.div>
-
-      <div className="flex items-center gap-3">
-        <div>
-          <a className="btn btn-main" target="_blank">
-            Resume
-          </a>
-        </div>
-        <div>
+        <div className="flex items-center gap-4">
+          <Resume className="btn btn-main" />
           <a className="btn btn-outline" onClick={() => scrollToID("#about")}>
             Portfolio
           </a>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }

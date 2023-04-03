@@ -26,10 +26,10 @@ export function TextInput(props: Props) {
       <label
         className={cx(
           "absolute top-0 left-2 -translate-y-1/2 rounded-full",
-          "text-brand-100/25 bg-main",
+          "text-brand-300/50 dark:text-brand-100/50 bg-main",
           "scale-75 px-2 cursor-text",
           "peer-placeholder-shown:top-1/2 peer-placeholder-shown:scale-100",
-          "peer-focus:top-0 peer-focus:scale-75 peer-focus:text-brand-100",
+          "peer-focus:top-0 peer-focus:scale-75 peer-focus:text-brand-300 dark:peer-focus:text-brand-100",
           "transition-all duration-200 origin-left"
         )}
         htmlFor={id}

@@ -56,8 +56,8 @@ export function ContactForm(props: Props) {
           htmlFor="message"
           className={cx([
             "absolute top-0 -translate-y-1/2",
-            "bg-main scale-75 px-3 text-brand-100/25",
-            "group-focus-within:text-brand-50",
+            "bg-main scale-75 px-3 text-brand-200/50 group-focus-within:text-brand-300",
+            "dark:text-brand-100/50 dark:group-focus-within:text-brand-100",
             "transition-smooth",
           ])}
         >
