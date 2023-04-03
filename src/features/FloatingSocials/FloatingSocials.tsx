@@ -37,8 +37,8 @@ interface LIProps {
 
 function Li({ text, node, href, onClick, order }: LIProps) {
   const vars: Variants = {
-    hidden: { x: "100%", opacity: 0 },
-    show: { x: 0, opacity: 1, transition: { delay: order! * 0.1 + 0.5 } },
+    hidden: { x: 50 },
+    show: { x: 0, transition: { delay: order! * 0.1 + 0.5 } },
     hover: { scale: 1.25 },
   };
 
@@ -54,7 +54,9 @@ function Li({ text, node, href, onClick, order }: LIProps) {
         href={href}
         target="_blank"
         className={cx(
-          "text-brand-50 dark:text-brand-300 relative text-2xl cursor-pointer"
+          "text-brand-50 dark:text-brand-300 text-2xl",
+          "relative cursor-pointer",
+          "hover:text-brand-300 dark:hover:text-brand-50"
         )}
         onClick={onClick}
         role={onClick ? "button" : "link"}
@@ -65,11 +67,11 @@ function Li({ text, node, href, onClick, order }: LIProps) {
         className={cx(
           "absolute right-8 bottom-1/2 translate-y-1/2",
           "transition-smooth break-keep w-max",
-          "text-[0.65em] text-brand-300 dark:text-slate-900",
+          "text-[0.65em] text-main",
           "font-semibold pointer-events-none",
           "opacity-0 group-hover:opacity-100",
           "scale-0 group-hover:scale-100 origin-right",
-          "bg-white dark:bg-brand-50/50 backdrop-blur-sm p-2 rounded-md"
+          "bg-white/70 dark:bg-brand-50/30 backdrop-blur-sm p-2 rounded-md"
         )}
       >
         {text}

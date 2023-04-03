@@ -35,8 +35,9 @@ export function AnimatedUnderline({
       <motion.span
         variants={vars}
         className={cx([
-          "absolute bottom-[1px] left-0 w-full -z-10",
-          "bg-brand-50/70 dark:bg-brand-200/50 rounded-sm",
+          "absolute bottom-[1px] left-0 w-full -z-10 rounded-sm",
+          "bg-gradient-to-br dark:from-brand-300/60 dark:to-brand-50/60",
+          "from-brand-100 to-brand-50/50",
           className,
         ])}
         style={{ height: h || 7 }}

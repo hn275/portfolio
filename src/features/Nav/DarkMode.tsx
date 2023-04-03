@@ -9,22 +9,23 @@ export function DarkMode({ className }: HTMLAttributes<HTMLButtonElement>) {
   const { dark, toggleDarkMode } = useTheme();
 
   const sunVar: Variants = {
-    hidden: { y: 30, scale: 0.5 },
-    show: { y: 0, scale: 1 },
+    hidden: { y: 30 },
+    show: { y: 0 },
   };
   const moonVar: Variants = {
-    hidden: { y: -30, scale: 0.5 },
-    show: { y: 0, scale: 1 },
+    hidden: { y: -30 },
+    show: { y: 0 },
   };
 
   return (
     <button
       onClick={toggleDarkMode}
       className={classNames(
-        "p-3 rounded-md relative overflow-hidden",
-        "bg-white dark:bg-brand-200 hover:bg-gray-100",
+        "p-[13px] rounded-md relative overflow-hidden",
+        "bg-white hover:bg-gray-100",
+        "dark:bg-brand-100",
         "text-brand-50 dark:text-slate-900",
-        "transition-smooth",
+        "transition-colors duration-300 delay-600",
         className
       )}
     >

@@ -31,7 +31,7 @@ export function ProjectCard(props: Props) {
         "shadow-main",
         "lg:rounded-md overflow-hidden",
         "h-max min-h-[400px] lg:min-h-max",
-        "mx-auto lg:w-[98%]",
+        "mx-auto lg:w-[98%] w-full",
         className,
       ])}
     >

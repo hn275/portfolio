@@ -63,7 +63,7 @@ export function Nav(props: HTMLAttributes<HTMLElement>) {
           <img
             src={Logo}
             alt="logo"
-            className={cx(["mx-auto w-14 lg:w-28 lg:mx-0"])}
+            className={cx(["mx-auto w-14 lg:w-16 lg:mx-0"])}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             role="button"
             aria-label="scroll-to-top"
@@ -130,8 +130,6 @@ export function Nav(props: HTMLAttributes<HTMLElement>) {
             </ul>
 
             <div className="flex flex-col lg:flex-row gap-7 lg:gap-2 items-center">
-              <DarkMode className="hidden lg:block" />
-
               <button className="btn btn-outline" onClick={() => null}>
                 Resume
               </button>
@@ -140,6 +138,7 @@ export function Nav(props: HTMLAttributes<HTMLElement>) {
                 onClose={onClose}
                 className="flex gap-4 lg:hidden text-brand-50 text-lg"
               />
+              <DarkMode className="hidden lg:block" />
             </div>
           </div>
         </div>

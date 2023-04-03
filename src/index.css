@@ -4,7 +4,7 @@
 
 html {
   @apply overflow-x-hidden outline-transparent;
-  @apply scroll-smooth;
+  @apply scroll-smooth scroll-p-16 lg:scroll-p-28;
 }
 
 main {
@@ -39,7 +39,7 @@ main {
   }
 
   .text-main {
-    @apply text-gray-700 dark:text-slate-50;
+    @apply text-slate-700 dark:text-slate-50;
   }
 
   .text-secondary {
@@ -71,6 +71,7 @@ main {
     @apply hover:brightness-125;
     @apply transition-smooth;
     @apply text-white dark:text-slate-900;
+    @apply px-[13px] py-[9px];
   }
 
   .btn-outline {
@@ -89,10 +90,11 @@ body::-webkit-scrollbar {
 }
 
 body::-webkit-scrollbar-track {
-  @apply bg-slate-800/30;
+  @apply bg-gray-200/40 dark:bg-slate-900/90;
 }
 
 body::-webkit-scrollbar-thumb {
-  @apply bg-slate-500/20 rounded-lg mx-3;
+  @apply bg-gray-300/50 dark:bg-slate-500/40 rounded-lg mx-3;
   @apply border border-slate-800/90;
+  @apply cursor-pointer;
 }

@@ -9,11 +9,11 @@ export function Banner() {
       <img src={BannerSVG} className="max-h-72" />
 
       <motion.div className="flex flex-col justify-center items-center gap-4 text-md">
-        <h1 className="font-bold text-brand-50 text-2xl md:text-5xl">
+        <h1 className="font-bold text-brand-200 dark:text-brand-50 text-2xl md:text-5xl">
           Hal Nguyen
         </h1>
 
-        <motion.p className="text-lg group">
+        <motion.p className="text-lg group text-main">
           <AnimatedUnderline>Full-stack</AnimatedUnderline>
           &nbsp;Developer
         </motion.p>

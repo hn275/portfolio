@@ -68,7 +68,7 @@ function App() {
               transition: { delay: 0.4 },
             }}
             viewport={{ once: true }}
-            className="border-brand-100/50 self-center"
+            className="border-brand-300 dark:border-brand-100/50 self-center"
           />
 
           <section className="flex flex-col gap-10">
