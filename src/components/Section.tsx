@@ -17,9 +17,9 @@ export function AnimatedSection(props: Props) {
         viewport={{ once: true, amount: "all" }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
-        className="text-4xl font-mono text-brand-50 mb-4"
+        className="text-4xl font-mono text-accent mb-4"
       >
-        <span className="text-2xl text-brand-300">{_count}</span>.&nbsp;{_title}
+        <span className="text-2xl text-secondary">{_count}</span>.&nbsp;{_title}
       </motion.h2>
       <div className={className}>{children}</div>
     </section>

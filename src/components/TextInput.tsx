@@ -14,7 +14,7 @@ export function TextInput(props: Props) {
       className={cx(
         "relative p-3",
         "my-3",
-        "border border-brand-300 rounded-md"
+        "border border-brand-50 dark:border-brand-300 rounded-md"
       )}
     >
       <input
@@ -26,7 +26,7 @@ export function TextInput(props: Props) {
       <label
         className={cx(
           "absolute top-0 left-2 -translate-y-1/2 rounded-full",
-          "text-brand-100/25 bg-slate-900",
+          "text-brand-100/25 bg-main",
           "scale-75 px-2 cursor-text",
           "peer-placeholder-shown:top-1/2 peer-placeholder-shown:scale-100",
           "peer-focus:top-0 peer-focus:scale-75 peer-focus:text-brand-100",

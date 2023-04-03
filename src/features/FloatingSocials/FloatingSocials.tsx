@@ -53,7 +53,9 @@ function Li({ text, node, href, onClick, order }: LIProps) {
       <a
         href={href}
         target="_blank"
-        className={cx("text-brand-300 relative text-2xl cursor-pointer")}
+        className={cx(
+          "text-brand-50 dark:text-brand-300 relative text-2xl cursor-pointer"
+        )}
         onClick={onClick}
         role={onClick ? "button" : "link"}
       >
@@ -63,10 +65,11 @@ function Li({ text, node, href, onClick, order }: LIProps) {
         className={cx(
           "absolute right-8 bottom-1/2 translate-y-1/2",
           "transition-smooth break-keep w-max",
-          "text-[0.65em] text-slate-900 font-mono font-semibold pointer-events-none",
+          "text-[0.65em] text-brand-300 dark:text-slate-900",
+          "font-semibold pointer-events-none",
           "opacity-0 group-hover:opacity-100",
           "scale-0 group-hover:scale-100 origin-right",
-          "bg-brand-50/50 backdrop-blur-sm p-2 rounded-md"
+          "bg-white dark:bg-brand-50/50 backdrop-blur-sm p-2 rounded-md"
         )}
       >
         {text}

@@ -16,7 +16,7 @@ export function Work({ title, work, tasks, duration }: WorkType) {
     <>
       <div className="flex gap-2 text-base md:text-lg">
         <h3 className="font-semibold">{title}</h3>
-        <h4 className="font-semibold text-brand-50">@ {work}</h4>
+        <h4 className="font-semibold text-accent">@ {work}</h4>
       </div>
 
       <p className="text-sm text-slate-500 py-2">{duration}</p>
@@ -31,7 +31,7 @@ export function Work({ title, work, tasks, duration }: WorkType) {
             className="grid grid-cols-[20px,1fr] gap-2"
           >
             <TbTriangle className="text-sm text-brand-50 relative top-[5px] rotate-90" />
-            <p className="text-gray-100">{task}</p>
+            <p className="text-main">{task}</p>
           </motion.li>
         ))}
       </motion.ul>

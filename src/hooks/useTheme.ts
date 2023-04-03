@@ -3,7 +3,9 @@ import { useEffect, useState } from "react";
 const THEME = "darkMode";
 
 export function useTheme() {
-  const [dark, setDark] = useState<boolean>(true);
+  const ls = window.localStorage.getItem(THEME);
+  const init = ls ? JSON.parse(ls) : true;
+  const [dark, setDark] = useState<boolean>(init);
 
   useEffect(() => {
     const ls = window.localStorage.getItem(THEME);

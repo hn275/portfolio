@@ -28,9 +28,8 @@ export function ProjectCard(props: Props) {
       fromLeft={fromLeft}
       className={cx([
         "grid lg:grid-cols-[60%,1fr] relative",
-        "shadow-lg shadow-black/30",
+        "shadow-main",
         "lg:rounded-md overflow-hidden",
-        "border border-slate-900",
         "h-max min-h-[400px] lg:min-h-max",
         "mx-auto lg:w-[98%]",
         className,
@@ -38,7 +37,7 @@ export function ProjectCard(props: Props) {
     >
       <div
         className={cx(
-          "bg-gradient-to-r from-brand-50/70 to-slate-800",
+          "bg-white dark:bg-gradient-to-r from-brand-50/70 to-slate-800",
           "lg:p-3",
           "flex items-center"
         )}
@@ -48,18 +47,19 @@ export function ProjectCard(props: Props) {
           className={cx("rounded-sm", "h-full w-auto object-fit")}
         />
       </div>
+
       <motion.section
         className={cx([
           "overflow-y-hidden",
           "absolute top-0 left-0 bottom-0 right-0 lg:h-auto lg:relative",
           "flex flex-col gap-3 p-5",
-          "bg-gradient-to-b from-slate-800/80 to-slate-800/100 lg:bg-slate-800",
+          "dark:bg-gradient-to-b from-slate-800/90 to-slate-800/100 bg-white dark:lg:bg-slate-800",
           "h-full",
         ])}
       >
         <motion.h2
           className={cx([
-            "text-white text-lg md:text-xl relative w-max isolate",
+            "text-main text-lg md:text-xl relative w-max isolate",
           ])}
         >
           <AnimatedUnderline h={9}>{title}</AnimatedUnderline>
@@ -67,7 +67,7 @@ export function ProjectCard(props: Props) {
 
         <p className="text-sm text-slate-400">{stacks.join(", ")}</p>
 
-        <div className="flex flex-col gap-1 text-slate-300 overflow-y-hidden overflow-x-hidden h-full">
+        <div className="flex flex-col gap-1 text-main overflow-y-hidden overflow-x-hidden h-full">
           {children}
         </div>
 

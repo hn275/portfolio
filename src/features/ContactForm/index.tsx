@@ -56,7 +56,7 @@ export function ContactForm(props: Props) {
           htmlFor="message"
           className={cx([
             "absolute top-0 -translate-y-1/2",
-            "bg-slate-900 scale-75 px-3 text-brand-100/25",
+            "bg-main scale-75 px-3 text-brand-100/25",
             "group-focus-within:text-brand-50",
             "transition-smooth",
           ])}
@@ -66,9 +66,9 @@ export function ContactForm(props: Props) {
         <textarea
           id="message"
           className={cx([
-            "peer w-full text-gray-50 outline-none",
+            "peer w-full text-main outline-none",
             "bg-transparent p-3 min-h-[8rem]",
-            "border border-brand-300 rounded-lg",
+            "border border-brand-50 dark:border-brand-300 rounded-md",
             "placeholder:text-brand-100/25",
           ])}
           placeholder="This project is awesome..."
@@ -79,7 +79,7 @@ export function ContactForm(props: Props) {
       </div>
 
       <button
-        className="btn btn-primary flex items-center gap-2 mx-auto mt-6"
+        className="btn btn-main flex items-center gap-2 mx-auto mt-6"
         type="submit"
       >
         Send

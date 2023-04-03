@@ -2,13 +2,14 @@ import cx from "classnames";
 import Logo from "./assets/logo.svg";
 import { CgMenuLeft } from "react-icons/cg";
 import { BsChevronLeft } from "react-icons/bs";
-import { useTheme, useToggle } from "hooks";
+import { useToggle } from "hooks";
 import { AnimatePresence, motion } from "framer-motion";
 import shortid from "shortid";
 import { HTMLAttributes } from "react";
 import { useAutoHide } from "./useAutoHide";
 import { scrollToID } from "lib/scrollToID";
 import { SocialLinks } from "./SocialLinks";
+import { DarkMode } from "./DarkMode";
 
 export function Nav(props: HTMLAttributes<HTMLElement>) {
   const { open, onOpen, onClose } = useToggle();
@@ -21,8 +22,6 @@ export function Nav(props: HTMLAttributes<HTMLElement>) {
       onClose();
     };
   }
-
-  const { dark, toggleDarkMode } = useTheme();
 
   const links = [
     {
@@ -43,8 +42,9 @@ export function Nav(props: HTMLAttributes<HTMLElement>) {
     <>
       <nav
         {...props}
-        className={cx(props.className, {
-          "shadow-md shadow-gray-400/10 dark:shadow-black/20": !hide,
+        className={cx(props.className, "bg-main -translate-y-[120%]", {
+          "shadow-md shadow-gray-400/10 dark:shadow-black/20 translate-y-0":
+            !hide,
         })}
       >
         <div
@@ -52,11 +52,10 @@ export function Nav(props: HTMLAttributes<HTMLElement>) {
             "transition-smooth max-w-[1280px] mx-auto relative",
             "flex items-center h-full lg:flex-row lg:justify-between",
             "lg:px-5",
-            { "-translate-y-[120%]": hide },
           ])}
         >
           <CgMenuLeft
-            className="w-auto h-6 lg:hidden ml-3 text-gray-50 absolute left-2 top-1/2 -translate-y-1/2"
+            className="w-auto h-6 lg:hidden ml-3 text-slate-500 dark:text-gray-50 absolute left-2 top-1/2 -translate-y-1/2"
             role="button"
             onClick={onOpen}
           />
@@ -77,7 +76,10 @@ export function Nav(props: HTMLAttributes<HTMLElement>) {
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
                 id="overlay"
-                className="bg-gray-900/80 absolute top-0 left-0 w-[100vw] h-[100vh] lg:hidden"
+                className={cx(
+                  "bg-gray-600/10 dark:bg-gray-900/80",
+                  "absolute top-0 left-0 w-[100vw] h-[100vh] lg:hidden"
+                )}
                 onClick={onClose}
               />
             )}
@@ -93,12 +95,12 @@ export function Nav(props: HTMLAttributes<HTMLElement>) {
               "w-3/4 md:w-1/2 lg:w-max",
               "p-5 pb-10 pl-10 md:pl-5 lg:px-0",
               "flex flex-col items-center gap-10",
-              "h-[100vh] lg:h-max z-50 bg-gray-800",
+              "h-[100vh] lg:h-max z-50 bg-white dark:bg-slate-800 dark:lg:bg-transparent",
               "lg:mt-6 lg:flex lg:flex-row",
             ])}
           >
             <BsChevronLeft
-              className="lg:hidden self-end"
+              className="lg:hidden self-end text-slate-700 dark:text-white"
               role="button"
               onClick={onClose}
             />
@@ -106,13 +108,13 @@ export function Nav(props: HTMLAttributes<HTMLElement>) {
             <ul className="flex flex-col lg:flex-row gap-5 grow">
               {links.map(({ text, handleClick }, index) => (
                 <li key={shortid.generate()} className="relative">
-                  <span className="font-mono text-brand-50">
+                  <span className="font-mono text-secondary">
                     {index.toString().padStart(2, "0")}.&nbsp;
                   </span>
 
                   <button
                     onClick={handleClick}
-                    className="relative text-gray-200 font-mono font-semibold group"
+                    className="relative font-mono font-semibold group text-accent"
                   >
                     {text}
                     <span
@@ -127,7 +129,9 @@ export function Nav(props: HTMLAttributes<HTMLElement>) {
               ))}
             </ul>
 
-            <div className="flex flex-col gap-7 items-center">
+            <div className="flex flex-col lg:flex-row gap-7 lg:gap-2 items-center">
+              <DarkMode className="hidden lg:block" />
+
               <button className="btn btn-outline" onClick={() => null}>
                 Resume
               </button>
@@ -136,10 +140,6 @@ export function Nav(props: HTMLAttributes<HTMLElement>) {
                 onClose={onClose}
                 className="flex gap-4 lg:hidden text-brand-50 text-lg"
               />
-
-              <button className="btn" onClick={toggleDarkMode}>
-                {dark ? "sun" : "moon"}
-              </button>
             </div>
           </div>
         </div>

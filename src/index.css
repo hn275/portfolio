@@ -4,6 +4,7 @@
 
 html {
   @apply overflow-x-hidden outline-transparent;
+  @apply scroll-smooth;
 }
 
 main {
@@ -12,17 +13,13 @@ main {
   @apply transition-colors duration-200;
 }
 
-@layer components {
-  .transition-smooth {
-    @apply transition-all duration-200;
+@layer utilities {
+  .shadow-main {
+    @apply shadow-lg shadow-gray-500/10 dark:shadow-black/30;
   }
 
-  .link-icon {
-    @apply rounded-full p-2 text-sm;
-    @apply bg-brand-50 lg:bg-slate-900 lg:hover:bg-brand-50;
-    @apply text-slate-900 lg:text-white lg:hover:text-slate-900;
-    @apply grid place-items-center;
-    @apply transition-smooth;
+  .transition-smooth {
+    @apply transition-all duration-200;
   }
 
   .underline-accent {
@@ -32,11 +29,21 @@ main {
     @apply rounded-sm;
     @apply -z-10;
   }
-}
 
-@layer utilities {
+  .link-icon {
+    @apply rounded-full p-2 text-sm;
+    @apply bg-main hover:bg-brand-50/70 dark:bg-brand-50 dark:lg:bg-slate-900 dark:lg:hover:bg-brand-50;
+    @apply hover:text-white dark:text-slate-900 dark:lg:text-white dark:lg:hover:text-slate-900;
+    @apply grid place-items-center;
+    @apply transition-smooth;
+  }
+
   .text-main {
-    @apply text-gray-800 dark:text-slate-50;
+    @apply text-gray-700 dark:text-slate-50;
+  }
+
+  .text-secondary {
+    @apply text-brand-50/90 dark:text-brand-300;
   }
 
   .text-accent {
@@ -47,25 +54,29 @@ main {
     @apply bg-gray-50 dark:bg-slate-900;
   }
 
+  .bg-secondary {
+    @apply bg-white dark:bg-slate-800;
+  }
+
   .btn {
     @apply px-3 py-2;
-    @apply rounded-sm;
+    @apply rounded-md;
     @apply transition-smooth;
     @apply font-[500] uppercase;
     @apply cursor-pointer;
   }
 
   .btn-main {
-    @apply bg-gradient-to-br from-brand-50 to-brand-300;
+    @apply bg-gradient-to-br from-brand-50 to-brand-200 dark:from-brand-200 dark:to-brand-50;
     @apply hover:brightness-125;
     @apply transition-smooth;
-    @apply text-gray-50 dark:text-slate-900;
+    @apply text-white dark:text-slate-900;
   }
 
   .btn-outline {
-    @apply border border-brand-300 hover:border-brand-50;
-    @apply text-brand-50 hover:text-brand-50;
-    @apply bg-transparent hover:bg-brand-300/20;
+    @apply border border-brand-50 dark:border-brand-300 hover:brightness-110;
+    @apply text-brand-50 dark:text-brand-300 hover:brightness-125;
+    @apply bg-transparent hover:bg-white/30 dark:hover:bg-brand-300/20;
     @apply hover:brightness-125;
     @apply shadow-md shadow-transparent hover:shadow-brand-50/10;
   }
