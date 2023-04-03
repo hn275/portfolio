@@ -12,7 +12,6 @@ module.exports = {
         "brand-100": "#6587E4",
         "brand-200": "#4463B9",
         "brand-300": "#385593",
-        "fg-dim": "#94a3b8",
       },
     },
   },

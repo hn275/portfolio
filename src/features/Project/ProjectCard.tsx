@@ -6,6 +6,7 @@ import { ReactNode } from "react";
 import { motion } from "framer-motion";
 import { SlideIn } from "layout";
 import { AnimatedUnderline, Image } from "components";
+import { Link } from "./Link";
 
 interface Props extends Project {
   children: ReactNode;
@@ -37,14 +38,14 @@ export function ProjectCard(props: Props) {
     >
       <div
         className={cx(
-          "bg-white dark:bg-gradient-to-r from-brand-50/70 to-slate-800",
+          "bg-white dark:bg-slate-800",
           "lg:p-3",
           "flex items-center"
         )}
       >
         <Image
           src={imageSrc}
-          className={cx("rounded-sm", "h-full w-auto object-fit")}
+          className={cx("rounded-sm", "h-full w-auto object-fit", "bg-grad")}
         />
       </div>
 
@@ -73,14 +74,14 @@ export function ProjectCard(props: Props) {
 
         <div className="flex gap-3 items-center justify-end">
           {github && (
-            <a className="link-icon" href={github} target="_blank">
+            <Link href={github} target="_blank">
               <BsGithub title={github} className="" />
-            </a>
+            </Link>
           )}
           {liveSite && (
-            <a className="link-icon" href={liveSite} target="_blank">
+            <Link href={liveSite} target="_blank">
               <MdOutlineComputer title={liveSite} className="" />
-            </a>
+            </Link>
           )}
         </div>
       </motion.section>

@@ -22,22 +22,6 @@ main {
     @apply transition-all duration-200;
   }
 
-  .underline-accent {
-    @apply absolute bottom-0 left-0;
-    @apply h-2 w-full;
-    @apply bg-brand-50/40;
-    @apply rounded-sm;
-    @apply -z-10;
-  }
-
-  .link-icon {
-    @apply rounded-full p-2 text-sm;
-    @apply bg-main hover:bg-brand-50/70 dark:bg-brand-50 dark:lg:bg-slate-900 dark:lg:hover:bg-brand-50;
-    @apply hover:text-white dark:text-slate-900 dark:lg:text-white dark:lg:hover:text-slate-900;
-    @apply grid place-items-center;
-    @apply transition-smooth;
-  }
-
   .text-main {
     @apply text-slate-700 dark:text-slate-50;
   }
@@ -51,11 +35,15 @@ main {
   }
 
   .bg-main {
-    @apply bg-gray-50 dark:bg-slate-900;
+    @apply bg-slate-50 dark:bg-slate-900;
   }
 
   .bg-secondary {
     @apply bg-white dark:bg-slate-800;
+  }
+
+  .bg-grad {
+    @apply bg-gradient-to-br from-brand-200 to-brand-50 dark:from-brand-50 dark:to-brand-200;
   }
 
   .btn {
