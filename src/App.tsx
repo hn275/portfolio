@@ -71,7 +71,7 @@ function App() {
             className="border-brand-300 dark:border-brand-100/50 self-center"
           />
 
-          <section className="flex flex-col gap-10">
+          <section className="grid md:grid-cols-3 gap-9 justify-items-center w-full">
             <Skills />
           </section>
         </AnimatedSection>

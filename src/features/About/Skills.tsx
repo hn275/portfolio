@@ -1,100 +1,59 @@
 import cx from "classnames";
 import { AnimatedUnderline } from "components";
-import { motion } from "framer-motion";
 import { FadeIn } from "layout";
 import shortid from "shortid";
+import { motion } from "framer-motion";
 
 export function Skills() {
   const skills = [
     {
-      title: "Languages",
+      name: "Languages",
+      stacks: ["Go", "TypeScript", "JavaScript", "Python", "C++", "Rust"],
+    },
+    {
+      name: "Technologies",
       stacks: [
-        {
-          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/go/go-original-wordmark.svg",
-          label: "Go (Golang)",
-        },
-        {
-          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
-          label: "TypeScript",
-        },
-        {
-          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
-          label: "JavaScript",
-        },
-        {
-          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
-          label: "Python",
-        },
+        "PostGreSQL",
+        "SQLite",
+        "Docker",
+        "Node.js",
+        "React.js",
+        "Next.js",
+        "TailwindCSS",
       ],
     },
     {
-      title: "Technologies",
-      stacks: [
-        {
-          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-plain.svg",
-          label: "PostGreSQL",
-        },
-        {
-          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg",
-          label: "SQLite",
-        },
-        {
-          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-plain.svg",
-          label: "Docker",
-        },
-        {
-          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-          label: "React.js",
-        },
-        {
-          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg",
-          label: "TailwindCSS",
-        },
-        {
-          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-plain.svg",
-          label: "Node.js",
-        },
-      ],
-    },
-    {
-      title: "Tools",
-      stacks: [
-        {
-          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
-          label: "Git",
-        },
-        {
-          src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vim/vim-plain.svg",
-          label: "Vim/NeoVim",
-        },
-      ],
+      name: "Tools",
+      stacks: ["Git/GitHub", "Vim/NeoVim"],
     },
   ];
 
   return (
     <>
-      {skills.map(({ title, stacks }) => (
-        <FadeIn key={shortid.generate()}>
-          <motion.section>
-            <motion.h2 className="text-xl mb-5">
-              <AnimatedUnderline>{title}</AnimatedUnderline>
-            </motion.h2>
-            <motion.ul
-              className={cx(
-                "grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-5 place-items-center"
-              )}
-            >
-              {stacks.map(({ label, src }) => (
-                <motion.li
-                  key={shortid.generate()}
-                  className="flex flex-col items-center gap-3"
+      {skills.map(({ name, stacks }, index) => (
+        <FadeIn
+          delay={index * 0.2}
+          key={shortid.generate()}
+          amount={0.7}
+          className={cx("w-full", "flex flex-col gap-5")}
+        >
+          <motion.h3 className="font-semibold text-xl text-accent">
+            <AnimatedUnderline>{name}</AnimatedUnderline>
+          </motion.h3>
+
+          <ul className={cx("flex flex-wrap gap-2")}>
+            {stacks.map((stack) => (
+              <li key={shortid.generate()}>
+                <p
+                  className={cx(
+                    "py-2 px-3 bg-white dark:bg-slate-800 rounded-md text-slate-500 dark:text-brand-50"
+                  )}
                 >
-                  <img src={src} alt={label} className="w-20 md:w-16 lg:w-20" />
-                  <p className="text-sm text-slate-500">{label}</p>
-                </motion.li>
-              ))}
-            </motion.ul>
-          </motion.section>
+                  {stack}
+                </p>
+              </li>
+            ))}
+          </ul>
         </FadeIn>
       ))}
     </>
