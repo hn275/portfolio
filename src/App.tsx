@@ -155,6 +155,7 @@ function App() {
           </section>
         </AnimatedSection>
 
+        {/* CONTACT ME */}
         <FadeIn>
           <motion.section
             id="contact"
@@ -165,7 +166,7 @@ function App() {
             </h2>
             <p>
               You&apos;ve made it this far, might as well&nbsp;
-              <AnimatedUnderline className="font-semibold">
+              <AnimatedUnderline className="font-semibold text-accent">
                 say hello
               </AnimatedUnderline>
               .
