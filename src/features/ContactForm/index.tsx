@@ -69,7 +69,8 @@ export function ContactForm(props: Props) {
             "peer w-full text-main outline-none",
             "bg-transparent p-3 min-h-[8rem]",
             "border border-brand-50 dark:border-brand-300 rounded-md",
-            "placeholder:text-brand-100/25",
+            "placeholder:text-brand-300/50",
+            "dark:placeholder:text-brand-100/50",
           ])}
           placeholder="This project is awesome..."
           value={message}
