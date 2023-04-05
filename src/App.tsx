@@ -166,7 +166,7 @@ function App() {
             </h2>
             <p>
               You&apos;ve made it this far, might as well&nbsp;
-              <AnimatedUnderline className="font-semibold text-accent">
+              <AnimatedUnderline className="font-semibold">
                 say hello
               </AnimatedUnderline>
               .

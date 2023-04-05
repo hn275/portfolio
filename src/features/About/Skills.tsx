@@ -32,12 +32,12 @@ export function Skills() {
     <>
       {skills.map(({ name, stacks }, index) => (
         <FadeIn
-          delay={index * 0.2}
+          delay={(index + 0.2) * 0.2}
           key={shortid.generate()}
           amount={0.7}
           className={cx("w-full", "flex flex-col gap-5")}
         >
-          <motion.h3 className="font-semibold text-xl text-accent">
+          <motion.h3 className="font-semibold text-xl">
             <AnimatedUnderline>{name}</AnimatedUnderline>
           </motion.h3>
 
@@ -46,7 +46,9 @@ export function Skills() {
               <li key={shortid.generate()}>
                 <p
                   className={cx(
-                    "py-2 px-3 bg-white dark:bg-slate-800 rounded-md text-slate-500 dark:text-brand-50"
+                    "py-2 px-3 rounded-md text-sm",
+                    "bg-white dark:bg-slate-800 text-slate-500 dark:text-brand-50",
+                    "shadow-main"
                   )}
                 >
                   {stack}
