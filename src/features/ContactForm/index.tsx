@@ -80,7 +80,7 @@ export function ContactForm(props: Props) {
       </div>
 
       <button
-        className="btn btn-main flex items-center gap-2 mx-auto mt-6"
+        className="btn btn-main flex items-center gap-2 mx-auto mt-6 shadow-main"
         type="submit"
       >
         Send

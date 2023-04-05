@@ -47,6 +47,7 @@ export function CopyToClipboard({ value, className }: Props) {
               "bg-green-300 py-2 px-3",
               "rounded-xl text-sm text-slate-900",
               "origin-center z-50",
+              "font-roboto",
             ])}
           >
             Copied!

@@ -67,11 +67,11 @@ function Li({ text, node, href, onClick, order }: LIProps) {
         className={cx(
           "absolute right-8 bottom-1/2 translate-y-1/2",
           "transition-smooth break-keep w-max",
-          "text-[0.65em] text-main",
+          "text-[0.65em] text-accent shadow-main",
           "font-semibold pointer-events-none",
           "opacity-0 group-hover:opacity-100",
           "scale-0 group-hover:scale-100 origin-right",
-          "bg-white/70 dark:bg-brand-50/30 backdrop-blur-sm p-2 rounded-md"
+          "bg-white dark:bg-slate-700/80 backdrop-blur-sm p-2 rounded-md"
         )}
       >
         {text}
