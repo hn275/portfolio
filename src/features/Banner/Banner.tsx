@@ -19,7 +19,7 @@ export function Banner() {
           &nbsp;Developer
         </motion.p>
         <div className="flex items-center gap-4">
-          <Resume className="btn btn-main" />
+          <Resume className="btn btn-main shadow-main" />
           <a className="btn btn-outline" onClick={() => scrollToID("#about")}>
             Portfolio
           </a>

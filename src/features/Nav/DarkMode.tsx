@@ -19,10 +19,11 @@ export function DarkMode({ className }: HTMLAttributes<HTMLButtonElement>) {
       onClick={toggleDarkMode}
       className={classNames(
         "p-[13px] rounded-md relative overflow-hidden",
-        "bg-white hover:bg-gray-100",
-        "dark:bg-brand-100",
+        "bg-white hover:bg-slate-100",
+        "dark:bg-brand-100 dark:hover:bg-brand-50",
         "text-brand-50 dark:text-slate-900",
         "transition-colors duration-300 delay-600",
+        "shadow-main",
         className
       )}
     >

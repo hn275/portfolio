@@ -19,7 +19,7 @@ export function Nav(props: HTMLAttributes<HTMLElement>) {
 
   function handleClick(id: string) {
     return () => {
-      scrollToID(id);
+      scrollToID(id)();
       onClose();
     };
   }
