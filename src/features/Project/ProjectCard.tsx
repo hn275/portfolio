@@ -45,7 +45,7 @@ export function ProjectCard(props: Props) {
       >
         <Image
           src={imageSrc}
-          className={cx("rounded-sm", "h-full w-auto object-fit", "bg-grad")}
+          className={cx("rounded-sm", "h-full w-auto object-fit")}
         />
       </div>
 
