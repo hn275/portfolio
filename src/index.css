@@ -31,7 +31,7 @@ main {
   }
 
   .text-accent {
-    @apply text-brand-300 dark:text-brand-50;
+    @apply text-brand-200 dark:text-brand-50;
   }
 
   .bg-main {
