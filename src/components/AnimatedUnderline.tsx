@@ -37,8 +37,7 @@ export function AnimatedUnderline({
         variants={vars}
         className={cx([
           "absolute bottom-[1px] left-0 w-full -z-10 rounded-sm",
-          "bg-gradient-to-br dark:from-brand-300/80 dark:to-brand-50/80",
-          "from-brand-100/50 to-brand-50/50",
+          "bg-brand-50/50 dark:bg-brand-300/70",
           className,
         ])}
         style={{ height: h || 7 }}
