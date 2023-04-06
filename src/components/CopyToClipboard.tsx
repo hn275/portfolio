@@ -45,7 +45,7 @@ export function CopyToClipboard({ value, className }: Props) {
             className={cx([
               "absolute -right-4 font-[Roboto]",
               "bg-green-300 py-2 px-3",
-              "rounded-xl text-sm text-slate-900",
+              "rounded-xl text-sm text-accent",
               "origin-center z-50",
               "font-roboto",
             ])}
