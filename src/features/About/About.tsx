@@ -22,11 +22,10 @@ export function About() {
         </motion.p>
 
         <p>
-          While I&apos;m an undergrad student in the department of Computer
-          Science at University of Victoria, my web development skills are
-          self-taught, I started with FreeCodeCamp for the basic of HTML, CSS,
-          and JavaScript, then quickly took to the internet for its infinite
-          wisdom and learning materials.
+          While I enjoy being an undergrad student in the department of Computer
+          Science at University of Victoria, my web development skills are&nbsp;
+          <span className="italic">self-taught</span>, through personal and
+          collaborative projects, and through countless debugging sessions.
         </p>
 
         <p>
