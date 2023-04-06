@@ -161,7 +161,7 @@ function App() {
             id="contact"
             className="mt-32 mb-10 flex flex-col justify-center items-center gap-5 text-center"
           >
-            <h2 className="text-2xl text-brand-50">
+            <h2 className="text-2xl text-accent">
               Thanks for seeing this through!
             </h2>
             <p>
