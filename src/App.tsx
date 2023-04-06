@@ -98,7 +98,7 @@ function App() {
               to log and track their grades. It has a built-in authentication
               system, here are the mock credentials.
             </p>
-            <div className="flex flex-col items-center lg:items-start gap-2 text-brand-50">
+            <div className="flex flex-col lg:flex-row lg:items-center gap-2 text-accent">
               <CopyToClipboard value="email@email.com" className="bg-main" />
               <CopyToClipboard value="password" className="bg-main" />
             </div>
@@ -109,7 +109,7 @@ function App() {
               This collaborative project helps students locate available
               classrooms on campus (University of Victoria.) I wrote the backend
               for this project, and as we don&apos;t have direct access to UVic
-              database, a lot of work has been put in to&nbsp;
+              database, I&apos;ve authored a lot of code to&nbsp;
               <a
                 className="italic hover:underline"
                 href="https://github.com/hn275/StudySpaceFinder/blob/main/db/get_data.py"
