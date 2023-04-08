@@ -31,7 +31,7 @@ export function ProjectCard(props: Props) {
         "grid lg:grid-cols-[60%,1fr] relative",
         "shadow-main",
         "lg:rounded-md overflow-hidden",
-        "h-max min-h-[500px] lg:min-h-max",
+        "h-max min-h-[400px] lg:min-h-max",
         "mx-auto lg:w-[98%] w-full",
         className,
       ])}
