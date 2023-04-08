@@ -5,9 +5,9 @@ export function AnimatedPage() {
   const { pathname } = useLocation();
 
   const vars: Variants = {
-    hidden: { x: "-100%" },
-    show: { x: 0 },
-    exit: { x: "100%" },
+    hidden: { opacity: 0, y: -30 },
+    show: { opacity: 1, y: 0 },
+    exit: { opacity: 0 },
   };
 
   return (
@@ -17,7 +17,7 @@ export function AnimatedPage() {
       initial="hidden"
       animate="show"
       exit="exit"
-      transition={{ type: "just" }}
+      transition={{ type: "just", when: "beforeChildren" }}
     >
       <Outlet />
     </motion.div>

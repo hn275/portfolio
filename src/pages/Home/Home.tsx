@@ -25,7 +25,7 @@ function App() {
   const { success, error } = contactMeProps;
 
   return (
-    <div className="bg-main">
+    <motion.div className="bg-main">
       <Nav
         className={cx([
           "transition-smooth",
@@ -236,7 +236,7 @@ function App() {
           "hidden lg:flex flex-col gap-4"
         )}
       />
-    </div>
+    </motion.div>
   );
 }
 
