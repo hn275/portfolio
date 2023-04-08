@@ -40,7 +40,7 @@ export const PROJECTS: ProjectProps = {
     title: "Study Space Finder",
     stacks: ["Python", "FastAPI", "SQLite", "Docker", "TypeScript", "React.js"],
     github: "https://github.com/hn275/StudySpaceFinder",
-    liveSite: "http://studyspace.vikelabs.ca/",
+    liveSite: "https://study-space-finder.vercel.app/",
     imageSrc: StudySpaceFinder,
     fromLeft: true,
   },
