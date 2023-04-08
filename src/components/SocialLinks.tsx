@@ -6,8 +6,7 @@ import { MdAlternateEmail } from "react-icons/md";
 import { FiGithub, FiLinkedin } from "react-icons/fi";
 
 interface Props extends HTMLAttributes<HTMLUListElement> {
-  onClose: () => void;
-  className: string;
+  onClose?: () => void;
 }
 
 export function SocialLinks({ onClose, className }: Props) {
@@ -26,24 +25,22 @@ export function SocialLinks({ onClose, className }: Props) {
 
   function handleEmailClick() {
     scrollToID("#contact");
-    onClose();
+    if (onClose) onClose();
   }
 
   return (
     <ul className={className}>
       {links.map(({ alt, href, icon }) => (
-        <li key={shortid.generate()}>
-          <a
-            href={href || undefined}
-            aria-label={alt}
-            target="_blank"
-            className="hover:text-brand-50 transition-smooth"
-          >
+        <li
+          key={shortid.generate()}
+          className="lg:hover:scale-125 transition-smooth"
+        >
+          <a href={href || undefined} aria-label={alt} target="_blank">
             {icon}
           </a>
         </li>
       ))}
-      <li>
+      <li className="lg:hover:scale-125 transition-smooth">
         <a role="button" onClick={handleEmailClick}>
           <MdAlternateEmail title="email" />
         </a>

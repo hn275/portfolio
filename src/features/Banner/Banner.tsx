@@ -3,6 +3,7 @@ import { AnimatedUnderline } from "components";
 import { motion } from "framer-motion";
 import { scrollToID } from "lib/scrollToID";
 import { Resume } from "features/Resume";
+import { SocialLinks } from "components";
 
 export function Banner() {
   return (
@@ -24,6 +25,8 @@ export function Banner() {
             Portfolio
           </a>
         </div>
+
+        <SocialLinks className="flex gap-3 text-xl text-accent" />
       </motion.div>
     </>
   );
