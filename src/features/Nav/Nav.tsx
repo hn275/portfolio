@@ -6,16 +6,16 @@ import { useToggle } from "hooks";
 import { AnimatePresence, motion } from "framer-motion";
 import shortid from "shortid";
 import { HTMLAttributes } from "react";
-import { useAutoHide } from "./useAutoHide";
+import { useAutoHide } from "hooks";
 import { scrollToID } from "lib/scrollToID";
-import { SocialLinks } from "./SocialLinks";
+import { SocialLinks } from "components";
 import { DarkMode } from "./DarkMode";
 import { Resume } from "features/Resume";
 
 export function Nav(props: HTMLAttributes<HTMLElement>) {
   const { open, onOpen, onClose } = useToggle();
 
-  const hide = useAutoHide(350);
+  const hide = useAutoHide(window.innerHeight * 0.8);
 
   function handleClick(id: string) {
     return () => {
