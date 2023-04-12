@@ -136,7 +136,11 @@ function App() {
               </p>
               <p className="text-sm">
                 There are so many more on my{" "}
-                <a href={LINKS.github} className="italic hover:underline">
+                <a
+                  href={LINKS.github}
+                  className="italic hover:underline"
+                  target="_blank"
+                >
                   GitHub
                 </a>
                 , see you there...
