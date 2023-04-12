@@ -12,6 +12,7 @@ export const PROJECTS: ProjectProps = {
     liveSite: "https://collabify.space",
     imageSrc: Collabify,
     fromLeft: true,
+    wip: false,
   },
   gradeTracker: {
     title: "GradeTracker",
@@ -27,6 +28,7 @@ export const PROJECTS: ProjectProps = {
     liveSite: null,
     imageSrc: GradeTracker,
     fromLeft: false,
+    wip: true,
   },
   goVikes: {
     title: "Go-Vikes",
@@ -40,8 +42,9 @@ export const PROJECTS: ProjectProps = {
     title: "Study Space Finder",
     stacks: ["Python", "FastAPI", "SQLite", "Docker", "TypeScript", "React.js"],
     github: "https://github.com/hn275/StudySpaceFinder",
-    liveSite: "https://study-space-finder.vercel.app/",
+    liveSite: "https://studyspace.vikelabs.ca/",
     imageSrc: StudySpaceFinder,
     fromLeft: true,
+    wip: false,
   },
 };

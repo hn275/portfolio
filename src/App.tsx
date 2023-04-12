@@ -91,18 +91,6 @@ function App() {
               </p>
             </ProjectCard>
 
-            <ProjectCard {...PROJECTS.gradeTracker}>
-              <p>
-                Grade Tracker is a secure and user-friendly web app for students
-                to log and track their grades. It has a built-in authentication
-                system, here are the mock credentials.
-              </p>
-              <div className="flex flex-col items-center lg:items-start gap-2 text-brand-50">
-                <CopyToClipboard value="email@email.com" className="bg-main" />
-                <CopyToClipboard value="password" className="bg-main" />
-              </div>
-            </ProjectCard>
-
             <ProjectCard {...PROJECTS.studySpaceFinder}>
               <p>
                 This collaborative project helps students locate available
@@ -120,12 +108,24 @@ function App() {
               </p>
             </ProjectCard>
 
-            <ProjectCard {...PROJECTS.goVikes}>
+            <ProjectCard {...PROJECTS.gradeTracker}>
+              <p>
+                Grade Tracker is a secure and user-friendly web app for students
+                to log and track their grades, with a built-in authentication
+                system.
+              </p>
+              {/*<div className="flex flex-col items-center lg:items-start gap-2 text-brand-50">
+                <CopyToClipboard value="email@email.com" className="bg-main" />
+                <CopyToClipboard value="password" className="bg-main" />
+              </div>*/}
+            </ProjectCard>
+
+            {/*<ProjectCard {...PROJECTS.goVikes}>
               <p>
                 This is a proxy server that expose University of Victoria's API
                 (with permission), open to all developers/students to use.
               </p>
-            </ProjectCard>
+            </ProjectCard>*/}
           </AnimatedSection>
 
           {/* WORK */}

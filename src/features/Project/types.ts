@@ -5,6 +5,7 @@ export interface Project {
   liveSite?: string | null;
   imageSrc: string;
   fromLeft: boolean;
+  wip?: boolean;
 }
 
 export interface ProjectProps {
