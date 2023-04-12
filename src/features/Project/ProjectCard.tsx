@@ -23,6 +23,7 @@ export function ProjectCard(props: Props) {
     github,
     children,
     className,
+    wip,
   } = props;
   return (
     <SlideIn
@@ -45,7 +46,10 @@ export function ProjectCard(props: Props) {
       >
         <Image
           src={imageSrc}
-          className={cx("rounded-sm", "h-full w-auto object-fit")}
+          className={cx(
+            "rounded-sm hidden lg:block",
+            "h-full w-auto object-fit"
+          )}
         />
       </div>
 
@@ -64,6 +68,9 @@ export function ProjectCard(props: Props) {
           ])}
         >
           <AnimatedUnderline h={9}>{title}</AnimatedUnderline>
+          {wip && (
+            <span className="text-sm text-secondary ml-3">in development</span>
+          )}
         </motion.h2>
 
         <p className="text-sm text-slate-400">{stacks.join(", ")}</p>
