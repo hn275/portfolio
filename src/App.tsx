@@ -18,6 +18,7 @@ import { useContactMe } from "hooks";
 import { FadeIn, SlideIn } from "layout";
 import Collabify from "features/Work/assets/collabify_code.svg";
 import Telus from "features/Work/assets/telus_phone.svg";
+import { LINKS } from "lib/links";
 
 function App() {
   const contactMeProps = useContactMe();
@@ -126,6 +127,21 @@ function App() {
                 (with permission), open to all developers/students to use.
               </p>
             </ProjectCard>*/}
+
+            <FadeIn className="flex flex-col justify-center items-center gap-3 mt-5">
+              <p className="text-xl">
+                These are only the&nbsp;
+                <AnimatedUnderline>featured</AnimatedUnderline>
+                &nbsp;ones
+              </p>
+              <p className="text-sm">
+                There are so many more on my{" "}
+                <a href={LINKS.github} className="italic hover:underline">
+                  GitHub
+                </a>
+                , see you there...
+              </p>
+            </FadeIn>
           </AnimatedSection>
 
           {/* WORK */}

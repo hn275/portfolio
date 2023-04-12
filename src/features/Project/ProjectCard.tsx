@@ -69,7 +69,9 @@ export function ProjectCard(props: Props) {
         >
           <AnimatedUnderline h={9}>{title}</AnimatedUnderline>
           {wip && (
-            <span className="text-sm text-secondary ml-3">in development</span>
+            <span className="text-sm text-secondary ml-2">
+              &#123;in development&#125;
+            </span>
           )}
         </motion.h2>
 

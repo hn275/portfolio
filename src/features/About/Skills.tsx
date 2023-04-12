@@ -8,7 +8,7 @@ export function Skills() {
   const skills = [
     {
       name: "Languages",
-      stacks: ["Go", "TypeScript", "JavaScript", "Python", "C++", "Rust"],
+      stacks: ["Go", "TypeScript", "JavaScript", "Python", "Rust", "C++"],
     },
     {
       name: "Technologies",
@@ -24,7 +24,7 @@ export function Skills() {
     },
     {
       name: "Tools",
-      stacks: ["Git/GitHub", "Vim/NeoVim"],
+      stacks: ["Git/GitHub", "Vim/NeoVim", "Linux"],
     },
   ];
 
