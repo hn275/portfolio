@@ -7,7 +7,7 @@ import { ProjectProps } from "./types";
 export const PROJECTS: ProjectProps = {
   collabify: {
     title: "Collabify",
-    stacks: ["PostGreSQL", "Prisma", "Next.js", "Material UI"],
+    stacks: ["TypeScript", "PostGreSQL", "Prisma", "Next.js", "Material UI"],
     github: null,
     liveSite: "https://collabify.space",
     imageSrc: Collabify,
