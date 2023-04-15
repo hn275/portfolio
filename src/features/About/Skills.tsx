@@ -19,6 +19,7 @@ export function Skills() {
         "Node.js",
         "React.js",
         "Next.js",
+        "Redux",
         "TailwindCSS",
       ],
     },
