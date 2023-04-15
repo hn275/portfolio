@@ -15,6 +15,7 @@ export function Skills() {
       stacks: [
         "PostGreSQL",
         "SQLite",
+        "MongoDB",
         "Docker",
         "Node.js",
         "React.js",
