@@ -1,0 +1,78 @@
+---
+import Section from "../components/section.astro";
+
+const languages = ["Go", "TypeScript/JavaScript", "HTML/CSS", "Python", "Rust","C/C++"];
+const skills = ["Git", "Linux", "Vim/NeoVim", "SSH"] 
+
+---
+
+<html lang="en" data-theme="dark">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+    </head>
+
+    <body class="bg-base-100 font-[Roboto]">
+        <!-- Header section -->
+        <section class="w-full h-[100vh] flex justify-center items-center">
+            <div class="flex flex-col justify-center items-center font-[500]">
+                <h1 class="text-4xl text-primary">Hal</h1>
+                <p class="text-lg">
+                    Full-stack Developer
+                </p>
+                <p>
+                    Solving complex problems with simple solutions.
+                </p>
+            </div>
+        </section>
+
+        <Section title="About">
+            <div class="mx-auto max-w-[60ch] w-full flex flex-col gap-3 mt-3 font-[500]">
+                <p>
+                    I'm Hal! A full-stack software developer, residing in the beautiful west coast 
+                    of Canada.
+                </p>
+                <p>
+                    While not writing code at <a href="" class="link">Hey Nova</a>, I attend to 
+                    University of Victoria as a student of the Computer Science department, 
+                    specializing in data structure and algorithms.
+                </p>
+                <p>
+                    In my free time, I like to stay active with hiking, climbing, and martial arts!
+                </p>
+            </div>
+
+            <div class="w-[90%] flex flex-col md:flex-row gap-10 justify-center align-center mx-auto mt-5">
+                <section class="w-[50%] bg-base-200 shadow-xl p-5 rounded-lg">
+                    <h3 class="text-center font-[600] text-lg mb-3 text-primary">Languages</h3>
+                    <ul class="flex gap-2 flex-wrap">
+                        {languages.map((l) => (
+                            <li class="badge badge-neutral">{l}</li>
+                        ))}
+                    </ul>
+                </section>
+
+                <section class="w-[50%] bg-base-200 shadow-xl p-5 rounded-lg">
+                    <h3 class="text-center font-[600] text-lg mb-3 text-primary">Skills</h3>
+                    <ul class="flex gap-2 flex-wrap">
+                        {skills.map((s) => (
+                            <li class="badge badge-neutral">{s}</li>
+                        ))}
+                    </ul>
+                </section>
+            </div>
+        </Section>
+
+        <Section title="Experiences">
+
+        </Section>
+    </body>
+</html>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap');
+</style> 
+
