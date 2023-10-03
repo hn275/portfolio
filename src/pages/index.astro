@@ -1,75 +1,110 @@
 ---
 import Section from "../components/section.astro";
+import Work from "../components/experience.astro";
 
 const languages = ["Go", "TypeScript/JavaScript", "HTML/CSS", "Python", "Rust","C/C++"];
 const skills = ["Git", "Linux", "Vim/NeoVim", "SSH"] 
 
+const works = [
+  {
+    work: "Hey Nova",
+    role: "Software Developer",
+    tasks: [
+      "Developed accessible UI with various front-end technologies.",
+      "Integrated external headless CMS services.",
+      "Authored queries with GraphQL."
+    ],
+    when: "May 2023 - current",
+  },
+  {
+    work: "TELUS Communications",
+    role: "Sales Representative",
+    tasks: [
+      "Managed and resolved potential fraudulent accounts.",
+      "Migrated client's home solutions from legacy technologies.",
+      "Apple Ambassador (2020 - 2021).",
+      "Google Ambassador (2021 - 2022)."
+    ],
+    when: "April 2017 - December 2022"
+  }
+]
+
 ---
 
-<html lang="en" data-theme="dark">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
+<html lang="en" data-theme="corporate">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
-    </head>
+  </head>
 
-    <body class="bg-base-100 font-[Roboto]">
-        <!-- Header section -->
-        <section class="w-full h-[100vh] flex justify-center items-center">
-            <div class="flex flex-col justify-center items-center font-[500]">
-                <h1 class="text-4xl text-primary">Hal</h1>
-                <p class="text-lg">
-                    Full-stack Developer
-                </p>
-                <p>
-                    Solving complex problems with simple solutions.
-                </p>
-            </div>
+  <body class="bg-base-100 font-[Roboto]">
+    <!-- Header section -->
+    <section class="w-full h-[100vh] flex justify-center items-center">
+      <div class="flex flex-col justify-center items-center font-[500]">
+        <h1 class="text-4xl text-primary">Hal</h1>
+        <p class="text-lg">
+          Full-stack Developer
+        </p>
+        <p>
+          Solving complex problems with simple solutions.
+        </p>
+      </div>
+    </section>
+
+    <Section title="About">
+      <div class="mx-auto max-w-[60ch] w-full flex flex-col gap-3 mt-3 font-[500]">
+        <p>
+          I'm Hal! A full-stack software developer, residing in the beautiful west coast 
+          of Canada.
+        </p>
+        <p>
+          While not writing code at <a href="" class="link">Hey Nova</a>, I attend to 
+          University of Victoria as a student of the Computer Science department, 
+          specializing in data structure and algorithms.
+        </p>
+        <p>
+          In my free time, I like to stay active with hiking, climbing, and martial arts!
+        </p>
+      </div>
+
+      <div class="w-[90%] max-w-screen-md flex flex-col md:flex-row gap-10 justify-center align-center mx-auto mt-10">
+        <section class="w-[50%] card shadow-md bg-base-100">
+          <h3 class="text-center font-[600] text-lg mb-3 text-primary">Languages</h3>
+          <div class="card-body">
+            <ul class="flex gap-2 flex-wrap">
+              {languages.map((l) => (
+                <li class="badge badge-outline badge-secondary">{l}</li>
+              ))}
+            </ul>
+          </div>
         </section>
 
-        <Section title="About">
-            <div class="mx-auto max-w-[60ch] w-full flex flex-col gap-3 mt-3 font-[500]">
-                <p>
-                    I'm Hal! A full-stack software developer, residing in the beautiful west coast 
-                    of Canada.
-                </p>
-                <p>
-                    While not writing code at <a href="" class="link">Hey Nova</a>, I attend to 
-                    University of Victoria as a student of the Computer Science department, 
-                    specializing in data structure and algorithms.
-                </p>
-                <p>
-                    In my free time, I like to stay active with hiking, climbing, and martial arts!
-                </p>
-            </div>
+        <section class="w-[50%] card shadow-md bg-base-100">
+          <h3 class="text-center font-[600] text-lg mb-3 text-primary">Skills</h3>
+          <div class="card-body">
+            <ul class="flex gap-2 flex-wrap">
+              {skills.map((s) => (
+                <li class="badge badge-outline badge-secondary">{s}</li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      </div>
+    </Section>
 
-            <div class="w-[90%] flex flex-col md:flex-row gap-10 justify-center align-center mx-auto mt-5">
-                <section class="w-[50%] bg-base-200 shadow-xl p-5 rounded-lg">
-                    <h3 class="text-center font-[600] text-lg mb-3 text-primary">Languages</h3>
-                    <ul class="flex gap-2 flex-wrap">
-                        {languages.map((l) => (
-                            <li class="badge badge-neutral">{l}</li>
-                        ))}
-                    </ul>
-                </section>
+    <Section title="Experiences">
+        {works.map((w) => (
+          <Work {...w} />
+        ))}
+    </Section>
 
-                <section class="w-[50%] bg-base-200 shadow-xl p-5 rounded-lg">
-                    <h3 class="text-center font-[600] text-lg mb-3 text-primary">Skills</h3>
-                    <ul class="flex gap-2 flex-wrap">
-                        {skills.map((s) => (
-                            <li class="badge badge-neutral">{s}</li>
-                        ))}
-                    </ul>
-                </section>
-            </div>
-        </Section>
-
-        <Section title="Experiences">
-
-        </Section>
-    </body>
+    <Section title="Projects">
+      alskdjlkdsklfjlksdjlk
+    </Section>
+  </body>
 </html>
 
 <style>

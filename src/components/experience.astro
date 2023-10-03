@@ -1,0 +1,30 @@
+---
+type Props = {
+  work: string;
+  role: string;
+  tasks: string[];
+  when: string;
+}
+
+const { work, role, tasks, when } = Astro.props as Props;
+---
+
+<section class="max-w-md mx-auto card shadow-md bg-base-100 my-5">
+  <div class="flex flex-col justify-center items-center">
+    <h2 class="font-[500] text-primary">
+      {role}
+      <span class="text-secondary">
+        @ {work}
+      </span>
+    </h2>
+    <p class="text-secondary font-[500] opacity-80 text-sm">{when}</p>
+  </div>
+
+  <div class="card-body">
+    <ul class="flex flex-col gap-2">
+      {tasks.map((t) => (
+        <li>{t}</li>
+      ))}
+    </ul>
+  </div>
+</section>
