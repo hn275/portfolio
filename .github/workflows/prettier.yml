@@ -1,0 +1,31 @@
+name: Format
+
+on:
+  push:
+    branches:
+      - release
+    pull-requests:
+
+permissions:
+  contents: read
+
+jobs:
+  prettier:
+    name: Format
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@4
+
+      - name: Set up Node
+        uses: actions/setup-node@3
+        with: 
+          node-versions: '16.x'
+
+      - name: Prettier
+        run: npm run format
+
+      - name: Check for diff
+        run: |
+          git diff --compact-summary --exit-code || \
+          (echo; echo "Format code with `npm run format` and commit"; exit 1)

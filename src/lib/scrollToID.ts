@@ -1,3 +1,3 @@
 export function scrollToID(id: string) {
-  window.document.querySelector(id)?.scrollIntoView();
+    window.document.querySelector(id)?.scrollIntoView();
 }
