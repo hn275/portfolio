@@ -2,11 +2,12 @@
     "tabWidth": 4,
     "semi": true,
     "singleQuote": false,
-    "quoteProps": "preserved",
+    "quoteProps": "preserve",
     "overrides": [
         {
             "files": "**/*.astro",
             "options": { "parser": "astro" }
         }
-    ]
+    ],
+    "plugins": ["prettier-plugin-svelte"]
 }
