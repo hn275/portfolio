@@ -1,5 +1,12 @@
 {
     "tabWidth": 4,
     "semi": true,
-    "singleQuote": false
+    "singleQuote": false,
+    "quoteProps": "preserved",
+    "overrides": [
+        {
+            "files": "**/*.astro",
+            "options": { "parser": "astro" }
+        }
+    ]
 }
