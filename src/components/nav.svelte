@@ -2,15 +2,6 @@
     import { clsx } from "clsx";
     import { onMount } from "svelte";
 
-    let open: boolean = false;
-    function toggleMenu() {
-        open = !open;
-    }
-
-    let pathName: string;
-    onMount(() => {
-        pathName = window.location.pathname;
-    });
     const navSections = [
         {
             title: "About",
@@ -25,6 +16,16 @@
             id: "/projects",
         },
     ];
+
+    let open: boolean = false;
+    function toggleMenu() {
+        open = !open;
+    }
+
+    let pathName: string;
+    onMount(() => {
+        pathName = window.location.pathname;
+    });
 </script>
 
 <nav class="bg-slate-800">
