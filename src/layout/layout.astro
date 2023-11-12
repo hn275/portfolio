@@ -1,6 +1,6 @@
 ---
-import { ViewTransitions } from "astro:transitions";
 import Nav from "../components/nav.svelte";
+import Html from "./html.astro";
 import type { TransitionAnimationPair, TransitionAnimationValue } from "astro";
 
 type LayoutProps = {
@@ -44,15 +44,7 @@ const headerSlide: TransitionAnimationValue = {
 };
 ---
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>Hal Nguyen</title>
-        <ViewTransitions />
-    </head>
+<Html>
     <body>
         <Nav client:load />
         <header class="" transition:animate={headerSlide}>
@@ -67,50 +59,46 @@ const headerSlide: TransitionAnimationValue = {
                 <slot />
             </div>
         </main>
-        <style>
-            body {
-                @apply bg-slate-950 text-slate-50;
-            }
-
-            @keyframes contentIn {
-                0% {
-                    opacity: 0;
-                    transform: translateY(20px);
-                }
-                100% {
-                    opacity: 1;
-                    transform: translateY(0px);
-                }
-            }
-
-            @keyframes contentOut {
-                0% {
-                    opacity: 1;
-                }
-                100% {
-                    opacity: 0;
-                }
-            }
-
-            @keyframes headerIn {
-                0% {
-                    opacity: 0;
-                    transform: translateX(20px);
-                }
-                100% {
-                    opacity: 1;
-                    transform: translateX(0px);
-                }
-            }
-
-            @keyframes headerOut {
-                0% {
-                    opacity: 1;
-                }
-                100% {
-                    opacity: 0;
-                }
-            }
-        </style>
     </body>
-</html>
+</Html>
+<style>
+    @keyframes contentIn {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0px);
+        }
+    }
+
+    @keyframes contentOut {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes headerIn {
+        0% {
+            opacity: 0;
+            transform: translateX(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+
+    @keyframes headerOut {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+</style>
