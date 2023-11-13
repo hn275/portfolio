@@ -1,6 +1,13 @@
 ---
 import Html from "../layout/html.astro";
 import Hero from "../assets/hero.svg";
+import { Icon } from "astro-icon";
+
+const links = [
+    { icon: "cib:linkedin", ref: "https://www.linkedin.com/in/hn275/" },
+    { icon: "cib:github", ref: "https://github.com/hn275" },
+    { icon: "cib:mail-ru", ref: "mailto:haln_01@proton.me" },
+];
 ---
 
 <Html>
@@ -20,25 +27,34 @@ import Hero from "../assets/hero.svg";
                         Hal Nguyen
                     </h2>
                     <p class="mt-6 text-lg leading-8 text-gray-300">
-                        Full-stack developer.<br/>
-                        Computer Science student.<br/>
+                        Full-stack developer.<br />
+                         Computer Science student.<br />
                     </p>
                     <div
                         class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start"
                     >
+                        <button class="btn btn-primary">Resume</button>
                         <a
                             href="/about"
-                            class="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                            >Resume</a
-                        >
-                        <a
-                            href="/about"
-                            class="text-sm font-semibold leading-6 text-white"
-                            >Get started <span aria-hidden="true">→</span></a
+                            class="text-sm font-semibold leading-6 text-white hover:underline"
+                            >Portfolio <span aria-hidden="true">→</span></a
                         >
                     </div>
-                    <div>
-                        external links here
+                    <div class="mt-4 lg:ml-9">
+                        <ul class="flex gap-5">
+                            {
+                                links.map(({ ref, icon }) => (
+                                    <li>
+                                        <a href={ref} target="_blank">
+                                            <Icon
+                                                name={icon}
+                                                class="text-accent-200 w-5 hover:text-accent-50 hover:scale-125 transition-all"
+                                            />
+                                        </a>
+                                    </li>
+                                ))
+                            }
+                        </ul>
                     </div>
                 </div>
                 <div class="hidden lg:block w-[60%]">
