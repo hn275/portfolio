@@ -28,7 +28,7 @@
     });
 </script>
 
-<nav class="bg-slate-800">
+<nav class="">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-between">
             <div class="absolute inset-y-0 left-0 flex items-center md:hidden">
@@ -83,16 +83,17 @@
                     </a>
                 </div>
                 <div class="hidden md:block sm:ml-6">
-                    <div class="flex space-x-4">
+                    <div class="flex">
                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
                         {#each navSections as { id, title }}
                             <a
                                 href={id}
                                 class={clsx(
-                                    "rounded-md px-3 py-2 text-sm font-medium",
+                                    "navlink",
+                                    "px-3 py-2 text-sm transition-all",
                                     pathName === id
-                                        ? "bg-slate-900 text-white"
-                                        : "bg-slate-800 text-slate-50 hover:text-white hover:bg-slate-700",
+                                        ? "bg-accent-100 text-slate-950 font-bold"
+                                        : "text-slate-500 hover:bg-slate-900 hover:text-white",
                                 )}
                             >
                                 {title}
@@ -138,3 +139,17 @@
         </div>
     </div>
 </nav>
+
+<style>
+    .navlink:first-child {
+        @apply rounded-bl-lg rounded-tl-lg;
+        @apply border-r border-l border-slate-900;
+    }
+    .navlink {
+        @apply border-t border-b border-slate-900;
+    }
+    .navlink:last-child {
+        @apply rounded-br-lg rounded-tr-lg;
+        @apply border-r border-l border-slate-900;
+    }
+</style>
