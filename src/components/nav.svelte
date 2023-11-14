@@ -92,7 +92,7 @@
                                     "navlink",
                                     "px-3 py-2 text-sm transition-all",
                                     pathName === id
-                                        ? "bg-accent-100 text-slate-950 font-bold"
+                                        ? "bg-accent-100 text-slate-950 font-bold cursor-default"
                                         : "text-slate-500 hover:bg-slate-900 hover:text-white",
                                 )}
                             >
