@@ -2,12 +2,7 @@
 import Html from "../layout/html.astro";
 import Hero from "../assets/hero.svg";
 import { Icon } from "astro-icon";
-
-const links = [
-    { icon: "cib:linkedin", ref: "https://www.linkedin.com/in/hn275/" },
-    { icon: "cib:github", ref: "https://github.com/hn275" },
-    { icon: "cib:mail-ru", ref: "mailto:haln_01@proton.me" },
-];
+import { links } from "../assets/links.ts";
 ---
 
 <Html>
@@ -43,9 +38,9 @@ const links = [
                     <div class="mt-4 lg:ml-9">
                         <ul class="flex gap-5">
                             {
-                                links.map(({ ref, icon }) => (
+                                links.map(({ href, icon }) => (
                                     <li>
-                                        <a href={ref} target="_blank">
+                                        <a href={href} target="_blank">
                                             <Icon
                                                 name={icon}
                                                 class="text-accent-200 w-5 hover:text-accent-50 hover:scale-125 transition-all"
