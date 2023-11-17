@@ -1,0 +1,57 @@
+---
+import { Icon } from "astro-icon";
+type Project = {
+    title: string;
+    github?: string;
+    live?: string;
+    stack: Array<string>;
+};
+
+const { title, github, live, stack } = Astro.props as Project;
+const placeholder =
+    "https://images.unsplash.com/photo-1634461093847-de2660fc7caf?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D";
+---
+
+<div class="w-full p-5 md:max-w-[65ch]">
+    <img src={placeholder} alt="" class="rounded-2xl shadow-lg" />
+    <div class="px-2">
+        <h2 class="mb-2 mt-4 text-2xl font-bold">{title}</h2>
+        <div class="flex items-center justify-between">
+            <ul class="flex gap-3">
+                {
+                    stack.map((s) => (
+                        <li class="rounded-xl bg-slate-300 px-2 py-1 text-xs text-slate-950">
+                            {s}
+                        </li>
+                    ))
+                }
+            </ul>
+
+            <div class="flex items-center justify-center gap-3">
+                {
+                    github && (
+                        <a href={github}>
+                            <Icon
+                                name="cib:github"
+                                class="w-5 transition-all hover:text-accent-50"
+                            />
+                        </a>
+                    )
+                }
+                {
+                    live && (
+                        <a href={live}>
+                            <Icon
+                                name="mdi:web"
+                                class="w-5 transition-all hover:text-accent-50"
+                            />
+                        </a>
+                    )
+                }
+            </div>
+        </div>
+    </div>
+    <div class="mt-2 px-2">
+        <slot />
+    </div>
+</div>
