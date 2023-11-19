@@ -7,13 +7,13 @@ import Icon from "astro-icon";
 
 <Layout header="About">
     <div
-        class="block md:grid grid-cols-2 justify-items-center items-stretch gap-5"
+        class="block md:flex justify-center gap-5"
     >
         <section
             class="md:flex flex-col justify-between items-start w-full p-5"
         >
             <div
-                class="max-w-[65ch] text-[1.05em] leading-relaxed flex flex-col gap-2"
+                class="max-w-[65ch] text-[1.05em] leading-relaxed flex flex-col gap-2 flex-grow"
             >
                 <p>
                     I am a dedicated full-stack software developer with a focus
@@ -47,7 +47,8 @@ import Icon from "astro-icon";
                 }
             </div>
         </section>
-        <div class="flex justify-start items-center">
+
+        <div class="flex justify-start items-center flex-shrink w-1/2">
             <img
                 src={AboutSVG.src}
                 alt=""
