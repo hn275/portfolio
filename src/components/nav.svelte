@@ -1,6 +1,7 @@
 <script lang="ts">
     import { clsx } from "clsx";
     import { onMount } from "svelte";
+    import { email } from "../assets/links";
 
     const navSections = [
         {
@@ -105,9 +106,10 @@
             <div
                 class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
             >
-                <button
-                    class="relative ml-3 text-sm rounded-md bg-accent-200 px-3 py-2 hover:bg-sky-700 font-bold"
-                    >Resume</button
+                <a
+                    class="btn btn-secondary"
+                    href={`mailto:${email}`}
+                    target="_blank">Contact Me</a
                 >
             </div>
         </div>
