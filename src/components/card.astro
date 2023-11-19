@@ -15,18 +15,8 @@ const placeholder =
 <div class="w-full p-5 md:max-w-[65ch]">
     <img src={placeholder} alt="" class="rounded-2xl shadow-lg" />
     <div class="px-2">
-        <h2 class="mb-2 mt-4 text-2xl font-bold">{title}</h2>
-        <div class="flex items-center justify-between">
-            <ul class="flex gap-3">
-                {
-                    stack.map((s) => (
-                        <li class="rounded-xl bg-slate-300 px-2 py-1 text-xs text-slate-950">
-                            {s}
-                        </li>
-                    ))
-                }
-            </ul>
-
+        <div class="flex justify-between">
+            <h2 class="mb-2 mt-4 text-2xl font-bold">{title}</h2>
             <div class="flex items-center justify-center gap-3">
                 {
                     github && (
@@ -50,6 +40,15 @@ const placeholder =
                 }
             </div>
         </div>
+        <ul class="flex gap-2">
+            {
+                stack.map((s) => (
+                    <li class="rounded-xl bg-slate-300 px-2 py-1 text-xs text-slate-950">
+                        {s}
+                    </li>
+                ))
+            }
+        </ul>
     </div>
     <div class="mt-2 px-2">
         <slot />
