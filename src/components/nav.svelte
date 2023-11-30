@@ -6,15 +6,15 @@
     const navSections = [
         {
             title: "About",
-            id: "/about",
+            id: "#about",
         },
         {
             title: "Experience",
-            id: "/experience",
+            id: "#experience",
         },
         {
             title: "Projects",
-            id: "/projects",
+            id: "#projects",
         },
     ];
 
@@ -29,7 +29,7 @@
     });
 </script>
 
-<nav class="">
+<nav class="sticky top-0 bg-slate-950 z-[888]">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div class="relative flex h-16 items-center justify-between">
             <div class="absolute inset-y-0 left-0 flex items-center md:hidden">
