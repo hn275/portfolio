@@ -1,3 +1,15 @@
-<div>
-    alksjfkljsdf
+---
+import ContactForm from "./ContactForm.svelte";
+---
+
+<div class="flex flex-col items-center gap-5 w-full">
+    <ContactForm client:load />
+    <span>or</span>
+    <div>
+        <a
+            class="underline text-accent-200 hover:text-accent-50 transition-all"
+            target="_blank"
+            href="mailto:haln_01@proton.me">haln_01@proton.me</a
+        >
+    </div>
 </div>
