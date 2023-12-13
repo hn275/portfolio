@@ -28,29 +28,24 @@ import { links } from "../assets/links.ts";
                     <div
                         class="mt-10 flex items-center justify-center gap-x-6 lg:justify-start"
                     >
-                        <button class="btn btn-primary">Resume</button>
-                        <a
-                            href="/portfolio"
-                            class="text-sm font-semibold leading-6 text-white hover:underline"
-                            >Portfolio <span aria-hidden="true">→</span></a
+                        <a href="/portfolio" class="btn btn-primary px-3">
+                            Portfolio <span aria-hidden="true">→</span></a
                         >
                     </div>
-                    <div class="mt-4 lg:ml-9">
-                        <ul class="flex gap-5">
-                            {
-                                links.map(({ href, icon }) => (
-                                    <li>
-                                        <a href={href} target="_blank">
-                                            <Icon
-                                                name={icon}
-                                                class="text-accent-200 w-5 hover:text-accent-50 hover:scale-125 transition-all"
-                                            />
-                                        </a>
-                                    </li>
-                                ))
-                            }
-                        </ul>
-                    </div>
+                    <ul class="flex gap-5 mt-5 justify-center lg:justify-start">
+                        {
+                            links.map(({ href, icon }) => (
+                                <li>
+                                    <a href={href} target="_blank">
+                                        <Icon
+                                            name={icon}
+                                            class="text-accent-200 w-5 hover:text-accent-50 hover:scale-125 transition-all"
+                                        />
+                                    </a>
+                                </li>
+                            ))
+                        }
+                    </ul>
                 </div>
                 <div class="hidden lg:block w-[60%]">
                     <img src={Hero.src} alt="" />
