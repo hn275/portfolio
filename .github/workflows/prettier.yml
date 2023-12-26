@@ -20,7 +20,7 @@ jobs:
             - name: Set up Node
               uses: actions/setup-node@v3
               with:
-                  node-versions: "16.x"
+                  node-versions: "20.x"
 
             - name: Prettier
               run: npm run format
