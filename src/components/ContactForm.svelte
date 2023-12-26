@@ -2,10 +2,41 @@
     let email: string;
     let message: string;
     let name: string;
+
+    let loading = false;
+    async function handleSubmit() {
+        try {
+            loading = true;
+            const r = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json",
+                },
+                body: JSON.stringify({ name, email, message }),
+            });
+
+            if (!r.ok) {
+                const msg = await r.text();
+                throw new Error(msg);
+            }
+
+        name= "";
+        message = "";
+        email = "";
+        } catch (e) {
+            console.error(e);
+        } finally {
+            loading = false;
+        }
+    }
 </script>
 
 <div class="w-full">
-    <form action="" class="flex flex-col items-center gap-3 max-w-md mx-auto">
+    <form
+        action=""
+        class="flex flex-col items-center gap-3 max-w-md mx-auto"
+        on:submit|preventDefault={handleSubmit}
+    >
         <input placeholder="Name" type="text" required bind:value={name} />
         <input placeholder="Email" type="email" required bind:value={email} />
         <textarea placeholder="Message" required bind:value={message} />
