@@ -28,4 +28,4 @@ jobs:
             - name: Check for diff
               run: |
                   git diff --compact-summary --exit-code || \
-                  (echo; echo "Format code with \`npm run format\` and commit"; exit 1)
+                  (echo; echo "Format code with \`npm run fmt\` and commit"; exit 1)
