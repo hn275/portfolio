@@ -3,8 +3,8 @@ name: Format
 on:
     push:
         branches:
-            - release
-        pull-requests:
+            - main
+    pull_request:
 
 permissions:
     contents: read
@@ -20,7 +20,7 @@ jobs:
             - name: Set up Node
               uses: actions/setup-node@v3
               with:
-                  node-versions: "20.x"
+                  node-version: "20.x"
 
             - name: Prettier
               run: npm run format
@@ -28,4 +28,4 @@ jobs:
             - name: Check for diff
               run: |
                   git diff --compact-summary --exit-code || \
-                  (echo; echo "Format code with `npm run format` and commit"; exit 1)
+                  (echo; echo "Format code with \`npm run format\` and commit"; exit 1)
