@@ -23,7 +23,7 @@ jobs:
                   node-version: "20.x"
 
             - name: Prettier
-              run: npm run format
+              run: npm ci; npm run fmt
 
             - name: Check for diff
               run: |
