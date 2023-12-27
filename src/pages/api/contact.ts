@@ -1,15 +1,15 @@
 import type { APIContext } from "astro";
 import nodemailer from "nodemailer";
 
+// To enable on-demand rendering
+// https://docs.astro.build/en/guides/server-side-rendering/
+export const prerender = false;
+
 const EMAIL_ADDR: string = import.meta.env.EMAIL_ADDR;
 const EMAIL_PASS: string = import.meta.env.EMAIL_PASS;
 const EMAIL_TO: string = import.meta.env.EMAIL_TO;
 const EMAIL_HOST: string = "smtp.gmail.com";
 const EMAIL_PORT: number = 465;
-
-// To enable on-demand rendering
-// https://docs.astro.build/en/guides/server-side-rendering/
-export const prerender = false;
 
 type ContactForm = {
   name: string;
