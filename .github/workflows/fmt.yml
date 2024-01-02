@@ -1,0 +1,32 @@
+name: Code format checker
+
+on:
+    push:
+        branches:
+            - main
+
+    pull_request:
+
+permissions:
+    contents: read
+
+jobs:
+    prettier:
+        name: Formatting with prettier
+        runs-on: ubuntu-latest
+        steps:
+            - name: checkout branch
+              uses: actions/checkout@v3
+
+            - name: setup node
+              uses: actions/setup-node@v3
+              with:
+                  node-version: "18.x"
+
+            - name: format code
+              run: npm ci && npm run fmt
+
+            - name: diff check
+              run: |
+                  git diff --compact-summary --exit-code || \
+                  (echo; echo "Format your code with \"npm run fmt\" then commit and push"; exit 1)
