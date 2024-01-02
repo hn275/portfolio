@@ -37,7 +37,7 @@
     }
 
     afterUpdate(() => {
-        if (ok!) return;
+        if (!ok) return;
         const id = setTimeout(() => (ok = false), 5000);
         return () => clearTimeout(id);
     });
