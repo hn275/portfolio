@@ -1,0 +1,61 @@
+---
+import ProjectCard from "./card.astro";
+---
+
+<div
+    class="flex w-full grid-cols-2 flex-col items-center justify-center gap-3 md:grid md:items-start"
+>
+    <ProjectCard
+        title="INSO Housing"
+        stack={["Go", "MySQL", "Docker", "React.js"]}
+        github={"test"}
+        live={"live"}
+    >
+        <p>
+            INSO Housing is a charitable initiative that assists homeless
+            shelter management by facilitating occupant tracking and
+            establishing a network to streamline communication among shelters.
+            It was developed using Golang for the backend, MySQL as the
+            database, Docker for containerization, and ReactJS for the frontend.
+        </p>
+    </ProjectCard>
+    <ProjectCard
+        title="Silver Rock"
+        stack={["Next.js", "PostgreSQL", "Node.js", "TailwindCSS"]}
+        github={"test"}
+        live={"live"}
+    >
+        <p>
+            A website for a property developer written in NextJS, complete with
+            a custom-built CMS. The website is hosted by Vercel, with it's
+            database being provided by Supabase.
+        </p>
+    </ProjectCard>
+
+    <ProjectCard
+        title="(VikeLabs) UVic Open API"
+        stack={["Go", "SQLite", "Docker"]}
+        github={"test"}
+    >
+        <p>
+            UVic Open API is the go-to data hub for VikeLabs projects, like
+            StudySpaceFinder! The server is written in Golang and a SQLite
+            database. This API dynamically fetches the latest data from UVic
+            Banner each semester, providing the most up-to-date information for
+            every term.
+        </p>
+    </ProjectCard>
+
+    <ProjectCard
+        title="(VikeLabs) StudySpaceFinder"
+        stack={["Go", "SQLite", "Docker"]}
+        github={"test"}
+    >
+        <p>
+            StudySpaceFinder simplifies the search for a study spot. Users
+            (students) can choose the preferred time and date to view classroom
+            availabilities. The webapp also provides detailed schedules for each
+            classrooms. The front-end is built with React, and it is powered by UVic Open API!
+        </p>
+    </ProjectCard>
+</div>

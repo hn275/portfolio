@@ -1,0 +1,52 @@
+---
+import {Icon} from "astro-icon/components";
+import AboutSVG from "../assets/about.svg";
+import { links } from "../assets/links";
+---
+
+<div class="block md:flex justify-center gap-5">
+    <section class="md:flex flex-col justify-between items-start w-full p-5">
+        <div
+            class="max-w-[65ch] text-[1.05em] leading-relaxed flex flex-col gap-2 flex-grow"
+        >
+            <p>
+                I am a dedicated full-stack software developer with a focus on
+                Golang and TypeScript, showcasing proficiency in crafting robust
+                and efficient solutions.
+            </p>
+            <p>
+                Experienced in web development at startups, I excel in crafting
+                innovative solutions within dynamic, fast-paced environments.
+            </p>
+            <p>
+                Currently pursuing my undergraduate degree in Computer Science
+                at the University of Victoria, specializing in Networking, Data
+                Structure and Algorithms.
+            </p>
+        </div>
+
+        <div
+            class="flex flex-row justify-center md:justify-start gap-3 mt-10 md:mt-5"
+        >
+            {
+                links.map(({ href, icon }) => (
+                    <a href={href} target="_blank">
+                        <Icon
+                            name={icon}
+                            class="text-accent-200 w-7 hover:scale-125 transition-all"
+                        />
+                    </a>
+                ))
+            }
+        </div>
+    </section>
+
+    <div class="flex justify-start items-center flex-shrink w-1/2">
+        <img
+            src={AboutSVG.src}
+            alt=""
+            role="presentation"
+            class="hidden md:block w-72"
+        />
+    </div>
+</div>
