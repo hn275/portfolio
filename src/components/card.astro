@@ -1,56 +1,56 @@
 ---
 import { Icon } from "astro-icon/components";
 type Project = {
-    title: string;
-    github?: string;
-    live?: string;
-    stack: Array<string>;
+	title: string;
+	github?: string;
+	live?: string;
+	stack: Array<string>;
 };
 
 const { title, github, live, stack } = Astro.props as Project;
 ---
 
 <div
-    class="w-full p-5 md:max-w-[65ch] bg-slate-900 shadow-xl rounded-lg flex flex-col h-full justify-between gap-5"
+	class="w-full p-5 md:max-w-[65ch] bg-slate-900 shadow-xl rounded-lg flex flex-col h-full justify-between gap-5"
 >
-    <div class="">
-        <div class="flex justify-between">
-            <h2 class="mb-2 mt-4 text-2xl font-bold">{title}</h2>
-            <div class="flex items-center justify-center gap-3">
-                {
-                    github && (
-                        <a href={github}>
-                            <Icon
-                                name="cib:github"
-                                class="w-5 transition-all hover:text-accent-50"
-                            />
-                        </a>
-                    )
-                }
-                {
-                    live && (
-                        <a href={live}>
-                            <Icon
-                                name="mdi:web"
-                                class="w-5 transition-all hover:text-accent-50"
-                            />
-                        </a>
-                    )
-                }
-            </div>
-        </div>
-        <div class="mt-2 px-2">
-            <slot />
-        </div>
-    </div>
+	<div class="">
+		<div class="flex justify-between">
+			<h2 class="mb-2 mt-4 text-2xl font-bold">{title}</h2>
+			<div class="flex items-center justify-center gap-3">
+				{
+					github && (
+						<a href={github}>
+							<Icon
+								name="cib:github"
+								class="w-5 transition-all hover:text-accent-50"
+							/>
+						</a>
+					)
+				}
+				{
+					live && (
+						<a href={live}>
+							<Icon
+								name="mdi:web"
+								class="w-5 transition-all hover:text-accent-50"
+							/>
+						</a>
+					)
+				}
+			</div>
+		</div>
+		<div class="mt-2 px-2">
+			<slot />
+		</div>
+	</div>
 
-    <ul class="flex gap-2">
-        {
-            stack.map((s) => (
-                <li class="rounded-xl bg-slate-300 px-2 py-1 text-xs text-slate-950">
-                    {s}
-                </li>
-            ))
-        }
-    </ul>
+	<ul class="flex gap-2">
+		{
+			stack.map((s) => (
+				<li class="rounded-xl bg-slate-300 px-2 py-1 text-xs text-slate-950">
+					{s}
+				</li>
+			))
+		}
+	</ul>
 </div>

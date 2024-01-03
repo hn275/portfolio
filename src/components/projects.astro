@@ -4,76 +4,76 @@ import { Icon } from "astro-icon/components";
 ---
 
 <div
-    class="flex w-full grid-cols-2 flex-col items-center justify-center gap-3 md:grid md:items-start"
+	class="flex w-full grid-cols-2 flex-col items-center justify-center gap-3 md:grid md:items-start"
 >
-    <ProjectCard
-        title="INSO Housing"
-        stack={["Go", "MySQL", "Docker", "React.js"]}
-    >
-        <p>
-            INSO Housing is a charitable initiative that assists homeless
-            shelter management by facilitating occupant tracking and
-            establishing a network to streamline communication among shelters.
-            It was developed using Golang for the backend, MySQL as the
-            database, Docker for containerization, and ReactJS for the frontend.
-        </p>
-    </ProjectCard>
-    <ProjectCard
-        title="Silver Rock"
-        stack={["Next.js", "PostgreSQL", "Node.js", "TailwindCSS"]}
-    >
-        <p>
-            A website for a property developer written in NextJS, complete with
-            a custom-built CMS. The website is hosted by Vercel, with it's
-            database being provided by Supabase.
-        </p>
-    </ProjectCard>
+	<ProjectCard
+		title="INSO Housing"
+		stack={["Go", "MySQL", "Docker", "React.js"]}
+	>
+		<p>
+			INSO Housing is a charitable initiative that assists homeless
+			shelter management by facilitating occupant tracking and
+			establishing a network to streamline communication among shelters.
+			It was developed using Golang for the backend, MySQL as the
+			database, Docker for containerization, and ReactJS for the frontend.
+		</p>
+	</ProjectCard>
+	<ProjectCard
+		title="Silver Rock"
+		stack={["Next.js", "PostgreSQL", "Node.js", "TailwindCSS"]}
+	>
+		<p>
+			A website for a property developer written in NextJS, complete with
+			a custom-built CMS. The website is hosted by Vercel, with it's
+			database being provided by Supabase.
+		</p>
+	</ProjectCard>
 
-    <ProjectCard
-        title="(VikeLabs) UVic Open API"
-        stack={["Go", "SQLite", "Docker"]}
-        github="https://github.com/VikeLabs/uvic-api-go"
-        live="https://uvic-api.fly.dev"
-    >
-        <p class="block mb-3">
-            UVic Open API is the go-to data hub for VikeLabs projects, like
-            StudySpaceFinder! The server is written in Golang and a SQLite
-            database. This API dynamically fetches the latest data from UVic
-            Banner each semester, providing the most up-to-date information for
-            every term.
-        </p>
+	<ProjectCard
+		title="(VikeLabs) UVic Open API"
+		stack={["Go", "SQLite", "Docker"]}
+		github="https://github.com/VikeLabs/uvic-api-go"
+		live="https://uvic-api.fly.dev"
+	>
+		<p class="block mb-3">
+			UVic Open API is the go-to data hub for VikeLabs projects, like
+			StudySpaceFinder! The server is written in Golang and a SQLite
+			database. This API dynamically fetches the latest data from UVic
+			Banner each semester, providing the most up-to-date information for
+			every term.
+		</p>
 
-        <span class="flex gap-3 items-center">
-            <code class="bg-slate-950 p-3 text-sm rounded-md">
-                <span class="text-accent-200">curl</span>
-                https://uvic-api.fly.dev/ssf/buildings</code
-            >
-            <button onclick="copyToClipboard()">
-                <Icon name="mdi:content-copy" />
-            </button>
-        </span>
-    </ProjectCard>
+		<span class="flex gap-3 items-center">
+			<code class="bg-slate-950 p-3 text-sm rounded-md">
+				<span class="text-accent-200">curl</span>
+				https://uvic-api.fly.dev/ssf/buildings</code
+			>
+			<button onclick="copyToClipboard()">
+				<Icon name="mdi:content-copy" />
+			</button>
+		</span>
+	</ProjectCard>
 
-    <ProjectCard
-        title="(VikeLabs) StudySpaceFinder"
-        stack={["Go", "SQLite", "Docker"]}
-        github="https://github.com/VikeLabs/StudySpaceFinder"
-        live="https://studyspace.vikelabs.ca/"
-    >
-        <p>
-            StudySpaceFinder simplifies the search for a study spot. Users
-            (students) can choose the preferred time and date to view classroom
-            availabilities. The webapp also provides detailed schedules for each
-            classrooms. The front-end is built with React, and it is powered by
-            UVic Open API!
-        </p>
-    </ProjectCard>
+	<ProjectCard
+		title="(VikeLabs) StudySpaceFinder"
+		stack={["Go", "SQLite", "Docker"]}
+		github="https://github.com/VikeLabs/StudySpaceFinder"
+		live="https://studyspace.vikelabs.ca/"
+	>
+		<p>
+			StudySpaceFinder simplifies the search for a study spot. Users
+			(students) can choose the preferred time and date to view classroom
+			availabilities. The webapp also provides detailed schedules for each
+			classrooms. The front-end is built with React, and it is powered by
+			UVic Open API!
+		</p>
+	</ProjectCard>
 </div>
 
 <script lang="ts">
-    const content = document.querySelector("code")?.innerText;
-    function copyToClipboard() {
-        if (!content) return;
-        navigator.clipboard.writeText(content);
-    }
+	const content = document.querySelector("code")?.innerText;
+	function copyToClipboard() {
+		if (!content) return;
+		navigator.clipboard.writeText(content);
+	}
 </script>
