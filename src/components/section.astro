@@ -1,17 +1,17 @@
 ---
 type Prop = {
-    header: string;
-    id: string;
+	header: string;
+	id: string;
 };
 
 const { header, id } = Astro.props as Prop;
 ---
 
 <section id={id} class="my-20">
-    <h2 class="text-accent-200 text-3xl mb-4 font-bold text-center">
-        {header}
-    </h2>
-    <div>
-        <slot />
-    </div>
+	<h2 class="text-accent-200 text-3xl mb-4 font-bold text-center">
+		{header}
+	</h2>
+	<div>
+		<slot />
+	</div>
 </section>

@@ -12,41 +12,41 @@ const EMAIL_PORT: number = 465;
 export const prerender = false;
 
 type ContactForm = {
-    name: string;
-    email: string;
-    message: string;
+	name: string;
+	email: string;
+	message: string;
 };
 
 export async function POST({ request }: APIContext) {
-    try {
-        const b: ContactForm = await request.json();
-        const { rejected } = await sendEmail(b);
-        if (rejected.length) {
-            throw new Error(`Failed to deliver email to ${EMAIL_ADDR}`);
-        }
-        return new Response(undefined, { status: 200 });
-    } catch (e) {
-        console.error(e);
-        return new Response("Something went wrong.", { status: 500 });
-    }
+	try {
+		const b: ContactForm = await request.json();
+		const { rejected } = await sendEmail(b);
+		if (rejected.length) {
+			throw new Error(`Failed to deliver email to ${EMAIL_ADDR}`);
+		}
+		return new Response(undefined, { status: 200 });
+	} catch (e) {
+		console.error(e);
+		return new Response("Something went wrong.", { status: 500 });
+	}
 }
 
 function sendEmail(c: ContactForm) {
-    return nodemailer
-        .createTransport({
-            host: EMAIL_HOST,
-            port: EMAIL_PORT,
-            secure: true,
-            auth: {
-                user: EMAIL_ADDR,
-                pass: EMAIL_PASS,
-            },
-        })
-        .sendMail({
-            from: EMAIL_ADDR,
-            to: EMAIL_TO,
-            subject: `Message from: ${c.name}`,
-            html: `
+	return nodemailer
+		.createTransport({
+			host: EMAIL_HOST,
+			port: EMAIL_PORT,
+			secure: true,
+			auth: {
+				user: EMAIL_ADDR,
+				pass: EMAIL_PASS,
+			},
+		})
+		.sendMail({
+			from: EMAIL_ADDR,
+			to: EMAIL_TO,
+			subject: `Message from: ${c.name}`,
+			html: `
 <p style="margin-bottom:20px">
   Name: ${c.name}
   <br />
@@ -65,5 +65,5 @@ function sendEmail(c: ContactForm) {
 </a>
 <br />
 `,
-        });
+		});
 }

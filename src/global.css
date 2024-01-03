@@ -1,14 +1,14 @@
 .btn {
-    @apply rounded-md px-5 py-3 text-sm font-semibold;
-    @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
-    @apply transition-all;
+	@apply rounded-md px-5 py-3 text-sm font-semibold;
+	@apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white;
+	@apply transition-all;
 }
 
 .btn-primary {
-    @apply bg-accent-200 text-black hover:bg-accent-100 hover:text-slate-950;
+	@apply bg-accent-200 text-black hover:bg-accent-100 hover:text-slate-950;
 }
 
 .btn-secondary {
-    @apply bg-transparent border border-accent-200 text-accent-200 transition-all;
-    @apply hover:bg-accent-200 hover:text-slate-950 shadow shadow-slate-950 hover:shadow-accent-200;
+	@apply border border-accent-200 bg-transparent text-accent-200 transition-all;
+	@apply shadow shadow-slate-950 hover:bg-accent-200 hover:text-slate-950 hover:shadow-accent-200;
 }
