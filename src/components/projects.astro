@@ -1,5 +1,6 @@
 ---
 import ProjectCard from "./card.astro";
+import { Icon } from "astro-icon/components";
 ---
 
 <div
@@ -8,8 +9,6 @@ import ProjectCard from "./card.astro";
     <ProjectCard
         title="INSO Housing"
         stack={["Go", "MySQL", "Docker", "React.js"]}
-        github={"test"}
-        live={"live"}
     >
         <p>
             INSO Housing is a charitable initiative that assists homeless
@@ -22,8 +21,6 @@ import ProjectCard from "./card.astro";
     <ProjectCard
         title="Silver Rock"
         stack={["Next.js", "PostgreSQL", "Node.js", "TailwindCSS"]}
-        github={"test"}
-        live={"live"}
     >
         <p>
             A website for a property developer written in NextJS, complete with
@@ -35,21 +32,33 @@ import ProjectCard from "./card.astro";
     <ProjectCard
         title="(VikeLabs) UVic Open API"
         stack={["Go", "SQLite", "Docker"]}
-        github={"test"}
+        github="https://github.com/VikeLabs/uvic-api-go"
+        live="https://uvic-api.fly.dev"
     >
-        <p>
+        <p class="block mb-3">
             UVic Open API is the go-to data hub for VikeLabs projects, like
             StudySpaceFinder! The server is written in Golang and a SQLite
             database. This API dynamically fetches the latest data from UVic
             Banner each semester, providing the most up-to-date information for
             every term.
         </p>
+
+        <span class="flex gap-3 items-center">
+            <code class="bg-slate-950 p-3 text-sm rounded-md">
+                <span class="text-accent-200">curl</span>
+                https://uvic-api.fly.dev/ssf/buildings</code
+            >
+            <button onclick="copyToClipboard()">
+                <Icon name="mdi:content-copy" />
+            </button>
+        </span>
     </ProjectCard>
 
     <ProjectCard
         title="(VikeLabs) StudySpaceFinder"
         stack={["Go", "SQLite", "Docker"]}
-        github={"test"}
+        github="https://github.com/VikeLabs/StudySpaceFinder"
+        live="https://studyspace.vikelabs.ca/"
     >
         <p>
             StudySpaceFinder simplifies the search for a study spot. Users
@@ -60,3 +69,11 @@ import ProjectCard from "./card.astro";
         </p>
     </ProjectCard>
 </div>
+
+<script lang="ts">
+    const content = document.querySelector("code")?.innerText;
+    function copyToClipboard() {
+        if (!content) return;
+        navigator.clipboard.writeText(content);
+    }
+</script>
