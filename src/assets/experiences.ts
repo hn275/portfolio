@@ -14,7 +14,7 @@ export const works: Array<Work> = [
 		employer: "INSO System",
 		duration: {
 			start: "Oct 2023",
-			end: "Current",
+			end: "Jan 2024",
 		},
 		tasks: [
 			"Implemented JWT and Session Cookie authentication for enhanced system security.",
