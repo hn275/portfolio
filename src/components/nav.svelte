@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { clsx } from "clsx";
 	import { onMount } from "svelte";
-	import { email } from "../assets/links";
 
 	const navSections = [
 		{
@@ -84,7 +83,7 @@
 			>
 				<div class="flex flex-shrink-0 items-center">
 					<a href="/" class="font-bold text-accent-200 text-lg">
-						{"{HalN}"}
+						{"HN"}
 					</a>
 				</div>
 				<div class="hidden md:block sm:ml-6">
