@@ -10,7 +10,7 @@ export type Work = {
 
 export const works: Array<Work> = [
 	{
-		role: "Backend Developer",
+		role: "Full-stack Developer",
 		employer: "INSO System",
 		duration: {
 			start: "Oct 2023",
@@ -24,7 +24,7 @@ export const works: Array<Work> = [
 		],
 	},
 	{
-		role: "Jr. Software Developer",
+		role: "Front-end Developer",
 		employer: "Hey Nova",
 		duration: {
 			start: "May 2023",
