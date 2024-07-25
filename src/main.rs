@@ -32,6 +32,14 @@ async fn home() -> maud::Markup {
             (section("Projects", html! {(projects())}))
 
             footer class="flex flex-col justify-center items-center text-sm opacity-60 py-5" {
+            span class="mb-3" {
+                "🦀 "
+                a href="https://github.com/hn275/portfolio" target="_blank" class="underline" {
+                    "Built with Rust"
+                }
+                " 🦀"
+            }
+
                 code class="text-slate-700" { ":(){:|:&};:" }
             }
         }
