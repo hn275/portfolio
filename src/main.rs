@@ -7,7 +7,7 @@ use components::*;
 
 #[tokio::main]
 async fn main() -> io::Result<()> {
-    let addr: net::SocketAddr = "127.0.0.1:3000".parse().expect("failed to parse port");
+    let addr: net::SocketAddr = "0.0.0.0:3000".parse().expect("failed to parse port");
 
     let app = axum::Router::new()
         .nest_service("/assets", tower_http::services::ServeDir::new("assets"))
