@@ -1,10 +1,6 @@
-FROM rust:1-bullseye AS build
+FROM rust:1-alpine3.19
 WORKDIR /app
 COPY . .
+RUN apk add musl-dev
 RUN cargo build --release
-
-FROM scratch
-WORKDIR /portfolio
-COPY --from=build /app/target/release/portfolio .
-EXPOSE 3000
-CMD ["./portfolio"]
+CMD ["./target/release/portfolio"]
