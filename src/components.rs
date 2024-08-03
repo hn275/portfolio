@@ -1,9 +1,26 @@
-pub fn li(content: maud::Markup) -> maud::Markup {
-    maud::html! {(content)}
+use maud::{html, Markup};
+
+pub fn html(content: Markup) -> Markup {
+    return html! {
+        html {
+            head {
+                title {"HN"}
+                link rel="stylesheet" type="text/css" href="/assets/styles.css" {}
+                meta name="viewport" content="width=device-width,initial-scale=1.0" {}
+                meta name="author" content="Hal Nguyen" {}
+                meta name="description" content="4th-year Computer Science student at University of Victoria!" {}
+            }
+            body class="bg-slate-950 text-slate-50 scroll-smooth" { (content) }
+        }
+    };
 }
 
-pub fn section(href: &str, content: maud::Markup) -> maud::Markup {
-    maud::html! {
+pub fn li(content: Markup) -> Markup {
+    html! {(content)}
+}
+
+pub fn section(href: &str, content: Markup) -> Markup {
+    html! {
         section #(href) class="my-5" {
             h2 class="text-4xl font-semibold my-5" {
                 (href)
@@ -18,8 +35,8 @@ pub fn exp(
     affiliate: &str,
     date: (&str, &str),
     responsibilities: Vec<&str>,
-) -> maud::Markup {
-    maud::html! {
+) -> Markup {
+    html! {
         section {
             div class="flex justify-between items-center mb-3 mt-6" {
                 h3 class="text-xl text-slate-500 font-bold" {
@@ -45,9 +62,9 @@ pub fn project(
     github: Option<&str>,
     live: Option<&str>,
     tools: Vec<&str>,
-    content: maud::Markup,
-) -> maud::Markup {
-    maud::html! {
+    content: Markup,
+) -> Markup {
+    html! {
         section class="flex flex-col gap-2 mt-6" {
             h3 class="text-xl text-slate-500 font-bold" {(title)}
 
