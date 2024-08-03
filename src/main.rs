@@ -197,7 +197,7 @@ fn html(content: Markup) -> maud::Markup {
         html {
             head {
                 title {"Hal Nguyen"}
-                script src="/assets/tailwind.js" {}
+                link rel="stylesheet" type="text/css" href="/assets/styles.css" {}
                 meta name="viewport" content="width=device-width,initial-scale=1.0" {}
                 meta name="author" content="Hal Nguyen" {}
                 meta name="description" content="4th-year Computer Science student at University of Victoria!" {}
