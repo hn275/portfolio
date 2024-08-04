@@ -11,7 +11,7 @@ pub async fn home() -> maud::Markup {
             (section("Experiences", html! {(experiences())}))
             (section("Projects", html! {(projects())}))
 
-            footer class="flex flex-col justify-center items-center text-sm opacity-60 py-5" {
+        footer class="flex flex-col justify-center items-center text-sm py-5" {
             span class="mb-3" {
                 "🦀 "
                 a href="https://github.com/hn275/portfolio" target="_blank" class="underline" {
@@ -20,9 +20,7 @@ pub async fn home() -> maud::Markup {
                 " 🦀"
             }
 
-                a class="hover:underline" href="/blog/what-is-a-fork-bomb" {
-                    code class="text-slate-700" { ":(){:|:&};:" }
-                }
+            code class="text-slate-700 p-1 rounded-md bg-slate-900 pointer-events-none" { ":(){:|:&};:" }
             }
         }
     });
@@ -30,6 +28,18 @@ pub async fn home() -> maud::Markup {
 
 fn projects() -> Markup {
     maud::html! {
+        (project(
+            "RSA from scratch",
+            Some("https://github.com/hn275/rsa"),
+            None,
+            Vec::from(["Rust"]),
+            html! {
+                "RSA From Scratch is an implementation of the renowned RSA crypto-system 
+                with 2048 bit security. It employs the Miller-Rabin test to verify the 
+                primality of the generated numbers."
+            }
+        ))
+
         (project(
             "file-encryptor",
             Some("https://github.com/hn275/file-encryptor"),
@@ -53,6 +63,7 @@ fn projects() -> Markup {
                 CMS. The website is hosted by Vercel, with it's database being provided by Supabase."
             }
         ))
+
     }
 }
 
@@ -164,11 +175,11 @@ fn nav() -> Markup {
 
 fn header() -> Markup {
     html! {
-        header class="flex flex-col justify-center items-center gap-5 my-5 h-[50vh]" {
-            h1 class="w-max text-5xl font-bold" { "Hal Nguyen" }
+        header class="flex flex-col justify-center items-center gap-5 mt-10 mb-5" {
+            h1 class="w-max text-slate-400 text-5xl font-bold" { "Hal Nguyen" }
             div class="flex flex-col justify-center items-center text-sm italic" {
-                span { "4th year Computer Science student" }
-                span { "Cryptography enthusiast" }
+                span { "4th year Computer Science Student" }
+                span { "Cryptography Enthusiast" }
             }
         }
     }

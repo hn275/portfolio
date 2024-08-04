@@ -2,7 +2,6 @@ use std::io;
 use std::net;
 
 mod components;
-mod bomb;
 mod home;
 
 #[tokio::main]

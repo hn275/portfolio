@@ -10,7 +10,7 @@ pub fn html(content: Markup) -> Markup {
                 meta name="author" content="Hal Nguyen" {}
                 meta name="description" content="4th-year Computer Science student at University of Victoria!" {}
             }
-            body class="bg-slate-950 text-slate-50 scroll-smooth" { (content) }
+            body class="text-slate-50 scroll-smooth" { (content) }
         }
     };
 }
@@ -39,11 +39,11 @@ pub fn exp(
     html! {
         section {
             div class="flex justify-between items-center mb-3 mt-6" {
-                h3 class="text-xl text-slate-500 font-bold" {
+                h3 class="text-lg text-slate-500 font-bold" {
                     (title)
                     span class="text-sm text-slate-50 font-medium" {" @ " (affiliate)}
                 }
-                span class="text-sm text-slate-500" {(date.0) "-" (date.1)}
+                span class="text-sm text-slate-500" {(date.0) " - " (date.1)}
             }
 
             ul class="list-disc pl-4" {
