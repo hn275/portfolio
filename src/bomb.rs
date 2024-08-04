@@ -3,8 +3,6 @@ use maud::{html, Markup};
 
 pub async fn bomb() -> Markup {
     return html(html! {
-        script src="/assets/scripts.js" {}
-
         header class="my-20 mx-auto w-max flex flex-col items-center gap-3" {
             h1 class="text-3xl font-bold" {
                 code {
@@ -47,7 +45,7 @@ pub async fn bomb() -> Markup {
             }
 
             p {
-                "Simple, yet effective! Just like the code that is running in your browser this whole time."
+                "Simple, yet effective!"
             }
         }
     });

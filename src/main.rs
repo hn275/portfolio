@@ -11,8 +11,7 @@ async fn main() -> io::Result<()> {
 
     let app = axum::Router::new()
         .nest_service("/assets", tower_http::services::ServeDir::new("assets"))
-        .route("/", axum::routing::get(home::home))
-        .route("/blog/what-is-a-fork-bomb", axum::routing::get(bomb::bomb));
+        .route("/", axum::routing::get(home::home));
 
     println!("listening at {}", &addr);
     let listener = tokio::net::TcpListener::bind(&addr).await?;
