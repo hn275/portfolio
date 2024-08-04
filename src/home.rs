@@ -82,9 +82,9 @@ fn experiences() -> Markup {
         ))
 
         (exp(
-            "Sales Representatives",
+            "Sales Representative",
             "TELUS Retails LTD.",
-            ("Apr 2017", "Dec 2020"),
+            ("Apr 2017", "Dec 2022"),
             Vec::from([
                 "Delivered customized communication solutions to clients, ensuring integration of services tailored to their specific needs.",
                 "Conducted thorough credit checks as part of the sales process to ensure financial eligibility for customers.",
