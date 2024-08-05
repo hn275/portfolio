@@ -39,11 +39,11 @@ pub fn exp(
     html! {
         section {
             div class="flex justify-between items-center mb-3 mt-6" {
-                h3 class="text-lg text-slate-500 font-bold" {
+                h3 class="text-lg text-primary font-bold" {
                     (title)
-                    span class="text-sm text-slate-50 font-medium" {" @ " (affiliate)}
+                    span class="text-sm text-secondary font-medium" {" @ " (affiliate)}
                 }
-                span class="text-sm text-slate-500" {(date.0) " - " (date.1)}
+                span class="text-sm text-secondary" {(date.0) " - " (date.1)}
             }
 
             ul class="list-disc pl-4" {
@@ -57,33 +57,20 @@ pub fn exp(
     }
 }
 
-pub fn project(
-    title: &str,
-    github: Option<&str>,
-    live: Option<&str>,
-    tools: Vec<&str>,
-    content: Markup,
-) -> Markup {
+pub fn project(title: &str, github: Option<&str>, live: Option<&str>, content: Markup) -> Markup {
     html! {
         section class="flex flex-col gap-2 mt-6" {
-            h3 class="text-xl text-slate-500 font-bold" {(title)}
+            h3 class="text-xl text-primary font-bold" {(title)}
 
-            div class="flex gap-3 text-sm underline italic" {
+            div class="flex gap-3 text-sm" {
                 @if let Some(url) = github {
-                    a href=(url) target="_blank" {"Github"}
+                    a href=(url) target="_blank" class="bg-slate-900 rounded-md py-1 px-2" {"Source code"}
                 }
                 @if let Some(url) = live {
-                    a href=(url) target="_blank" {"Live site"}
+                    a href=(url) target="_blank" class="bg-slate-900 rounded-md py-1 px-2" {"Live site"}
                 }
             }
-
             (content)
-
-            div class="flex flex gap-2 text-xs" {
-                @for tool in tools {
-                    span class="p-2 rounded-lg bg-slate-900 w-max" {(tool)}
-                }
-            }
         }
     }
 }
