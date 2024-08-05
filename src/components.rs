@@ -4,7 +4,7 @@ pub fn html(content: Markup) -> Markup {
     return html! {
         html {
             head {
-                title {"HN"}
+                title {"Hal Nguyen"}
                 link rel="stylesheet" type="text/css" href="/assets/styles.css" {}
                 meta name="viewport" content="width=device-width,initial-scale=1.0" {}
                 meta name="author" content="Hal Nguyen" {}

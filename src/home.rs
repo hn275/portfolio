@@ -28,17 +28,42 @@ pub async fn home() -> maud::Markup {
 
 fn projects() -> Markup {
     maud::html! {
+
+        (project(
+            "Differential Cryptanalysis",
+            Some("https://github.com/MNThomson/DifferentialCryptanalysis"),
+            None,
+            Vec::from(["Rust"]),
+            html! {
+                p {
+                    "A small program efficiently recovers the last round key from a basic cipher
+                    using "
+                    a
+                        class="underline italic"
+                        href="https://www.engr.mun.ca/~howard/PAPERS/ldc_tutorial.pdf"
+                        target="_blank" {
+                        "Linear Differential Cryptanalysis"
+                    }
+                    ". Through a chosen plaintext attack, it processes over 17,000
+                    plaintext/ciphertext pairs to identify a specific characteristic. The correct 
+                    16-bit key is then determined by partially decrypting the last round with all 
+                    possible key combinations and finding the one that matches the characteristic."
+                }
+            }
+        ))
+
         (project(
             "RSA from scratch",
             Some("https://github.com/hn275/rsa"),
             None,
             Vec::from(["Rust"]),
             html! {
-                "RSA From Scratch is an implementation of the renowned RSA crypto-system 
+                "RSA From Scratch is an implementation of the renowned RSA crypto-system
                 with 2048 bit security. It employs the Miller-Rabin test to verify the 
                 primality of the generated numbers."
             }
         ))
+
 
         (project(
             "file-encryptor",
