@@ -2,7 +2,7 @@ use crate::components::{exp, html, li, project, section};
 use maud::{html, Markup};
 
 pub async fn home() -> maud::Markup {
-    return html(maud::html! {
+    html(maud::html! {
         (nav())
 
         main class="w-full max-w-screen-sm mx-auto flex flex-col gap-5 py-5 px-5" {
@@ -23,7 +23,7 @@ pub async fn home() -> maud::Markup {
             code class="text-slate-800 p-1 rounded-md bg-slate-950 pointer-events-none" { ":(){:|:&};:" }
             }
         }
-    });
+    })
 }
 
 fn header() -> Markup {

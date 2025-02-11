@@ -1,7 +1,7 @@
 use maud::{html, Markup};
 
 pub fn html(content: Markup) -> Markup {
-    return html! {
+    html! {
         html {
             head {
                 title {"Hal Nguyen"}
@@ -12,7 +12,7 @@ pub fn html(content: Markup) -> Markup {
             }
             body class="text-slate-50 scroll-smooth" { (content) }
         }
-    };
+    }
 }
 
 pub fn li(content: Markup) -> Markup {
