@@ -49,7 +49,7 @@ fn about() -> Markup {
                 strong focus on "
                 span class="italic font-bold" {"Networking" }
                 " and "
-                span class = "italic font-bold" { "Cryptography" }
+                span class = "italic font-bold" { "Information Security" }
                 ". Beyond my
                 academic pursuits, I'm 
                 deeply passionate about Cryptography, Linux, and Free and Open Source 
@@ -176,7 +176,6 @@ fn nav() -> Markup {
     let navlinks = [
         ("github", "https://github.com/hn275"),
         ("linkedin", "https://linkedin.com/in/hn275"),
-        ("email", "mailto:haln_01@proton.me"),
     ];
 
     html! {
