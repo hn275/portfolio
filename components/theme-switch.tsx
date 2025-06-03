@@ -4,7 +4,6 @@ import { SwitchProps, useSwitch } from "@heroui/switch";
 import { useTheme } from "next-themes";
 import clsx from "clsx";
 
-import { SunFilledIcon, MoonFilledIcon } from "@/components/icons";
 import { FaRegMoon, FaRegSun } from "react-icons/fa6";
 
 export interface ThemeSwitchProps {
