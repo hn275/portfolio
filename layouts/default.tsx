@@ -52,10 +52,12 @@ export function Section({
 }) {
   return (
     <section
-      className="px-5 lg:px-0 flex flex-col gap-3 lg:gap-7 mx-auto justify-center max-w-screen-lg"
+      className="px-5 my-5 lg:px-0 flex flex-col gap-3 lg:gap-7 mx-auto justify-center max-w-screen-lg"
       id={id}
     >
-      <h2 className="text-[2em] font-bold lg:justify-self-end">{header}</h2>
+      <h2 className="text-[2em] font-bold lg:justify-self-end text-center mt-5">
+        {header}
+      </h2>
       <Divider />
       {children}
     </section>

@@ -8,6 +8,7 @@ import { experiences } from "@/content/experiences";
 import { ExperienceCard } from "@/components/ExperienceCard";
 import { projects } from "@/content/projects";
 import { ProjectCard } from "@/components/ProjectCard";
+import { Contact, contacts } from "@/components/Contact";
 
 export default function IndexPage() {
   return (
@@ -67,9 +68,19 @@ export default function IndexPage() {
 
       <Container>
         <Section id="projects" header="Projects">
-          <SectionBody className="flex flex-col justify-center items-center gap-5 mx-auto max-w-[65ch] w-full bg-red-500">
+          <SectionBody className="flex flex-col justify-center items-center gap-5 mx-auto max-w-[65ch] w-full">
             {projects.map((exp, index) => (
               <ProjectCard key={`exp${index}`} {...exp} />
+            ))}
+          </SectionBody>
+        </Section>
+      </Container>
+
+      <Container className="mb-10">
+        <Section id="contacts" header="Contacts">
+          <SectionBody className="flex flex-col justify-center items-start mx-auto">
+            {contacts.map((exp, index) => (
+              <Contact key={`exp${index}`} {...exp} />
             ))}
           </SectionBody>
         </Section>
