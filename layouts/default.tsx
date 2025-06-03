@@ -1,6 +1,7 @@
 import { Head } from "./head";
 import { Navbar } from "@/components/navbar";
 import { clsx } from "clsx";
+import { Divider } from "@heroui/divider";
 
 export function DefaultLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -43,18 +44,38 @@ export function Container({
 export function Section({
   children,
   header,
+  id,
 }: {
   header: string;
   children: React.ReactNode;
+  id: string;
 }) {
   return (
-    <div className="px-5 lg:px-0 flex flex-col lg:grid lg:grid-rows-1 lg:grid-cols-[30vw,auto] gap-3 lg:gap-7 justify-center max-w-screen-lg">
+    <section
+      className="px-5 lg:px-0 flex flex-col gap-3 lg:gap-7 mx-auto justify-center max-w-screen-lg"
+      id={id}
+    >
       <h2 className="text-[2em] font-bold lg:justify-self-end">{header}</h2>
+      <Divider />
       {children}
-    </div>
+    </section>
   );
 }
 
-export function SectionBody({ children }: { children: React.ReactNode }) {
-  return <div className="flex flex-col gap-2 lg:max-w-[60ch]">{children}</div>;
+export function SectionBody({
+  children,
+  className,
+  ...props
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
+  return (
+    <div
+      className={clsx("flex flex-col gap-2 lg:max-w-[60ch]", className)}
+      {...props}
+    >
+      {children}
+    </div>
+  );
 }

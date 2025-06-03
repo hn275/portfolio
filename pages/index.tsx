@@ -4,6 +4,8 @@ import {
   Section,
   SectionBody,
 } from "@/layouts/default";
+import { experiences } from "@/content/experiences";
+import { ExperienceCard } from "@/components/ExperienceCard";
 
 export default function IndexPage() {
   return (
@@ -24,33 +26,42 @@ export default function IndexPage() {
         </Container>
       </section>
 
-      <section id="about">
-        <Container>
-          <Section header="About">
-            <SectionBody>
-              <span>Hello 👋!</span>
-              <p>
-                I'm in my final year as a Computer Science student at University
-                of Victoria, with a strong focus on Networking and Information
-                Security. Beyond my academic pursuits, I'm deeply passionate
-                about Cryptography, Linux, and Free and Open Source Software.
-              </p>
-              <p>
-                My journey through the tech industry has led me to roles at
-                various startups and freelancing opportunities, where I've
-                authored code as a full-stack software developer. These
-                experiences have introduced me to the modern web technologies,
-                and standard security practices.
-              </p>
-              <p>
-                Motivated to learn, I constantly seek to leverage my skills and
-                expertise to contribute meaningfully to the realms of
-                cybersecurity and open-source innovation.
-              </p>
-            </SectionBody>
-          </Section>
-        </Container>
-      </section>
+      <Container>
+        <Section header="About" id="about">
+          <SectionBody className="self-center lg:max-w-[60ch]">
+            <span className="font-bold">Hello 👋!</span>
+            <p>
+              I am a recent grad year as a Computer Science student at
+              University of Victoria, with a strong focus on Networking and
+              Information Security. Beyond my academic pursuits, I'm deeply
+              passionate about Cryptography, Linux, and Free and Open Source
+              Software.
+            </p>
+            <p>
+              My journey through the tech industry has led me to roles at
+              various startups and freelancing opportunities, where I've
+              authored code as a full-stack software developer. These
+              experiences have introduced me to the modern web technologies, and
+              standard security practices.
+            </p>
+            <p>
+              Motivated to learn, I constantly seek to leverage my skills and
+              expertise to contribute meaningfully to the realms of
+              cybersecurity and open-source innovation.
+            </p>
+          </SectionBody>
+        </Section>
+      </Container>
+
+      <Container>
+        <Section id="experiences" header="Experiences">
+          <SectionBody className="flex flex-col justify-center items-center gap-5 mx-auto">
+            {experiences.map((exp, index) => (
+              <ExperienceCard key={`exp${index}`} {...exp} />
+            ))}
+          </SectionBody>
+        </Section>
+      </Container>
     </DefaultLayout>
   );
 }
