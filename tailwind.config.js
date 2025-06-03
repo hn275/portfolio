@@ -1,13 +1,23 @@
+import {heroui} from "@heroui/theme"
+
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./src/**/*.{rs,html}"],
+const config = {
+  content: [
+    './layouts/**/*.{js,ts,jsx,tsx,mdx}',
+    './pages/**/*.{js,ts,jsx,tsx,mdx}',
+    './components/**/*.{js,ts,jsx,tsx,mdx}',
+    "./node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
-      colors: {
-        primary: "#64748b",
-        secondary: "#cbd5e1",
+      fontFamily: {
+        sans: ["var(--font-sans)"],
+        mono: ["var(--font-mono)"],
       },
     },
   },
-  plugins: [],
-};
+  darkMode: "class",
+  plugins: [heroui()],
+}
+
+export default config;
