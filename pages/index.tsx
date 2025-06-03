@@ -6,6 +6,8 @@ import {
 } from "@/layouts/default";
 import { experiences } from "@/content/experiences";
 import { ExperienceCard } from "@/components/ExperienceCard";
+import { projects } from "@/content/projects";
+import { ProjectCard } from "@/components/ProjectCard";
 
 export default function IndexPage() {
   return (
@@ -58,6 +60,16 @@ export default function IndexPage() {
           <SectionBody className="flex flex-col justify-center items-center gap-5 mx-auto">
             {experiences.map((exp, index) => (
               <ExperienceCard key={`exp${index}`} {...exp} />
+            ))}
+          </SectionBody>
+        </Section>
+      </Container>
+
+      <Container>
+        <Section id="projects" header="Projects">
+          <SectionBody className="flex flex-col justify-center items-center gap-5 mx-auto max-w-[65ch] w-full bg-red-500">
+            {projects.map((exp, index) => (
+              <ProjectCard key={`exp${index}`} {...exp} />
             ))}
           </SectionBody>
         </Section>
