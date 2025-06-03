@@ -16,7 +16,7 @@ export function ProjectCard(p: ProjectCardProps) {
       </CardHeader>
       <Divider />
       <CardBody>
-        <p>{p.desc}</p>
+        <p className="text-default-800">{p.desc}</p>
       </CardBody>
       <Divider />
       <CardFooter className="justify-start gap-5">

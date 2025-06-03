@@ -2,10 +2,8 @@ import { Head } from "./head";
 import { Navbar } from "@/components/navbar";
 import { clsx } from "clsx";
 import { Divider } from "@heroui/divider";
-import { Code } from "@heroui/code";
 
 export function DefaultLayout({ children }: { children: React.ReactNode }) {
-  const forkBomb = ":(){:|:&};:";
   return (
     <div className="relative flex flex-col h-screen">
       <Head />
@@ -15,10 +13,6 @@ export function DefaultLayout({ children }: { children: React.ReactNode }) {
 
       <footer className="w-full flex flex-col items-center justify-center py-3 text-xs gap-3 text-default-600">
         <span>Copyright © 2025 Hal Nguyen. All Rights Reserved.</span>
-        <span className="flex flex-col items-center">
-          <Code>{forkBomb}</Code>
-          <span>Fun snippet to run in your shell</span>
-        </span>
       </footer>
     </div>
   );
@@ -35,7 +29,7 @@ export function Container({
   return (
     <div
       className={clsx(
-        "container mx-auto max-w-7xl px-6 flex-grow pt-16",
+        "container mx-auto max-w-4xl px-6 flex-grow pt-16",
         className ?? "",
       )}
       {...props}
@@ -62,7 +56,7 @@ export function Section({
       <h2 className="text-[2em] font-bold lg:justify-self-end text-center mt-5">
         {header}
       </h2>
-      <Divider />
+      <Divider className="my-3" />
       {children}
     </section>
   );
@@ -77,10 +71,7 @@ export function SectionBody({
   className?: string;
 }) {
   return (
-    <div
-      className={clsx("flex flex-col gap-2 lg:max-w-[60ch]", className)}
-      {...props}
-    >
+    <div className={clsx("flex flex-col gap-2 w-[90%]", className)} {...props}>
       {children}
     </div>
   );

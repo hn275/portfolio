@@ -6,7 +6,7 @@ interface ExperienceCardProps extends ExperienceProps {}
 
 export function ExperienceCard(p: ExperienceCardProps) {
   return (
-    <Card className="p-2">
+    <Card className="p-2 w-full">
       <CardHeader className="flex gap-3">
         <div className="flex flex-col items-start justify-start w-full md:flex-row md:justify-between md:items-center">
           <p className="text-lg font-bold">{p.company}</p>
@@ -17,7 +17,7 @@ export function ExperienceCard(p: ExperienceCardProps) {
       <CardBody>
         <ul className="flex flex-col gap-2 list-disc list-outside">
           {p.tasks.map((task, index) => (
-            <li key={`${index}`} className="ml-4">
+            <li key={`${index}`} className="ml-4 text-default-800">
               {task}
             </li>
           ))}
