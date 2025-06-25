@@ -5,10 +5,6 @@ export const siteConfig = {
   description: "Computer Science Graduate, Software Developer",
   navItems: [
     {
-      label: "Home",
-      href: "#",
-    },
-    {
       label: "About",
       href: "#about",
     },
@@ -26,10 +22,6 @@ export const siteConfig = {
     },
   ],
   navMenuItems: [
-    {
-      label: "Home",
-      href: "#",
-    },
     {
       label: "About",
       href: "#about",

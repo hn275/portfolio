@@ -29,7 +29,7 @@ export function Container({
   return (
     <div
       className={clsx(
-        "container mx-auto max-w-4xl px-6 flex-grow pt-16",
+        "px-5 container mx-auto max-w-4xl flex-grow",
         className ?? "",
       )}
       {...props}
@@ -50,7 +50,7 @@ export function Section({
 }) {
   return (
     <section
-      className="px-5 my-5 lg:px-0 flex flex-col gap-3 lg:gap-7 mx-auto justify-center max-w-screen-lg"
+      className="my-5 lg:px-0 flex flex-col gap-3 lg:gap-7 mx-auto justify-center max-w-screen-lg"
       id={id}
     >
       <h2 className="text-[2em] font-bold lg:justify-self-end text-center mt-5">
@@ -71,7 +71,7 @@ export function SectionBody({
   className?: string;
 }) {
   return (
-    <div className={clsx("flex flex-col gap-2 w-[90%]", className)} {...props}>
+    <div className={clsx("flex flex-col gap-2", className)} {...props}>
       {children}
     </div>
   );

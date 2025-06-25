@@ -5,82 +5,82 @@ import {
   Section,
   SectionBody,
 } from "@/layouts/default";
+import { Popover, PopoverTrigger, PopoverContent, Button } from "@heroui/react";
 import { experiences } from "@/content/experiences";
 import { ExperienceCard } from "@/components/ExperienceCard";
 import { projects } from "@/content/projects";
 import { ProjectCard } from "@/components/ProjectCard";
 import { Contact, contacts } from "@/components/Contact";
+import { Link } from "@heroui/link";
+import { Typewriter } from "react-simple-typewriter";
 
 export default function IndexPage() {
   const forkBomb = ":(){:|:&};:";
+
   return (
     <DefaultLayout>
-      <section id="#">
-        <Container className="text-[1rem] md:text-[2rem] h-[90vh] grid items-center">
-          <div className="py-10 md:py-20 px-10">
-            <h1 className="text-primary font-bold opacity-90 text-[2.5em]">
-              hey! my name is hal.
-            </h1>
+      <section id="#" className="grid justify-center items-center h-[100vh]">
+        <Container className="text-[0.9rem] md:text-[1rem] lg:text-[1.5rem]">
+          <h1 className="text-primary font-bold text-[2.5em]">
+            hey! my name is hal.
+          </h1>
 
-            <div className="text-[1.5em] opacity-70">
-              <p>Computer Science Graduate,</p>
-              <p>Software Developer,</p>
-              <p>Cryptography Enthusiast</p>
-            </div>
+          <div className="text-[1em] md:text-[1em]">
+            I am a{" "}
+            <span className="text-default-800 font-bold italic">
+              back-end engineer
+            </span>
+            &nbsp;@&nbsp;
+            <Link
+              href="https://vsc.eco"
+              target="_blank"
+              className="text-[1em] font-bold underline text-primary"
+            >
+              VSC Network
+            </Link>
+            .
           </div>
         </Container>
       </section>
 
       <Container>
         <Section header="About" id="about">
-          <SectionBody className="self-center lg:max-w-[60ch] text-default-600">
+          <SectionBody className="self-center lg:max-w-[60ch]">
             <span className="text-default-800 font-bold text-xl">
               Hello 👋!
             </span>
             <p>
-              I’m a recent{" "}
-              <span className="text-default-800 font-bold">
-                Computer Science
-              </span>{" "}
-              graduate from the University of Victoria, specializing in&nbsp;
-              <span className="text-default-800 font-bold">
-                Computer Networking
-              </span>{" "}
-              and{" "}
-              <span className="text-default-800 font-bold">
-                Information Security
-              </span>
-              . My studies gave me a solid foundation in network protocols,
-              secure system design, and distributed computing, fueling my
-              interest in building secure, performant, and reliable software.
+              At my day job, I'm working on decentralized infrastructure for
+              verifiable sustainability — building{" "}
+              <span className="font-bold italic">distributed systems</span>
+              ,&nbsp;
+              <span className="font-bold italic">scalable services</span>,
+              and&nbsp;
+              <span className="font-bold italic">DevOps</span> related things.
             </p>
 
             <p>
-              I’ve worked as a{" "}
-              <span className="text-default-800 font-bold">
-                full-stack software developer
-              </span>{" "}
-              in both freelance and startup settings, where I built{" "}
-              <span className="text-default-800 font-bold">
-                client-facing applications
-              </span>
-              ,<span className="text-default-800">backend services</span>, and{" "}
-              <span className="text-default-800 font-bold">
-                secure authentication systems
-              </span>
-              . These roles sharpened my ability to deliver maintainable,
-              production-ready code across the stack.
-            </p>
-
-            <p>
-              Outside of tech, I enjoy{" "}
-              <span className="text-default-800 font-bold">rock climbing</span>,{" "}
-              <span className="text-default-800 font-bold">exercising</span>,
-              and I am an expert when it comes to{" "}
-              <span className="text-default-800 font-bold">
-                guitar noodling
-              </span>
-              !
+              Outside of software, I’m a&nbsp;
+              <span className="font-bold italic">rock climber</span>, and a
+              seasoned{" "}
+              <Popover backdrop="blur">
+                <PopoverTrigger>
+                  <span className="font-bold underline cursor-pointer italic">
+                    guitar
+                  </span>
+                </PopoverTrigger>
+                <PopoverContent>
+                  <div className="px-1 py-2">
+                    <div className="text-small font-bold">
+                      Current Guitar Goal
+                    </div>
+                    <div className="text-tiny">
+                      PRS SE NF3 with Rosewood Fingerboard 👌
+                    </div>
+                  </div>
+                </PopoverContent>
+              </Popover>
+              &nbsp;noodler!
             </p>
           </SectionBody>
         </Section>
