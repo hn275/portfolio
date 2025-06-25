@@ -28,6 +28,7 @@ export const Navbar = () => {
             <img src="/favicon.svg" alt="HN" />
           </NextLink>
         </NavbarBrand>
+        {/*
         <div className="hidden sm:flex gap-4 justify-start ml-2">
           {siteConfig.navItems.map((item) => (
             <NavbarItem key={item.href}>
@@ -44,8 +45,11 @@ export const Navbar = () => {
             </NavbarItem>
           ))}
         </div>
+				*/}
       </NavbarContent>
 
+      {/*
+       */}
       <NavbarContent
         className="hidden sm:flex basis-1/5 sm:basis-full"
         justify="end"

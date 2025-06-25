@@ -1,6 +1,6 @@
 import { Head } from "./head";
-import { Navbar } from "@/components/navbar";
 import { clsx } from "clsx";
+import { Navbar } from "@/components/navbar";
 import { Divider } from "@heroui/divider";
 
 export function DefaultLayout({ children }: { children: React.ReactNode }) {
@@ -9,10 +9,12 @@ export function DefaultLayout({ children }: { children: React.ReactNode }) {
       <Head />
       <Navbar />
 
-      <main>{children}</main>
+      <main className="h-full">{children}</main>
 
-      <footer className="w-full flex flex-col items-center justify-center py-3 text-xs gap-3 text-default-600">
-        <span>Copyright © 2025 Hal Nguyen. All Rights Reserved.</span>
+      <footer className="w-full flex flex-col items-center justify-center pb-2">
+        <span className="text-sm">
+          Copyright © 2025 Hal Nguyen. All Rights Reserved.
+        </span>
       </footer>
     </div>
   );
