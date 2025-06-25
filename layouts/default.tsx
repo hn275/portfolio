@@ -50,7 +50,7 @@ export function Section({
 }) {
   return (
     <section
-      className="my-5 lg:px-0 flex flex-col gap-3 lg:gap-7 mx-auto justify-center max-w-screen-lg"
+      className="my-28 lg:px-0 flex flex-col gap-3 lg:gap-7 mx-auto justify-center max-w-screen-lg"
       id={id}
     >
       <h2 className="text-[2em] font-bold lg:justify-self-end text-center mt-5">

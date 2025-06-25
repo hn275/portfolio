@@ -63,23 +63,18 @@ export default function IndexPage() {
               Outside of software, I’m a&nbsp;
               <span className="font-bold italic">rock climber</span>, and a
               seasoned{" "}
-              <Popover backdrop="blur">
-                <PopoverTrigger>
-                  <span className="font-bold underline cursor-pointer italic">
-                    guitar
-                  </span>
-                </PopoverTrigger>
-                <PopoverContent>
-                  <div className="px-1 py-2">
-                    <div className="text-small font-bold">
-                      Current Guitar Goal
-                    </div>
-                    <div className="text-tiny">
-                      PRS SE NF3 with Rosewood Fingerboard 👌
-                    </div>
+              <div className="font-bold underline cursor-default italic group relative inline-block">
+                guitar
+                <div className="p-4 absolute bg-surface bottom-5 group-hover:bottom-8 w-max rounded-lg shadow-lg opacity-0 group-hover:opacity-100 transition-all pointer-events-none">
+                  <div className="text-small font-bold">
+                    Current Guitar Goal
                   </div>
-                </PopoverContent>
-              </Popover>
+
+                  <div className="text-tiny font-normal">
+                    PRS SE NF3 with Rosewood Fingerboard 👌
+                  </div>
+                </div>
+              </div>
               &nbsp;noodler!
             </p>
           </SectionBody>
