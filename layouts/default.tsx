@@ -10,12 +10,6 @@ export function DefaultLayout({ children }: { children: React.ReactNode }) {
       <Navbar />
 
       <main className="h-full">{children}</main>
-
-      <footer className="w-full flex flex-col items-center justify-center pb-4 opacity-75">
-        <span className="text-sm">
-          Copyright © 2025 Hal Nguyen. All Rights Reserved.
-        </span>
-      </footer>
     </div>
   );
 }
