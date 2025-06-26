@@ -2,6 +2,8 @@ import { DefaultLayout, Container } from "@/layouts/default";
 import { Link } from "@heroui/link";
 import clsx from "clsx";
 import { Code } from "@heroui/code";
+import { siteConfig } from "@/config/site";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 export default function IndexPage() {
   const forkBomb = ":(){:|:&};:";
@@ -13,12 +15,12 @@ export default function IndexPage() {
         className="grid justify-center items-center leading-relaxed h-full"
       >
         <Container className="text-[0.9rem] md:text-[1rem] lg:text-[1.2rem]">
-          <h1 className="font-bold text-[2.5em]">
+          <h1 className="font-bold text-[2.5em] mb-5">
             hello! my name is <span className="text-primary">hal</span>
           </h1>
 
-          <p className="text-[1em] md:text-[1em]">
-            I am a software engineer at&nbsp;
+          <p className="text-[0.9em]">
+            Currently, I am a software engineer at&nbsp;
             <Link
               href="https://vsc.eco"
               target="_blank"
@@ -29,24 +31,11 @@ export default function IndexPage() {
             , working on decentralized infrastructure for verifiable
             sustainability — building{" "}
             <span className="font-bold italic">distributed systems</span>
-            ,&nbsp;
-            <span className="font-bold italic">scalable services</span>,
-            and&nbsp;
-            <span className="font-bold italic">DevOps</span> related things.
+            &nbsp;and&nbsp;
+            <span className="font-bold italic">scalable services</span>.
           </p>
 
-          <p>
-            At&nbsp;
-            <Link
-              href="https://vsc.eco"
-              target="_blank"
-              className="text-primary italic underline"
-            >
-              VSC
-            </Link>
-          </p>
-
-          <p>
+          <p className="mt-3 text-[0.9em]">
             Outside of software, I’m a&nbsp;
             <span className="font-bold italic">rock climber</span>, and a
             seasoned{" "}
@@ -71,8 +60,23 @@ export default function IndexPage() {
             &nbsp;noodler!
           </p>
 
-          <div className="flex justify-center mt-3">
-            <Code className="text-xs text-center mx-auto">{forkBomb}</Code>
+          <div className="flex justify-center mt-5 gap-4">
+            <Link
+              isExternal
+              href={siteConfig.links.linkedin}
+              title="LinkedIn"
+              className="hover:scale-125 transition-all"
+            >
+              <FaLinkedin size="1.5em" />
+            </Link>
+            <Link
+              isExternal
+              href={siteConfig.links.github}
+              title="GitHub"
+              className="hover:scale-125 transition-all"
+            >
+              <FaGithub size="1.5em" />
+            </Link>
           </div>
         </Container>
       </section>

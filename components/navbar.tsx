@@ -8,9 +8,7 @@ import {
   NavbarMenuItem,
 } from "@heroui/navbar";
 import { Link } from "@heroui/link";
-import { link as linkStyles } from "@heroui/theme";
 import NextLink from "next/link";
-import clsx from "clsx";
 
 import { siteConfig } from "@/config/site";
 import { ThemeSwitch } from "@/components/theme-switch";
@@ -21,12 +19,9 @@ export const Navbar = () => {
     <HeroUINavbar maxWidth="xl" position="sticky">
       <NavbarContent className="basis-1/5 sm:basis-full" justify="start">
         <NavbarBrand className="gap-3 max-w-fit">
-          <NextLink
-            className="flex justify-start items-center gap-1 w-9"
-            href="/#"
-          >
+          <div className="w-9">
             <img src="/favicon.svg" alt="HN" />
-          </NextLink>
+          </div>
         </NavbarBrand>
         {/*
         <div className="hidden sm:flex gap-4 justify-start ml-2">
@@ -55,12 +50,6 @@ export const Navbar = () => {
         justify="end"
       >
         <NavbarItem className="hidden sm:flex gap-2">
-          <Link isExternal href={siteConfig.links.linkedin} title="">
-            <FaLinkedin />
-          </Link>
-          <Link isExternal href={siteConfig.links.github} title="GitHub">
-            <FaGithub />
-          </Link>
           <ThemeSwitch />
         </NavbarItem>
       </NavbarContent>
