@@ -22,7 +22,7 @@ const config = {
       themes: {
         light: {
           colors: {
-            primary: "#4A90D9",
+            primary: "#498FDA",
             background: "#FFFFFF",
             surface: "#F8F9FA",
             surfaceVariant: "#E9ECEF",
@@ -39,7 +39,7 @@ const config = {
 
         dark: {
           colors: {
-            primary: "#1A5A9A",
+            primary: "#67AAF1",
             background: "#0D1117",
             surface: "#161B22",
             surfaceVariant: "#21262D",

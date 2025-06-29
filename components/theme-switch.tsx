@@ -3,8 +3,7 @@ import { VisuallyHidden } from "@react-aria/visually-hidden";
 import { SwitchProps, useSwitch } from "@heroui/switch";
 import { useTheme } from "next-themes";
 import clsx from "clsx";
-
-import { FaRegMoon, FaRegSun } from "react-icons/fa6";
+import { GoMoon, GoSun } from "react-icons/go";
 
 export interface ThemeSwitchProps {
   className?: string;
@@ -75,7 +74,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
           ),
         })}
       >
-        {isSelected ? <FaRegMoon /> : <FaRegSun />}
+        {isSelected ? <GoMoon /> : <GoSun />}
       </div>
     </Component>
   );

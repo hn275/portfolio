@@ -1,13 +1,10 @@
 import { DefaultLayout, Container } from "@/layouts/default";
 import { Link } from "@heroui/link";
 import clsx from "clsx";
-import { Code } from "@heroui/code";
 import { siteConfig } from "@/config/site";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 export default function IndexPage() {
-  const forkBomb = ":(){:|:&};:";
-
   return (
     <DefaultLayout>
       <section
@@ -24,7 +21,7 @@ export default function IndexPage() {
             <Link
               href="https://vsc.eco"
               target="_blank"
-              className="text-primary italic underline text-[1rem] lg:text-[1.2rem]"
+              className="text-primary italic underline text-[1rem] lg:text-[1.2rem] font-semibold"
             >
               VSC
             </Link>
