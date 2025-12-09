@@ -1,5 +1,7 @@
 use tower_http::services::{ServeDir, ServeFile};
 
+const HTTP_ADDRESS: &'static str = "0.0.0.0:8000";
+
 #[tokio::main]
 async fn main() {
     tracing_subscriber::fmt()
@@ -12,7 +14,8 @@ async fn main() {
         .nest_service("/assets", ServeDir::new("assets/"))
         .layer(tower_http::trace::TraceLayer::new_for_http());
 
-    let listener = tokio::net::TcpListener::bind("0.0.0.0:8000")
+    println!("Listening at {}", HTTP_ADDRESS);
+    let listener = tokio::net::TcpListener::bind(HTTP_ADDRESS)
         .await
         .expect("unable to bind address.");
 

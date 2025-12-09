@@ -6,10 +6,19 @@ To install dependencies:
 bun install
 ```
 
-To run:
+Start tailwind:
 
 ```bash
-bun run index.ts
+bun run tailwind:watch
 ```
 
-This project was created using `bun init` in bun v1.2.18. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+To run server:
+
+```bash
+cargo run
+```
+
+The server serves at 0.0.0.0:8000
+
+## TODO
+- [ ] pass in server port number as env variable
